@@ -57,6 +57,7 @@ namespace AppliConsole
             getSourcePath();
             getTargetPath();
             chooseBackupType();
+            controller.updateBackupInfos();
         }
 
         //Functions linked to the source path and the target path of the save
@@ -96,7 +97,6 @@ namespace AppliConsole
         {
             Console.WriteLine("Choose a saving type (full or differential)");
             BackupType = Console.ReadLine();
-            controller.updateBackupType();
             return BackupType;
         }
 
