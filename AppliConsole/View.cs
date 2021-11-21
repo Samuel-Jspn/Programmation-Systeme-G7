@@ -7,15 +7,27 @@ namespace AppliConsole
 {
     class View
     {
+        private string name;
         private string sourceFilePath;
         private string targetFilePath;
+        private string backupType;
+        private IController controller;
 
+        //Constructor
         public View()
         {
+            Name = "";
             SourceFilePath = "";
             TargetFilePath = "";
+            backupType = "";
         }
 
+        //geter and seter of the variables
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
         public string SourceFilePath
         {
             get { return sourceFilePath; }
@@ -26,7 +38,28 @@ namespace AppliConsole
             get { return targetFilePath; }
             set { targetFilePath = value; }
         }
+        public string BackupType
+        {
+            get { return backupType; }
+            set { backupType = value; }
+        }
+        public IController Controller
+        {
+            get { return controller; }
+            set { controller = value; }
+        }
 
+        //get the backup info
+        public void backupInfo()
+        {
+            Console.WriteLine("Please enter the backup's name");
+            Name = Console.ReadLine();
+            getSourcePath();
+            getTargetPath();
+            chooseBackupType();
+        }
+
+        //Functions linked to the source path and the target path of the save
         public void getSourcePath()
         {
             bool isSourcePathValid = false;
@@ -56,6 +89,21 @@ namespace AppliConsole
         {
             bool result = Directory.Exists(TargetFilePath);
             return result;
+        }
+
+        //function to choose the saving type
+        public string chooseBackupType()
+        {
+            Console.WriteLine("Choose a saving type (full or differential)");
+            BackupType = Console.ReadLine();
+            controller.updateBackupType();
+            return BackupType;
+        }
+
+        //link the view to the controller
+        public void setController(IController cont)
+        {
+            controller = cont;
         }
     }
 }
