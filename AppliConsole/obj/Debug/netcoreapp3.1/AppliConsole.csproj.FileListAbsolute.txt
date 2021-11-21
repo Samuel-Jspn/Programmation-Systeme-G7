@@ -1,0 +1,14 @@
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.exe
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.deps.json
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.runtimeconfig.json
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.runtimeconfig.dev.json
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.dll
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.pdb
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.csproj.AssemblyReference.cache
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.AssemblyInfoInputs.cache
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.AssemblyInfo.cs
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.csproj.CoreCompileInputs.cache
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.dll
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.pdb
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.genruntimeconfig.cache
