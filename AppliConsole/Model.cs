@@ -72,11 +72,15 @@ namespace AppliConsole
                         {
                             DirectoryInfo dir = new DirectoryInfo(SourcePath);
                             DirectoryInfo[] dirs = dir.GetDirectories();
+                            // If the destination directory doesn't exist, create it.       
+                            Directory.CreateDirectory(TargetPath + @"\" + Name);
                             //get the file in the directory and copy them to the new location
                             FileInfo[] files = dir.GetFiles();
                             foreach(FileInfo file in files)
                             {
-                                file.CopyTo(TargetPath + @"\" + Name, false);
+                                //file.CopyTo(TargetPath + @"\" + file.Name, false);
+                                string tempPath = TargetPath + @"\" + Name + @"\" + file.Name;
+                                file.CopyTo(tempPath, false);
                             }
 
                             Console.WriteLine("full backup succeed");

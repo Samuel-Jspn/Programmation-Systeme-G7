@@ -20,6 +20,7 @@ namespace AppliConsole
         public View()
         {
             dirOrFile = "";
+            Extension = "";
             Name = "";
             SourcePath = "";
             TargetPath = "";
