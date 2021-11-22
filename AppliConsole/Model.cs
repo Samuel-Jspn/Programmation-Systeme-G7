@@ -7,37 +7,56 @@ namespace AppliConsole
 {
     class Model
     {
+        #region VARIABLES 
+        private string dirOrFile;
+        private string extension;
         private string name;
-        private string sourceFilePath;
-        private string targetFilePath;
+        private string sourcePath;
+        private string targetPath;
         private string backupType;
+        #endregion
 
+        #region GETER AND SETER
+        public string DirOrFile
+        {
+            get { return dirOrFile; }
+            set { dirOrFile = value; }
+        }
+        public string Extension
+        {
+            get { return extension; }
+            set { extension = value; }
+        }
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
-        public string SourceFilePath
+        public string SourcePath
         {
-            get { return sourceFilePath; }
-            set { sourceFilePath = value; }
+            get { return sourcePath; }
+            set { sourcePath = value; }
         }
-        public string TargetFilePath
+        public string TargetPath
         {
-            get { return targetFilePath; }
-            set { targetFilePath = value; }
+            get { return targetPath; }
+            set { targetPath = value; }
         }
         public string BackupType
         {
             get { return backupType; }
             set { backupType = value; }
         }
+        #endregion
 
+        //constructor
         public Model()
         {
+            DirOrFile = "";
+            Extension = "";
             Name = "";
-            SourceFilePath = "";
-            TargetFilePath = "";
+            SourcePath = "";
+            TargetPath = "";
             BackupType = "";
         }
 
@@ -48,8 +67,29 @@ namespace AppliConsole
                 case "full":
                     try
                     {
-                        File.Copy(SourceFilePath, TargetFilePath + @"\" + Name, true);
-                        Console.WriteLine("full backup succeed");
+                        if(DirOrFile == "File")
+                        {
+                            string path = TargetPath + @"\" + Name + "." + Extension;
+                            File.Copy(SourcePath, path, true);
+                            Console.WriteLine("full backup succeed");
+                        }
+                        else if(DirOrFile == "Directory")
+                        {
+                            DirectoryInfo dir = new DirectoryInfo(SourcePath);
+                            DirectoryInfo[] dirs = dir.GetDirectories();
+                            // If the destination directory doesn't exist, create it.       
+                            Directory.CreateDirectory(TargetPath + @"\" + Name);
+                            //get the file in the directory and copy them to the new location
+                            FileInfo[] files = dir.GetFiles();
+                            foreach(FileInfo file in files)
+                            {
+                                //file.CopyTo(TargetPath + @"\" + file.Name, false);
+                                string tempPath = TargetPath + @"\" + Name + @"\" + file.Name;
+                                file.CopyTo(tempPath, false);
+                            }
+
+                            Console.WriteLine("full backup succeed");
+                        }
                     }
                     catch (IOException iox)
                     {
