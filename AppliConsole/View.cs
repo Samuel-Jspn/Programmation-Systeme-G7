@@ -83,7 +83,7 @@ namespace AppliConsole
             getTargetPath();
             Extension = SourcePath.Split('.').Last();
             chooseBackupType();
-            controller.updateBackupInfos();
+            controller.updateBackupInfo();
         }
 
         //Functions linked to the backup infos one by one

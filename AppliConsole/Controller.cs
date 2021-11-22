@@ -24,7 +24,7 @@ namespace AppliConsole
 
             view.backupInfo();
         }
-        public void updateBackupInfos()
+        public void updateBackupInfo()
         {
             if(nbBackup < 1)
             {

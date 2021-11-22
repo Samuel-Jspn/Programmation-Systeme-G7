@@ -6,6 +6,6 @@ namespace AppliConsole
 {
     public interface IController
     {
-        void updateBackupInfos();
+        void updateBackupInfo();
     }
 }
