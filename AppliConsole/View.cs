@@ -8,6 +8,8 @@ namespace AppliConsole
 {
     class View
     {
+        #region VARIABLES 
+
         private string dirOrFile;
         private string extension;
         private string name;
@@ -15,17 +17,9 @@ namespace AppliConsole
         private string targetPath;
         private string backupType;
         private IController controller;
+        #endregion
 
-        //Constructor
-        public View()
-        {
-            dirOrFile = "";
-            Extension = "";
-            Name = "";
-            SourcePath = "";
-            TargetPath = "";
-            backupType = "";
-        }
+        #region GETER AND SETER
 
         //geter and seter of the variables
         public string DirOrFile
@@ -63,6 +57,22 @@ namespace AppliConsole
             get { return controller; }
             set { controller = value; }
         }
+        #endregion
+
+        //Constructor
+        public View()
+        {
+            dirOrFile = "";
+            Extension = "";
+            Name = "";
+            SourcePath = "";
+            TargetPath = "";
+            backupType = "";
+        }
+
+        
+
+        #region FUNCTION TO GET BACKUP INFO
 
         //get the backup info
         public void backupInfo()
@@ -76,7 +86,7 @@ namespace AppliConsole
             controller.updateBackupInfos();
         }
 
-        //Functions linked to the backup infos
+        //Functions linked to the backup infos one by one
         public void getName()
         {
             bool isNameValid = false;
@@ -163,5 +173,7 @@ namespace AppliConsole
         {
             controller = cont;
         }
+
+        #endregion
     }
 }

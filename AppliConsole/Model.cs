@@ -7,13 +7,16 @@ namespace AppliConsole
 {
     class Model
     {
+        #region VARIABLES 
         private string dirOrFile;
         private string extension;
         private string name;
         private string sourcePath;
         private string targetPath;
         private string backupType;
+        #endregion
 
+        #region GETER AND SETER
         public string DirOrFile
         {
             get { return dirOrFile; }
@@ -44,7 +47,9 @@ namespace AppliConsole
             get { return backupType; }
             set { backupType = value; }
         }
+        #endregion
 
+        //constructor
         public Model()
         {
             DirOrFile = "";
