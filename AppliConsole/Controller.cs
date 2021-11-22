@@ -21,9 +21,11 @@ namespace AppliConsole
         }
         public void updateBackupInfos()
         {
+            model.DirOrFile = view.DirOrFile;
+            model.Extension = view.Extension;
             model.Name = view.Name;
-            model.SourceFilePath = view.SourceFilePath;
-            model.TargetFilePath = view.TargetFilePath;
+            model.SourcePath = view.SourcePath;
+            model.TargetPath = view.TargetPath;
             model.BackupType = view.BackupType;
             model.createBackup(model.BackupType);
         }
