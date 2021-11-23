@@ -9,6 +9,7 @@ namespace AppliConsole
         #region VARIABLES
         private Model model;
         private View view;
+        private ViewDailyLog viewDailyLog;
         private int nbBackup { get; set; }
         #endregion
 
@@ -17,6 +18,7 @@ namespace AppliConsole
         {
             model = new Model();
             view = new View();
+            viewDailyLog = new ViewDailyLog();
             nbBackup = 0;
 
             //linking the controller to the view
@@ -26,7 +28,7 @@ namespace AppliConsole
         }
         public void updateBackupInfo()
         {
-            if(nbBackup < 1)
+            if(nbBackup < 5)
             {
                 model.DirOrFile = view.DirOrFile;
                 model.Extension = view.Extension;
@@ -34,6 +36,7 @@ namespace AppliConsole
                 model.SourcePath = view.SourcePath;
                 model.TargetPath = view.TargetPath;
                 model.BackupType = view.BackupType;
+
                 model.createBackup(model.BackupType);
                 nbBackup++;
                 view.backupInfo();

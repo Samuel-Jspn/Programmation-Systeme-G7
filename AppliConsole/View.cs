@@ -10,13 +10,13 @@ namespace AppliConsole
     {
         #region VARIABLES 
 
-        private string dirOrFile;
-        private string extension;
+        internal string dirOrFile;
+        internal string extension;
         private string name;
         private string sourcePath;
         private string targetPath;
-        private string backupType;
-        private IController controller;
+        internal string backupType;
+        internal IController controller;
         #endregion
 
         #region GETER AND SETER
