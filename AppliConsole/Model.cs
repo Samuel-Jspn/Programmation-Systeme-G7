@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace AppliConsole
 {
@@ -14,6 +15,10 @@ namespace AppliConsole
         private string sourcePath;
         private string targetPath;
         private string backupType;
+        private DateTime timestamp;
+        private long fileSize;
+        private string fileTransferTime;
+
         #endregion
 
         #region GETER AND SETER
@@ -47,6 +52,21 @@ namespace AppliConsole
             get { return backupType; }
             set { backupType = value; }
         }
+        public DateTime Timestamp
+        {
+            get { return timestamp; }
+            set { timestamp = value; }
+        }
+        public long FileSize
+        {
+            get { return fileSize; }
+            set { fileSize = value; }
+        }
+        public string FileTransferTime
+        {
+            get { return fileTransferTime; }
+            set { fileTransferTime = value; }
+        }
         #endregion
 
         //constructor
@@ -58,6 +78,9 @@ namespace AppliConsole
             SourcePath = "";
             TargetPath = "";
             BackupType = "";
+            Timestamp = default;
+            FileTransferTime = default;
+            FileSize = 0;
         }
 
         public void createBackup(string type)
@@ -70,7 +93,17 @@ namespace AppliConsole
                         if(DirOrFile == "File")
                         {
                             string path = TargetPath + @"\" + Name + "." + Extension;
+                            DateTime start = DateTime.Now;
                             File.Copy(SourcePath, path, true);
+                            DateTime stop = DateTime.Now;
+                            //recup copy time
+                            FileTransferTime = (stop - start).ToString();
+
+                            //recup infos log
+                            Timestamp = DateTime.Now;
+                            FileInfo file = new FileInfo(SourcePath);
+                            FileSize = file.Length;
+
                             Console.WriteLine("full backup succeed");
                         }
                         else if(DirOrFile == "Directory")
@@ -81,12 +114,20 @@ namespace AppliConsole
                             Directory.CreateDirectory(TargetPath + @"\" + Name);
                             //get the file in the directory and copy them to the new location
                             FileInfo[] files = dir.GetFiles();
-                            foreach(FileInfo file in files)
+
+                            DateTime start = DateTime.Now;
+
+                            foreach (FileInfo file in files)
                             {
-                                //file.CopyTo(TargetPath + @"\" + file.Name, false);
+                                FileSize += file.Length;
                                 string tempPath = TargetPath + @"\" + Name + @"\" + file.Name;
                                 file.CopyTo(tempPath, false);
                             }
+                            DateTime stop = DateTime.Now;
+                            //recup copy time
+                            FileTransferTime = (stop - start).ToString();
+
+                            Timestamp = DateTime.Now;
 
                             Console.WriteLine("full backup succeed");
                         }
@@ -100,6 +141,62 @@ namespace AppliConsole
                     Console.WriteLine("differential backup not available yet");
                     break;
             }
+            createDailyLog();
+        }
+
+        public void createDailyLog()
+        {
+            DailyLog dailyLog = new DailyLog();
+            dailyLog.Timestamp = Timestamp;
+            dailyLog.FileSize = FileSize;
+            dailyLog.Name = Name + "." + Extension;
+            dailyLog.SourcePath = SourcePath;
+            dailyLog.TargetPath = TargetPath;
+            dailyLog.FileTransferTime = FileTransferTime;
+
+            string jsonSerializeObj = JsonConvert.SerializeObject(dailyLog, Formatting.Indented);
+            File.AppendAllText(@"C:\testBackup\StateLogs\StateLog.son", jsonSerializeObj);
+        }
+    }
+
+    public class DailyLog
+    {
+        private string name;
+        private string sourcePath;
+        private string targetPath;
+        private DateTime timestamp;
+        private long fileSize;
+        private string fileTransferTime;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public string SourcePath
+        {
+            get { return sourcePath; }
+            set { sourcePath = value; }
+        }
+        public string TargetPath
+        {
+            get { return targetPath; }
+            set { targetPath = value; }
+        }
+        public DateTime Timestamp
+        {
+            get { return timestamp; }
+            set { timestamp = value; }
+        }
+        public long FileSize
+        {
+            get { return fileSize; }
+            set { fileSize = value; }
+        }
+        public string FileTransferTime
+        {
+            get { return fileTransferTime; }
+            set { fileTransferTime = value; }
         }
     }
 }
