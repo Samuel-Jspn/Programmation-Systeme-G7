@@ -52,9 +52,6 @@ namespace AppliConsole
         //constructor
         public ViewStateLog()
         {
-            Name = "";
-            SourcePath = "";
-            TargetPath = "";
             Timestamp = default;
             BackupState = "";
             TotalFileToCopy = 0;

@@ -15,6 +15,8 @@ namespace AppliConsole
         private string sourcePath;
         private string targetPath;
         private string backupType;
+        private DateTime timestamp;
+        private string state;
         #endregion
 
         #region GETER AND SETER
@@ -48,6 +50,16 @@ namespace AppliConsole
             get { return backupType; }
             set { backupType = value; }
         }
+        public DateTime Timestamp
+        {
+            get { return timestamp; }
+            set { timestamp = value; }
+        }
+        public string State
+        {
+            get { return state; }
+            set { state = value; }
+        }
         #endregion
 
         //constructor
@@ -59,10 +71,13 @@ namespace AppliConsole
             SourcePath = "";
             TargetPath = "";
             BackupType = "";
+            Timestamp = default;
         }
 
         public void createBackup(string type)
         {
+            Timestamp = DateTime.Now;
+            State = "ACTIF";
             switch (type)
             {
                 case "full":
@@ -101,16 +116,23 @@ namespace AppliConsole
                     Console.WriteLine("differential backup not available yet");
                     break;
             }
-            createStateLog(Name, SourcePath, TargetPath);
+            State = "NON ACTIF";
+
+            createStateLog(Name, SourcePath, TargetPath, Timestamp, State);
         }
 
-        public void createStateLog(string name, string sourcePath, string targetPath)
+        public void createStateLog(string name, string sourcePath, string targetPath, DateTime timestamp, string state)
         {
             ViewStateLog stateLog = new ViewStateLog();
             stateLog.Name = name;
             stateLog.SourcePath = sourcePath;
             stateLog.TargetPath = targetPath;
+            stateLog.Timestamp = timestamp;
+            stateLog.BackupState = state;
+            //if(stateLog.BackupState == "ACTIF")
+            //{
 
+            //}
 
             string jsonSerializeObj = JsonConvert.SerializeObject(stateLog, Formatting.Indented);
             File.AppendAllText(@"C:\testBackup\StateLogs\StateLog.son", jsonSerializeObj);

@@ -43,6 +43,8 @@ namespace AppliConsole
                 viewStateLog.Name = model.Name;
                 viewStateLog.SourcePath = model.SourcePath;
                 viewStateLog.TargetPath = model.TargetPath;
+                viewStateLog.Timestamp = model.Timestamp;
+                viewStateLog.BackupState = model.State;
 
                 model.createBackup(model.BackupType);
 
