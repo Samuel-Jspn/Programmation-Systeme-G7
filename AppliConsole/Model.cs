@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace AppliConsole
 {
@@ -100,6 +101,19 @@ namespace AppliConsole
                     Console.WriteLine("differential backup not available yet");
                     break;
             }
+            createStateLog(Name, SourcePath, TargetPath);
+        }
+
+        public void createStateLog(string name, string sourcePath, string targetPath)
+        {
+            ViewStateLog stateLog = new ViewStateLog();
+            stateLog.Name = name;
+            stateLog.SourcePath = sourcePath;
+            stateLog.TargetPath = targetPath;
+
+
+            string jsonSerializeObj = JsonConvert.SerializeObject(stateLog, Formatting.Indented);
+            File.AppendAllText(@"C:\testBackup\StateLogs\StateLog.son", jsonSerializeObj);
         }
     }
 }

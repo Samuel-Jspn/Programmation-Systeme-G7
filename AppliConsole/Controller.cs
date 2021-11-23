@@ -9,6 +9,7 @@ namespace AppliConsole
         #region VARIABLES
         private Model model;
         private View view;
+        private ViewStateLog viewStateLog;
         private int nbBackup { get; set; }
         #endregion
 
@@ -17,12 +18,16 @@ namespace AppliConsole
         {
             model = new Model();
             view = new View();
+            viewStateLog = new ViewStateLog();
             nbBackup = 0;
 
             //linking the controller to the view
             view.setController(this);
+            viewStateLog.setController(this);
 
             view.backupInfo();
+
+            viewStateLog.stateLogInfo();
         }
         public void updateBackupInfo()
         {
@@ -34,7 +39,13 @@ namespace AppliConsole
                 model.SourcePath = view.SourcePath;
                 model.TargetPath = view.TargetPath;
                 model.BackupType = view.BackupType;
+                //variables for the stateLog
+                viewStateLog.Name = model.Name;
+                viewStateLog.SourcePath = model.SourcePath;
+                viewStateLog.TargetPath = model.TargetPath;
+
                 model.createBackup(model.BackupType);
+
                 nbBackup++;
                 view.backupInfo();
             }
