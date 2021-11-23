@@ -9,6 +9,17 @@
       "AppliConsole/1.0.0": {
         "runtime": {
           "AppliConsole.dll": {}
+        },
+        "resources": {
+          "en-US/AppliConsole.resources.dll": {
+            "locale": "en-US"
+          },
+          "en/AppliConsole.resources.dll": {
+            "locale": "en"
+          },
+          "fr-FR/AppliConsole.resources.dll": {
+            "locale": "fr-FR"
+          }
         }
       }
     }
