@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Resources;
+using System.Reflection;
+using System.Threading;
+using System.Globalization;
 
 namespace AppliConsole
 {
@@ -14,6 +18,10 @@ namespace AppliConsole
         private string sourcePath;
         private string targetPath;
         private string backupType;
+
+        ResourceManager rm = new ResourceManager("AppliConsole.Resources.Strings",
+            Assembly.GetExecutingAssembly());
+
         #endregion
 
         #region GETER AND SETER
@@ -87,8 +95,14 @@ namespace AppliConsole
                                 string tempPath = TargetPath + @"\" + Name + @"\" + file.Name;
                                 file.CopyTo(tempPath, false);
                             }
-
-                            Console.WriteLine("full backup succeed");
+                            if (Thread.CurrentThread.CurrentUICulture.Name == "fr-FR")
+                            {
+                                Console.WriteLine(rm.GetString("FullSuceedFR"));
+                            }
+                            else if (Thread.CurrentThread.CurrentUICulture.Name == "en-US")
+                            {
+                                Console.WriteLine(rm.GetString("FullSuceedEN"));
+                            }
                         }
                     }
                     catch (IOException iox)

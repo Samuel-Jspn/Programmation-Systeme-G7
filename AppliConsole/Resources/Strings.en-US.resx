@@ -117,10 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TestEN" xml:space="preserve">
-    <value>This is a test in English.</value>
+  <data name="BackupNameEN" xml:space="preserve">
+    <value>Please enter the backup's name</value>
   </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>This is the language "en-US"</value>
+  <data name="BackupTypeEN" xml:space="preserve">
+    <value>Choose a saving type (full or differential)</value>
+  </data>
+  <data name="DirOrFileEN" xml:space="preserve">
+    <value>Please choose if you want to save a directory or a file (enter "Directory" or "File")</value>
+  </data>
+  <data name="FullSuceedEN" xml:space="preserve">
+    <value>Full backup succeed</value>
+  </data>
+  <data name="MaxBackupNbEN" xml:space="preserve">
+    <value>You have made 5 backups, you're not allowed to do more</value>
+  </data>
+  <data name="SelectEN" xml:space="preserve">
+    <value>You chose "English" language</value>
+  </data>
+  <data name="SourcePathDirectoryEN" xml:space="preserve">
+    <value>Please enter the path to the directory you want to save</value>
+  </data>
+  <data name="SourcePathFileEN" xml:space="preserve">
+    <value>Please enter the path to the file you want to save</value>
+  </data>
+  <data name="TargetPathEN" xml:space="preserve">
+    <value>Please enter the path to the directory where you want to save</value>
   </data>
 </root>
