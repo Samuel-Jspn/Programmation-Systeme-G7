@@ -1,0 +1,44 @@
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.exe
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.deps.json
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.runtimeconfig.json
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.runtimeconfig.dev.json
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.dll
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.pdb
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.csproj.AssemblyReference.cache
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.AssemblyInfoInputs.cache
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.AssemblyInfo.cs
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.csproj.CoreCompileInputs.cache
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.dll
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.pdb
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.genruntimeconfig.cache
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.exe
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.deps.json
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.runtimeconfig.json
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.runtimeconfig.dev.json
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.dll
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\AppliConsole.pdb
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\en-US\AppliConsole.resources.dll
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\fr-FR\AppliConsole.resources.dll
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.csproj.AssemblyReference.cache
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.Resources.Strings.en-US.resources
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.Resources.Strings.fr-FR.resources
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.csproj.GenerateResource.cache
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.AssemblyInfoInputs.cache
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.AssemblyInfo.cs
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.csproj.CoreCompileInputs.cache
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\en-US\AppliConsole.resources.dll
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\fr-FR\AppliConsole.resources.dll
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.dll
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.pdb
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.genruntimeconfig.cache
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.csproj.CopyComplete
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.Resources.Strings.en-US.resources
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.Resources.Strings.fr-FR.resources
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\AppliConsole.csproj.GenerateResource.cache
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\en-US\AppliConsole.resources.dll
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\bin\Debug\netcoreapp3.1\fr-FR\AppliConsole.resources.dll
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\en-US\AppliConsole.resources.dll
+C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\AppliConsole\obj\Debug\netcoreapp3.1\fr-FR\AppliConsole.resources.dll
