@@ -14,9 +14,6 @@
           "en-US/AppliConsole.resources.dll": {
             "locale": "en-US"
           },
-          "en/AppliConsole.resources.dll": {
-            "locale": "en"
-          },
           "fr-FR/AppliConsole.resources.dll": {
             "locale": "fr-FR"
           }
