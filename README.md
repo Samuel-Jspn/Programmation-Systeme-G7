@@ -4,6 +4,13 @@
 
 Ce fichier fera office de document utilisateur pour notre projet. Il va permettre à n'importe quel utilisateur de comprendre l'utilisation de notre application. 
 
+1. [Features](#Features)
+2. [Installation](#Installation)
+3. [Utilisation](#Utilisation)
+    1. [Backup Infos](#BackupInfos)
+4. [Release Notes](#ReleaseNotes)
+
+
 ## Features
 
 - Choix de la langue (Français ou anglais)
