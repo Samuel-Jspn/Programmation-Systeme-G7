@@ -19,9 +19,11 @@ namespace AppliConsole
         private string sourcePath;
         private string targetPath;
         private string backupType;
+        private string state;
         private DateTime timestamp;
         private long fileSize;
         private string fileTransferTime;
+        private int totalFileToCopy; 
 
 
         ResourceManager rm = new ResourceManager("AppliConsole.Resources.Strings",
@@ -75,6 +77,16 @@ namespace AppliConsole
             get { return fileTransferTime; }
             set { fileTransferTime = value; }
         }
+        public string State
+        {
+            get { return state; }
+            set { state = value; }
+        }
+        public int TotalFileToCopy
+        {
+            get { return totalFileToCopy; }
+            set { totalFileToCopy = value; }
+        }
         #endregion
 
         //constructor
@@ -89,10 +101,12 @@ namespace AppliConsole
             Timestamp = default;
             FileTransferTime = default;
             FileSize = 0;
+            TotalFileToCopy = 0;
         }
 
         public void createBackup(string type)
         {
+            State = "ACTIF";
             switch (type)
             {
                 case "full":
@@ -102,13 +116,18 @@ namespace AppliConsole
                         {
                             string path = TargetPath + @"\" + Name + "." + Extension;
                             DateTime start = DateTime.Now;
+
+                            //info for stateLog
+                            Timestamp = start;
+                            TotalFileToCopy = 1;
+
                             File.Copy(SourcePath, path, true);
                             DateTime stop = DateTime.Now;
+
                             //recup copy time
                             FileTransferTime = (stop - start).ToString();
 
                             //recup infos log
-                            Timestamp = DateTime.Now;
                             FileInfo file = new FileInfo(SourcePath);
                             FileSize = file.Length;
 
@@ -124,11 +143,15 @@ namespace AppliConsole
                             FileInfo[] files = dir.GetFiles();
 
                             DateTime start = DateTime.Now;
+                            Timestamp = start;
 
                             foreach (FileInfo file in files)
                             {
                                 FileSize += file.Length;
                                 string tempPath = TargetPath + @"\" + Name + @"\" + file.Name;
+
+                                TotalFileToCopy++;
+
                                 file.CopyTo(tempPath, false);
                             }
 
@@ -161,7 +184,11 @@ namespace AppliConsole
                     Console.WriteLine("differential backup not available yet");
                     break;
             }
+            //creation of stateLog when backupState actif
+            createStateLog();
             createDailyLog();
+            State = "NON ACTIF";
+            createStateLog();
         }
 
         public void createDailyLog()
@@ -177,19 +204,46 @@ namespace AppliConsole
             string jsonSerializeObj = JsonConvert.SerializeObject(dailyLog, Formatting.Indented);
 
             Directory.CreateDirectory(@"C:\testBackup\DailyLogs");
-            File.AppendAllText(@"C:\testBackup\DailyLogs\DailyLog.son", jsonSerializeObj);
+            File.AppendAllText(@"C:\testBackup\DailyLogs\DailyLog.json", jsonSerializeObj);
+        }
+
+        public void createStateLog()
+        {
+            StateLog stateLog = new StateLog();
+            stateLog.Name = Name;
+            stateLog.SourcePath = SourcePath;
+            stateLog.TargetPath = TargetPath;
+            stateLog.Timestamp = Timestamp;
+            stateLog.BackupState = State;
+            if (stateLog.BackupState == "ACTIF")
+            {
+                stateLog.TotalFileToCopy = TotalFileToCopy;
+                stateLog.TotalFileSize = FileSize;
+                stateLog.FileSizeLeftToDo = FileSize;
+                stateLog.NbFileLeftToDo = TotalFileToCopy;
+            }
+
+
+            string jsonSerializeObj = JsonConvert.SerializeObject(stateLog, Formatting.Indented);
+
+            Directory.CreateDirectory(@"C:\testBackup\StateLogs");
+
+            File.AppendAllText(@"C:\testBackup\StateLogs\StateLog.json", jsonSerializeObj);
         }
     }
 
     public class DailyLog
     {
+        #region VARIABLES
         private string name;
         private string sourcePath;
         private string targetPath;
         private DateTime timestamp;
         private long fileSize;
         private string fileTransferTime;
+        #endregion
 
+        #region GETER AND SETER
         public string Name
         {
             get { return name; }
@@ -220,5 +274,69 @@ namespace AppliConsole
             get { return fileTransferTime; }
             set { fileTransferTime = value; }
         }
+        #endregion
+    }
+
+    public class StateLog
+    {
+        #region VARIABLES
+        private string name;
+        private string sourcePath;
+        private string targetPath;
+        private DateTime timestamp;
+        private string backupState;
+        private int totalFileToCopy;
+        private long totalFileSize;
+        private int nbFileLeftToDo;
+        private long fileSizeLeftToDo;
+        #endregion
+
+        #region GETER AND SETER
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public string SourcePath
+        {
+            get { return sourcePath; }
+            set { sourcePath = value; }
+        }
+        public string TargetPath
+        {
+            get { return targetPath; }
+            set { targetPath = value; }
+        }
+        public DateTime Timestamp
+        {
+            get { return timestamp; }
+            set { timestamp = value; }
+        }
+        public string BackupState
+        {
+            get { return backupState; }
+            set { backupState = value; }
+        }
+        public int TotalFileToCopy
+        {
+            get { return totalFileToCopy; }
+            set { totalFileToCopy = value; }
+        }
+        public long TotalFileSize
+        {
+            get { return totalFileSize; }
+            set { totalFileSize = value; }
+        }
+        public int NbFileLeftToDo
+        {
+            get { return nbFileLeftToDo; }
+            set { nbFileLeftToDo = value; }
+        }
+        public long FileSizeLeftToDo
+        {
+            get { return fileSizeLeftToDo; }
+            set { fileSizeLeftToDo = value; }
+        }
+        #endregion
     }
 }

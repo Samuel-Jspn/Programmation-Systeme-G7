@@ -14,6 +14,7 @@ namespace AppliConsole
         private Model model;
         private View view;
         private ViewDailyLog viewDailyLog;
+        private ViewStateLog viewStateLog;
         private int nbBackup { get; set; }
 
         ResourceManager rm = new ResourceManager("AppliConsole.Resources.Strings",
@@ -27,17 +28,22 @@ namespace AppliConsole
             model = new Model();
             view = new View();
             viewDailyLog = new ViewDailyLog();
+            viewStateLog = new ViewStateLog();
             nbBackup = 0;
 
             //linking the controller to the view
             view.setController(this);
+            viewStateLog.setController(this);
 
             view.backupInfo();
+
+            viewStateLog.stateLogInfo();
         }
         public void updateBackupInfo()
         {
             if(nbBackup < 5)
             {
+                //variable for the model
                 model.DirOrFile = view.DirOrFile;
                 model.Extension = view.Extension;
                 model.Name = view.Name;
@@ -45,7 +51,17 @@ namespace AppliConsole
                 model.TargetPath = view.TargetPath;
                 model.BackupType = view.BackupType;
 
+                //variables for the stateLog
+                viewStateLog.Name = model.Name;
+                viewStateLog.SourcePath = model.SourcePath;
+                viewStateLog.TargetPath = model.TargetPath;
+
                 model.createBackup(model.BackupType);
+
+                viewStateLog.Timestamp = model.Timestamp;
+                viewStateLog.BackupState = model.State;
+
+               
                 nbBackup++;
                 view.backupInfo();
             }
