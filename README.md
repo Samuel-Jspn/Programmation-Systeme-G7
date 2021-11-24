@@ -7,8 +7,8 @@ Ce fichier fera office de document utilisateur pour notre projet. Il va permettr
 1. [Features](#Features)
 2. [Installation](#Installation)
 3. [Utilisation](#Utilisation)
-    1. [Backup Infos](#BackupInfos)
-4. [Release Notes](#ReleaseNotes)
+    1. [Backup_Infos](#BackupInfos)
+4. [Release_Notes](#Release_Notes)
 
 
 ## Features
@@ -30,7 +30,7 @@ Il vous suffit de vous rendre sur notre [repository Github](https://github.com/S
 Lors du lancement du programme, il vou sera demandé de choisir entre Français et Anglais.
 Par la suite il vous sera demandé d'entrer les informations nécessaire à la Sauvegarde.
 
-### Backup Infos
+### Backup_Infos
 
 L'utilisateur devra  remplir dans l'ordre :
 
@@ -42,7 +42,7 @@ L'utilisateur devra  remplir dans l'ordre :
 
 Une fois toutes ces informations rentrées, le programme effectue la sauvegarde puis vous notifie du succès ou non de cette dernière.
 
-# Release Notes
+# Release_Notes
 
 ## [2.1] - 23-11-2021
 ### Modification
