@@ -19,6 +19,7 @@ namespace AppliConsole
         private string sourcePath;
         private string targetPath;
         private string backupType;
+        private string state;
         private DateTime timestamp;
         private long fileSize;
         private string fileTransferTime;
@@ -75,6 +76,11 @@ namespace AppliConsole
             get { return fileTransferTime; }
             set { fileTransferTime = value; }
         }
+        public string State
+        {
+            get { return state; }
+            set { state = value; }
+        }
         #endregion
 
         //constructor
@@ -93,6 +99,8 @@ namespace AppliConsole
 
         public void createBackup(string type)
         {
+            Timestamp = DateTime.Now;
+            State = "ACTIF";
             switch (type)
             {
                 case "full":
@@ -162,6 +170,9 @@ namespace AppliConsole
                     break;
             }
             createDailyLog();
+            State = "NON ACTIF";
+
+            createStateLog(Name, SourcePath, TargetPath, Timestamp, State);
         }
 
         public void createDailyLog()
@@ -178,6 +189,23 @@ namespace AppliConsole
 
             Directory.CreateDirectory(@"C:\testBackup\DailyLogs");
             File.AppendAllText(@"C:\testBackup\DailyLogs\DailyLog.son", jsonSerializeObj);
+        }
+
+        public void createStateLog(string name, string sourcePath, string targetPath, DateTime timestamp, string state)
+        {
+            ViewStateLog stateLog = new ViewStateLog();
+            stateLog.Name = name;
+            stateLog.SourcePath = sourcePath;
+            stateLog.TargetPath = targetPath;
+            stateLog.Timestamp = timestamp;
+            stateLog.BackupState = state;
+            //if(stateLog.BackupState == "ACTIF")
+            //{
+
+            //}
+
+            string jsonSerializeObj = JsonConvert.SerializeObject(stateLog, Formatting.Indented);
+            File.AppendAllText(@"C:\testBackup\StateLogs\StateLog.son", jsonSerializeObj);
         }
     }
 

@@ -69,12 +69,12 @@ namespace AppliConsole
         //Constructor
         public View()
         {
-            dirOrFile = "";
+            DirOrFile = "";
             Extension = "";
             Name = "";
             SourcePath = "";
             TargetPath = "";
-            backupType = "";
+            BackupType = "";
         }
 
         
