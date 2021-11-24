@@ -43,6 +43,7 @@ namespace AppliConsole
         {
             if(nbBackup < 5)
             {
+                //variable for the model
                 model.DirOrFile = view.DirOrFile;
                 model.Extension = view.Extension;
                 model.Name = view.Name;
@@ -54,11 +55,13 @@ namespace AppliConsole
                 viewStateLog.Name = model.Name;
                 viewStateLog.SourcePath = model.SourcePath;
                 viewStateLog.TargetPath = model.TargetPath;
-                viewStateLog.Timestamp = model.Timestamp;
-                viewStateLog.BackupState = model.State;
 
                 model.createBackup(model.BackupType);
 
+                viewStateLog.Timestamp = model.Timestamp;
+                viewStateLog.BackupState = model.State;
+
+               
                 nbBackup++;
                 view.backupInfo();
             }

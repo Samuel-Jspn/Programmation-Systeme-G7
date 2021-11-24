@@ -4,24 +4,18 @@ using System.Text;
 
 namespace AppliConsole
 {
-    class ViewStateLog : View
+    class ViewStateLog : ViewDailyLog
     {
         #region VARIABLES
-        private DateTime timestamp { get; set; }
-        private string backupState { get; set; }
-        private int totalFileToCopy { get; set; }
-        private int totalFileSize { get; set; }
-        private int nbFileLeftToDo { get; set; }
-        private int fileLeftToDoSize { get; set; }
+        private string backupState;
+        private int totalFileToCopy;
+        private long totalFileSize;
+        private int nbFileLeftToDo;
+        private long fileSizeLeftToDo;
         #endregion
 
         #region GETER AND SETER
         
-        public DateTime Timestamp
-        {
-            get { return timestamp; }
-            set { timestamp = value; }
-        }
         public string BackupState
         {
             get { return backupState; }
@@ -32,7 +26,7 @@ namespace AppliConsole
             get { return totalFileToCopy; }
             set { totalFileToCopy = value; }
         }
-        public int TotalFileSize
+        public long TotalFileSize
         {
             get { return totalFileSize; }
             set { totalFileSize = value; }
@@ -42,39 +36,25 @@ namespace AppliConsole
             get { return nbFileLeftToDo; }
             set { nbFileLeftToDo = value; }
         }
-        public int FileLeftToDoSize
+        public long FileSizeLeftToDo
         {
-            get { return fileLeftToDoSize; }
-            set { fileLeftToDoSize = value; }
+            get { return fileSizeLeftToDo; }
+            set { fileSizeLeftToDo = value; }
         }
         #endregion
 
         //constructor
         public ViewStateLog()
         {
-            Timestamp = default;
             BackupState = "";
             TotalFileToCopy = 0;
             TotalFileSize = 0;
             NbFileLeftToDo = 0;
-            FileLeftToDoSize = 0;
+            FileSizeLeftToDo = 0;
         }
 
         public void stateLogInfo()
         {
-            //getTimestamp();
-            //getBackupState();
         }
-
-        //public void getTimestamp()
-        //{
-
-        //}
-        //public void getBackupState()
-        //{
-
-        //}
-
-
     }
 }
