@@ -131,19 +131,23 @@ namespace AppliConsole
                                 string tempPath = TargetPath + @"\" + Name + @"\" + file.Name;
                                 file.CopyTo(tempPath, false);
                             }
-                            DateTime stop = DateTime.Now;
-                            //recup copy time
-                            FileTransferTime = (stop - start).ToString();
 
-                            Timestamp = DateTime.Now;
-
-                            Console.WriteLine("full backup succeed");
                             if (Thread.CurrentThread.CurrentUICulture.Name == "fr-FR")
                             {
+                                DateTime stop = DateTime.Now;
+                                //recup copy time
+                                FileTransferTime = (stop - start).ToString();
+
+                                Timestamp = DateTime.Now;
                                 Console.WriteLine(rm.GetString("FullSuceedFR"));
                             }
                             else if (Thread.CurrentThread.CurrentUICulture.Name == "en-US")
                             {
+                                DateTime stop = DateTime.Now;
+                                //recup copy time
+                                FileTransferTime = (stop - start).ToString();
+
+                                Timestamp = DateTime.Now;
                                 Console.WriteLine(rm.GetString("FullSuceedEN"));
                             }
                         }
