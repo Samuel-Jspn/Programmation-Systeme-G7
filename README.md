@@ -9,7 +9,7 @@ Ce fichier fera office de document utilisateur pour notre projet. Il va permettr
 3. [Utilisation](#Utilisation)
     1. [Backup_Infos](#Backup_Infos)
 4. [Release_Notes](#Release_Notes)
-___
+
 ## Features
 
 - Choix de la langue (Français ou anglais)
@@ -19,17 +19,17 @@ ___
 - Fichiers de logs journaliers
 
 >Chacun des étapes est décrite dans la console si jamais vous ne savez plus comment faire.
-___
+
 ## Installation
 
 Il faut vous rendre sur notre [repository Github](https://github.com/Samuel-Jspn/Programmation-Systeme-G7) et télécharger le code de la branche main.
 Sur votre machine, il faut installer Visual studio et .NET (les liens sont en haut de la page)
-___
+
 ## Utilisation
 
 Lors du lancement du programme, il vou sera demandé de choisir entre Français et Anglais.
 Par la suite il vous sera demandé d'entrer les informations nécessaire à la Sauvegarde.
-___
+
 ### Backup_Infos
 
 L'utilisateur devra  remplir dans l'ordre :
@@ -41,29 +41,29 @@ L'utilisateur devra  remplir dans l'ordre :
 5. Type de sauvegarde (Full ou différentielle)
 
 Une fois toutes ces informations rentrées, le programme effectue la sauvegarde puis vous notifie du succès ou non de cette dernière.
-___
+
 # Release_Notes
 
 ## [2.1] - 23-11-2021
 ### Modification
 - Finalisation des logs d'état et journaliers
-___
+
 ## [2.0] - 23-11-2021
 ### Ajout
 - Logs d'état et journaliers
 - Ajout Multilingue (Anglais - Français)
-___
+
 ## [1.2] - 22-11-2021
 ### Ajout
 - Recupération de l'extension de fichier
 - Ajout fonctionnalité de sauvegarde de **dossier**
 - Ajout d'une limite du nombre de sauvegardes
-___
+
 ## [1.1] - 22-11-2021
 ### Ajout
 - Verification chemin d'origine et de destination
 - Choix du type de sauvegarde
 - Création sauvegarde complète
-___
+
 ### Projet Programmation Système par Elise, Sam & Amaury
 [![Cesi](https://lh3.googleusercontent.com/proxy/W2mtm2UV1LQTeMa-iLjaDeya72b1ElMUlSfHoO7aw_doMRZmOQmSJE72Nro0_4_G6K7-bBvs1EoUnGXXuCB0Fo4shYHDz_bfYWI4mW89RLKeMorNG6kyOsi3GEp8B7UESnWJ5S7xDzeGOQo)](https://www.cesi.fr)
