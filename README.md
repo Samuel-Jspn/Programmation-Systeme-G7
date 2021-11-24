@@ -7,7 +7,7 @@ Ce fichier fera office de document utilisateur pour notre projet. Il va permettr
 1. [Features](#Features)
 2. [Installation](#Installation)
 3. [Utilisation](#Utilisation)
-    a. [Backup_Infos](#Backup_Infos)
+    1. [Backup_Infos](#Backup_Infos)
 4. [Release_Notes](#Release_Notes)
 ___
 ## Features
