@@ -23,7 +23,7 @@ namespace AppliConsole
         private DateTime timestamp;
         private long fileSize;
         private string fileTransferTime;
-        private int totalFileToCopy;
+        private int totalFileToCopy; 
 
 
         ResourceManager rm = new ResourceManager("AppliConsole.Resources.Strings",
@@ -121,9 +121,6 @@ namespace AppliConsole
                             Timestamp = start;
                             TotalFileToCopy = 1;
 
-                            //creation of stateLog when backupState actif
-                            createStateLog();
-
                             File.Copy(SourcePath, path, true);
                             DateTime stop = DateTime.Now;
 
@@ -158,9 +155,6 @@ namespace AppliConsole
                                 file.CopyTo(tempPath, false);
                             }
 
-                            //creation of stateLog when backupState actif
-                            createStateLog();
-
                             if (Thread.CurrentThread.CurrentUICulture.Name == "fr-FR")
                             {
                                 DateTime stop = DateTime.Now;
@@ -190,6 +184,8 @@ namespace AppliConsole
                     Console.WriteLine("differential backup not available yet");
                     break;
             }
+            //creation of stateLog when backupState actif
+            createStateLog();
             createDailyLog();
             State = "NON ACTIF";
             createStateLog();
@@ -208,7 +204,7 @@ namespace AppliConsole
             string jsonSerializeObj = JsonConvert.SerializeObject(dailyLog, Formatting.Indented);
 
             Directory.CreateDirectory(@"C:\testBackup\DailyLogs");
-            File.AppendAllText(@"C:\testBackup\DailyLogs\DailyLog.son", jsonSerializeObj);
+            File.AppendAllText(@"C:\testBackup\DailyLogs\DailyLog.json", jsonSerializeObj);
         }
 
         public void createStateLog()
@@ -224,6 +220,7 @@ namespace AppliConsole
                 stateLog.TotalFileToCopy = TotalFileToCopy;
                 stateLog.TotalFileSize = FileSize;
                 stateLog.FileSizeLeftToDo = FileSize;
+                stateLog.NbFileLeftToDo = TotalFileToCopy;
             }
 
 
@@ -231,7 +228,7 @@ namespace AppliConsole
 
             Directory.CreateDirectory(@"C:\testBackup\StateLogs");
 
-            File.AppendAllText(@"C:\testBackup\StateLogs\StateLog.son", jsonSerializeObj);
+            File.AppendAllText(@"C:\testBackup\StateLogs\StateLog.json", jsonSerializeObj);
         }
     }
 
