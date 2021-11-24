@@ -175,7 +175,9 @@ namespace AppliConsole
             dailyLog.FileTransferTime = FileTransferTime;
 
             string jsonSerializeObj = JsonConvert.SerializeObject(dailyLog, Formatting.Indented);
-            File.AppendAllText(@"C:\testBackup\StateLogs\StateLog.son", jsonSerializeObj);
+
+            Directory.CreateDirectory(@"C:\testBackup\DailyLogs");
+            File.AppendAllText(@"C:\testBackup\DailyLogs\DailyLog.son", jsonSerializeObj);
         }
     }
 

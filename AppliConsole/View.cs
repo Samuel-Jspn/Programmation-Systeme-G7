@@ -21,8 +21,6 @@ namespace AppliConsole
         private string targetPath;
         internal string backupType;
         internal IController controller;
-        private string backupType;
-        private IController controller;
 
             ResourceManager rm = new ResourceManager("AppliConsole.Resources.Strings",
                 Assembly.GetExecutingAssembly());
