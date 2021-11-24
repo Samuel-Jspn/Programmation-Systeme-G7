@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Linq;
+using System.Resources;
+using System.Reflection;
+using System.Threading;
+using System.Globalization;
 
 namespace AppliConsole
 {
@@ -17,6 +21,11 @@ namespace AppliConsole
         private string targetPath;
         internal string backupType;
         internal IController controller;
+        private string backupType;
+        private IController controller;
+
+            ResourceManager rm = new ResourceManager("AppliConsole.Resources.Strings",
+                Assembly.GetExecutingAssembly());
         #endregion
 
         #region GETER AND SETER
@@ -92,11 +101,23 @@ namespace AppliConsole
             bool isNameValid = false;
             while(isNameValid != true)
             {
-                Console.WriteLine("Please enter the backup's name");
-                Name = Console.ReadLine();
-                if(Name != "")
+                if (Thread.CurrentThread.CurrentUICulture.Name == "fr-FR")
                 {
+                    Console.WriteLine(rm.GetString("BackupNameFR"));
+                    Name = Console.ReadLine();
+                    if(Name != "")
+                    {
                     isNameValid = true;
+                    }
+                }
+                else if (Thread.CurrentThread.CurrentUICulture.Name == "en-US")
+                {
+                    Console.WriteLine(rm.GetString("BackupNameEN"));
+                    Name = Console.ReadLine();
+                    if (Name != "")
+                    {
+                        isNameValid = true;
+                    }
                 }
             }
         }
@@ -105,11 +126,23 @@ namespace AppliConsole
             bool isDirOrFileValid = false;
             while (isDirOrFileValid != true)
             {
-                Console.WriteLine("Pease choose if you want to save a directory or a file (enter \"Directory\" or \"File\")");
-                DirOrFile = Console.ReadLine();
+                if (Thread.CurrentThread.CurrentUICulture.Name == "fr-FR")
+                {
+                    Console.WriteLine(rm.GetString("DirOrFileFR"));
+                    DirOrFile = Console.ReadLine();
+                    if (DirOrFile == "Directory" || DirOrFile == "File")
+                    {
+                        isDirOrFileValid = true;
+                    }
+                }
+                else if (Thread.CurrentThread.CurrentUICulture.Name == "en-US")
+                {
+                    Console.WriteLine(rm.GetString("DirOrFileEN"));
+                    DirOrFile = Console.ReadLine();
                 if(DirOrFile == "Directory" || DirOrFile == "File")
                 {
                     isDirOrFileValid = true;
+                }
                 }
             }
         }
@@ -118,18 +151,37 @@ namespace AppliConsole
             bool isSourcePathValid = false;
             while(isSourcePathValid != true)
             {
-                if(DirOrFile == "File")
+                if (DirOrFile == "File")
                 {
-                    Console.WriteLine("Please enter the path to the file you want to save");
-                    SourcePath = Console.ReadLine();
-                    isSourcePathValid = checkFilePath(SourcePath);
+                    if (Thread.CurrentThread.CurrentUICulture.Name == "fr-FR")
+                    {
+                        Console.WriteLine(rm.GetString("SourcePathFileFR"));
+                        SourcePath = Console.ReadLine();
+                        isSourcePathValid = checkFilePath(SourcePath);
+                    }
+                    else if (Thread.CurrentThread.CurrentUICulture.Name == "en-US")
+                    {
+                        Console.WriteLine(rm.GetString("SourcePathFileEN"));
+                        SourcePath = Console.ReadLine();
+                        isSourcePathValid = checkFilePath(SourcePath);
+                    }
                 }
-                else if(DirOrFile == "Directory")
+                else if (DirOrFile == "Directory")
                 {
-                    Console.WriteLine("Please enter the path to the directory you want to save");
+                    if (Thread.CurrentThread.CurrentUICulture.Name == "fr-FR")
+                    {
+                    Console.WriteLine(rm.GetString("SourcePathDirectoryFR"));
                     SourcePath = Console.ReadLine();
                     isSourcePathValid = checkDirPath(SourcePath);
+                    }
+                    else if (Thread.CurrentThread.CurrentUICulture.Name == "en-US")
+                    {
+                        Console.WriteLine(rm.GetString("SourcePathDirectoryEN"));
+                        SourcePath = Console.ReadLine();
+                        isSourcePathValid = checkDirPath(SourcePath);
+                    }
                 }
+
             }
         }
         public void getTargetPath()
@@ -137,9 +189,18 @@ namespace AppliConsole
             bool isTargetPathValid = false;
             while (isTargetPathValid != true)
             {
-                Console.WriteLine("Please enter the path to the directory where you want to save");
-                TargetPath = Console.ReadLine();
-                isTargetPathValid = checkDirPath(TargetPath);
+                if (Thread.CurrentThread.CurrentUICulture.Name == "fr-FR")
+                {
+                    Console.WriteLine(rm.GetString("TargetPathFR"));
+                    TargetPath = Console.ReadLine();
+                    isTargetPathValid = checkDirPath(TargetPath);
+                }
+                else if (Thread.CurrentThread.CurrentUICulture.Name == "en-US")
+                {
+                    Console.WriteLine(rm.GetString("TargetPathEN"));
+                    TargetPath = Console.ReadLine();
+                    isTargetPathValid = checkDirPath(TargetPath);
+                }
             }
         }
         public bool checkFilePath(string filePath)
@@ -159,11 +220,23 @@ namespace AppliConsole
             bool isTypeValid = false;
             while(isTypeValid != true)
             {
-                Console.WriteLine("Choose a saving type (full or differential)");
+                if (Thread.CurrentThread.CurrentUICulture.Name == "fr-FR")
+                {
+                    Console.WriteLine(rm.GetString("BackupTypeFR"));
+                    BackupType = Console.ReadLine();
+                    if (BackupType == "full" || BackupType == "differential")
+                    {
+                        isTypeValid = true;
+                    }
+                }
+                else if (Thread.CurrentThread.CurrentUICulture.Name == "en-US")
+                {
+                Console.WriteLine(rm.GetString("BackupTypeEN"));
                 BackupType = Console.ReadLine();
                 if(BackupType == "full" || BackupType == "differential")
                 {
                     isTypeValid = true;
+                }
                 }
             }
         }

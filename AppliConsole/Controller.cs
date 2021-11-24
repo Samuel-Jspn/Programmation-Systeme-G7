@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Resources;
+using System.Reflection;
+using System.Threading;
+using System.Globalization;
 
 namespace AppliConsole
 {
@@ -11,6 +15,10 @@ namespace AppliConsole
         private View view;
         private ViewDailyLog viewDailyLog;
         private int nbBackup { get; set; }
+
+        ResourceManager rm = new ResourceManager("AppliConsole.Resources.Strings",
+    Assembly.GetExecutingAssembly());
+
         #endregion
 
         //constructor
@@ -43,7 +51,14 @@ namespace AppliConsole
             }
             else
             {
-                Console.WriteLine("You have made 5 backups, you're not allowed to do more, buy the premium version !");
+                if (Thread.CurrentThread.CurrentUICulture.Name == "fr-FR")
+                {
+                Console.WriteLine(rm.GetString("MaxBackupNbFR"));
+                }
+                else if (Thread.CurrentThread.CurrentUICulture.Name == "en-US")
+                {
+                Console.WriteLine(rm.GetString("MaxBackupNbEN"));
+                }
             }
             
         }

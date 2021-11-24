@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using Newtonsoft.Json;
+using System.Resources;
+using System.Reflection;
+using System.Threading;
+using System.Globalization;
 
 namespace AppliConsole
 {
@@ -18,6 +22,10 @@ namespace AppliConsole
         private DateTime timestamp;
         private long fileSize;
         private string fileTransferTime;
+
+
+        ResourceManager rm = new ResourceManager("AppliConsole.Resources.Strings",
+            Assembly.GetExecutingAssembly());
 
         #endregion
 
@@ -130,6 +138,14 @@ namespace AppliConsole
                             Timestamp = DateTime.Now;
 
                             Console.WriteLine("full backup succeed");
+                            if (Thread.CurrentThread.CurrentUICulture.Name == "fr-FR")
+                            {
+                                Console.WriteLine(rm.GetString("FullSuceedFR"));
+                            }
+                            else if (Thread.CurrentThread.CurrentUICulture.Name == "en-US")
+                            {
+                                Console.WriteLine(rm.GetString("FullSuceedEN"));
+                            }
                         }
                     }
                     catch (IOException iox)

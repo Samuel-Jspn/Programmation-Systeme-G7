@@ -12,6 +12,14 @@
         },
         "runtime": {
           "AppliConsole.dll": {}
+        },
+        "resources": {
+          "en-US/AppliConsole.resources.dll": {
+            "locale": "en-US"
+          },
+          "fr-FR/AppliConsole.resources.dll": {
+            "locale": "fr-FR"
+          }
         }
       },
       "Newtonsoft.Json/13.0.1": {
