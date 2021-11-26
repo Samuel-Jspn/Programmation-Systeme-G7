@@ -84,6 +84,9 @@ namespace AppliConsole
         //get the backup info
         public void backupInfo()
         {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("-----------------------------");
+            Console.ForegroundColor = ConsoleColor.Gray;
             dirOrFileChoice();
             getName();
             getSourcePath();
