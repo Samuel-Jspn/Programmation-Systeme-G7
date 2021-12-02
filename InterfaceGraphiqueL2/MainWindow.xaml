@@ -1,0 +1,39 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InterfaceGraphiqueL2"
+        xmlns:System="clr-namespace:System;assembly=System.Runtime" x:Class="InterfaceGraphiqueL2.MainWindow"
+        mc:Ignorable="d"
+        Title="EasySave" Height="450" Width="800">
+    <Grid>
+
+        <TextBox x:Name="TextBoxName" HorizontalAlignment="Left" Height="23" Margin="510,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="LabelName" Content="Nom de la save" Margin="524,41,184,0" VerticalAlignment="Top"/>
+        <Label Content="Chemin source du document à sauvegarder" Margin="452,101,112,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.232"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.612"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="510,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Chemin de destination du document" Margin="468,167,128,0" VerticalAlignment="Top"/>
+        <TextBox Height="23" Margin="510,198,170,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox Margin="510,269,170,0" VerticalAlignment="Top">
+            <System:String>Complète</System:String>
+            <System:String>Séquentielle</System:String>
+        </ComboBox>
+        <Button Content="Sauvegarde" Margin="510,309,170,0" VerticalAlignment="Top" Height="63"/>
+        <Label Content="Type de sauvegarde" Margin="512,243,172,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="68" Margin="127,340,0,0" VerticalAlignment="Top" Width="100" Source="/flag_en.png" Stretch="Fill"/>
+        <Image HorizontalAlignment="Left" Height="68" Margin="260,341,0,0" VerticalAlignment="Top" Width="100" Source="/flag_fr.png"/>
+        <Image HorizontalAlignment="Left" Height="68
+               " Margin="34,339,0,0" VerticalAlignment="Top" Width="68" Source="/param_logo.png"/>
+
+    </Grid>
+</Window>
