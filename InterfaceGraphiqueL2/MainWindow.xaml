@@ -30,10 +30,18 @@
         </ComboBox>
         <Button Content="Sauvegarde" Margin="510,309,170,0" VerticalAlignment="Top" Height="63"/>
         <Label Content="Type de sauvegarde" Margin="512,243,172,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="68" Margin="127,340,0,0" VerticalAlignment="Top" Width="100" Source="/flag_en.png" Stretch="Fill"/>
-        <Image HorizontalAlignment="Left" Height="68" Margin="260,341,0,0" VerticalAlignment="Top" Width="100" Source="/flag_fr.png"/>
+        <Image HorizontalAlignment="Left" Height="68" Margin="103,357,0,0" VerticalAlignment="Top" Width="100" Source="/flag_en.png" Stretch="Fill">
+            <Image.Effect>
+                <DropShadowEffect/>
+            </Image.Effect>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="68" Margin="236,358,0,0" VerticalAlignment="Top" Width="100" Source="/flag_fr.png">
+            <Image.Effect>
+                <DropShadowEffect/>
+            </Image.Effect>
+        </Image>
         <Image HorizontalAlignment="Left" Height="68
-               " Margin="34,339,0,0" VerticalAlignment="Top" Width="68" Source="/param_logo.png"/>
+               " Margin="10,356,0,0" VerticalAlignment="Top" Width="68" Source="/param_logo.png"/>
 
     </Grid>
 </Window>
