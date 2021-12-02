@@ -18,4 +18,28 @@
     <Resource Include="param_logo.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="resources\en_language.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>en_language.resx</DependentUpon>
+    </Compile>
+    <Compile Update="resources\fr_language.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>fr_language.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="resources\en_language.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>en_language.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="resources\fr_language.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>fr_language.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

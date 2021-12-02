@@ -7,11 +7,14 @@
         xmlns:System="clr-namespace:System;assembly=System.Runtime" x:Class="InterfaceGraphiqueL2.MainWindow"
         mc:Ignorable="d"
         Title="EasySave" Height="450" Width="800">
+    <Window.Resources>
+        <local:App x:Key="Language"/>
+    </Window.Resources>
     <Grid>
 
         <TextBox x:Name="TextBoxName" HorizontalAlignment="Left" Height="23" Margin="510,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="LabelName" Content="Nom de la save" Margin="524,41,184,0" VerticalAlignment="Top"/>
-        <Label Content="Chemin source du document à sauvegarder" Margin="452,101,112,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelSaveName" Content="" Margin="470,41,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="204" HorizontalContentAlignment="Center"/>
+        <Label x:Name="LabelSourcePath" Content="" Margin="452,101,112,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Center" HorizontalAlignment="Center">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -21,21 +24,21 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="510,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Chemin de destination du document" Margin="468,167,128,0" VerticalAlignment="Top"/>
-        <TextBox Height="23" Margin="510,198,170,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <ComboBox Margin="510,269,170,0" VerticalAlignment="Top">
+        <TextBox x:Name="TextBoxSourcePath" HorizontalAlignment="Left" Height="23" Margin="510,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="LabelTargetPath" Content="" Margin="468,167,128,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <TextBox x:Name="TextBoxTargetPath" Height="23" Margin="510,198,170,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ComboType" Margin="510,269,170,0" VerticalAlignment="Top">
             <System:String>Complète</System:String>
             <System:String>Séquentielle</System:String>
         </ComboBox>
-        <Button Content="Sauvegarde" Margin="510,309,170,0" VerticalAlignment="Top" Height="63"/>
-        <Label Content="Type de sauvegarde" Margin="512,243,172,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="68" Margin="103,357,0,0" VerticalAlignment="Top" Width="100" Source="/flag_en.png" Stretch="Fill">
+        <Button x:Name="btn_Save" Content="" Margin="510,306,0,0" VerticalAlignment="Top" Height="65" HorizontalAlignment="Left" Width="120"/>
+        <Label x:Name="LabelSaveType" Content="" Margin="514,243,170,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Image x:Name="flag_en" HorizontalAlignment="Left" Height="68" Margin="103,357,0,0" VerticalAlignment="Top" Width="100" Source="/flag_en.png" Stretch="Fill">
             <Image.Effect>
                 <DropShadowEffect/>
             </Image.Effect>
         </Image>
-        <Image HorizontalAlignment="Left" Height="68" Margin="236,358,0,0" VerticalAlignment="Top" Width="100" Source="/flag_fr.png">
+        <Image x:Name="flag_fr" HorizontalAlignment="Left" Height="68" Margin="236,358,0,0" VerticalAlignment="Top" Width="100" Source="/flag_fr.png">
             <Image.Effect>
                 <DropShadowEffect/>
             </Image.Effect>

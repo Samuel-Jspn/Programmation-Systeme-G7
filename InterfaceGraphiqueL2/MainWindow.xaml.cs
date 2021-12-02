@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using System.Resources;
+using InterfaceGraphiqueL2.resources;
 
 namespace InterfaceGraphiqueL2
 {
@@ -20,9 +9,39 @@ namespace InterfaceGraphiqueL2
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ResourceManager rm;
+
+        public ResourceManager RM
+        {
+            get { return rm; }
+            set { rm = value; }
+        }
+
         public MainWindow()
         {
+            rm = new ResourceManager(typeof(en_language));
             InitializeComponent();
+            btn_Save.Content = rm.GetString("saveButton");
+            LabelSaveName.Content = rm.GetString("saveName");
+            LabelSourcePath.Content = rm.GetString("sourcePath");
+            LabelTargetPath.Content = rm.GetString("targetPath");
+            LabelSaveType.Content = rm.GetString("saveType");
+        }
+        private void LanguageEN(object sender, RoutedEventArgs e)
+        {
+            rm = new ResourceManager(typeof(en_language));
+            this.RM = this.rm;
+            Translate();
+        }
+        private void LanguageFR(object sender, RoutedEventArgs e)
+        {
+            rm = new ResourceManager(typeof(fr_language));
+            this.RM = this.rm;
+            Translate();
+        }
+        public void Translate()
+        {
+            btn_Save.Content = rm.GetString("saveButton");
         }
     }
 }
