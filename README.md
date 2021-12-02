@@ -66,4 +66,4 @@ Une fois toutes ces informations rentrées, le programme effectue la sauvegarde 
 - Création sauvegarde complète
 
 ### Projet Programmation Système par Elise, Sam & Amaury
-[![Cesi](https://lh3.googleusercontent.com/proxy/W2mtm2UV1LQTeMa-iLjaDeya72b1ElMUlSfHoO7aw_doMRZmOQmSJE72Nro0_4_G6K7-bBvs1EoUnGXXuCB0Fo4shYHDz_bfYWI4mW89RLKeMorNG6kyOsi3GEp8B7UESnWJ5S7xDzeGOQo)](https://www.cesi.fr)
+[![Cesi](https://www.cesi.fr/wp-content/uploads/2018/11/logo-CESI.png)](https://www.cesi.fr)
