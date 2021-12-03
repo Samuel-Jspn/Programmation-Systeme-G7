@@ -20,4 +20,13 @@ def caesar2(plaintext):
     print(plaintext.translate(table));
     return plaintext.translate(table)
 
-caesar2(sys.argv[1]);
+nbArgument = len(sys.argv) - 1;
+
+i = 1;
+textToEncrypt ="";
+
+while(i <= nbArgument):
+    textToEncrypt += sys.argv[i] + " ";
+    i+=1;
+
+caesar2(textToEncrypt);
