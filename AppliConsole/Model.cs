@@ -245,7 +245,12 @@ namespace AppliConsole
             StreamWriter sw = new StreamWriter(pathTargetFile); //fichier où écrire
             Process crypt = new Process(); //logiciel cryptosoft
 
-            crypt.StartInfo.FileName = "C:\\Users\\beaus\\OneDrive - Association Cesi Viacesi mail\\Documents\\FISE A3 info\\Programmation Système\\Projet\\Programmation-Systeme-G7\\Cryptage\\Cryptage.exe";
+            //recup du chemin vers l'exécutable de cryptosoft adapté à chaque PC
+            string fullPath = Environment.CurrentDirectory;
+            string halfPath = fullPath.Substring(0, 133);
+            string path = halfPath + "Cryptage\\Cryptage.exe";
+
+            crypt.StartInfo.FileName = path;
             crypt.StartInfo.UseShellExecute = false;
             crypt.StartInfo.RedirectStandardOutput = true;
             crypt.StartInfo.RedirectStandardInput = true;
