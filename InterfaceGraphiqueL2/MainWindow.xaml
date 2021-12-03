@@ -12,9 +12,10 @@
     </Window.Resources>
     <Grid>
 
+
         <TextBox x:Name="TextBoxName" HorizontalAlignment="Left" Height="23" Margin="510,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="LabelSaveName" Content="" Margin="470,41,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="204" HorizontalContentAlignment="Center"/>
-        <Label x:Name="LabelSourcePath" Content="" Margin="452,101,112,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Center" HorizontalAlignment="Center">
+        <Label x:Name="LabelSaveName" Content="" Margin="560,36,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <Label x:Name="LabelSourcePath" Content="" Margin="573,100,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -24,27 +25,41 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="TextBoxSourcePath" HorizontalAlignment="Left" Height="23" Margin="510,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="LabelTargetPath" Content="" Margin="468,167,128,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <TextBox x:Name="TextBoxTargetPath" Height="23" Margin="510,198,170,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <ComboBox x:Name="ComboType" Margin="510,269,170,0" VerticalAlignment="Top">
+        <TextBox x:Name="TextBoxSourcePath" Margin="510,127,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" Width="120" Height="23" VerticalAlignment="Top"/>
+        <Label x:Name="LabelTargetPath" Content="" Margin="565,172,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBox x:Name="TextBoxTargetPath" Height="23" Margin="510,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <ComboBox x:Name="ComboType" Margin="510,269,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120">
             <System:String>Complète</System:String>
             <System:String>Séquentielle</System:String>
         </ComboBox>
         <Button x:Name="btn_Save" Content="" Margin="510,306,0,0" VerticalAlignment="Top" Height="65" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="LabelSaveType" Content="" Margin="514,243,170,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <Image x:Name="flag_en" HorizontalAlignment="Left" Height="68" Margin="103,357,0,0" VerticalAlignment="Top" Width="100" Source="/flag_en.png" Stretch="Fill">
-            <Image.Effect>
-                <DropShadowEffect/>
-            </Image.Effect>
-        </Image>
-        <Image x:Name="flag_fr" HorizontalAlignment="Left" Height="68" Margin="236,358,0,0" VerticalAlignment="Top" Width="100" Source="/flag_fr.png">
-            <Image.Effect>
-                <DropShadowEffect/>
-            </Image.Effect>
-        </Image>
-        <Image HorizontalAlignment="Left" Height="68
-               " Margin="10,356,0,0" VerticalAlignment="Top" Width="68" Source="/param_logo.png"/>
+        <Label x:Name="LabelSaveType" Content="" Margin="567,243,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+        <Button x:Name="btn_en" HorizontalAlignment="Left" Margin="103,358,0,0" VerticalAlignment="Top" Width="100" Height="68" Click="btn_en_Click">
+            <Image  Source="/flag_en.png"  Stretch="Fill" >
+                <Image.Effect>
+                    <DropShadowEffect/>
+                </Image.Effect>
+            </Image>
+        </Button>
+        <!-- <Image x:Name="flag_en" HorizontalAlignment="Left" Height="68" Margin="103,357,0,0" VerticalAlignment="Top" Width="100" Source="/flag_en.png" Stretch="Fill">-->
+
+        <Button x:Name="btn_fr" HorizontalAlignment="Left" Margin="236,358,0,0" VerticalAlignment="Top" Height="68" Width="100" Click="btn_fr_Click">
+            <Image Source="/flag_fr.png" Stretch="Fill">
+                <Image.Effect>
+                    <DropShadowEffect/>
+                </Image.Effect>
+            </Image>
+        </Button>
+        <Button x:Name="btn_param" Content="   " HorizontalAlignment="Left" Margin="10,356,0,0" VerticalAlignment="Top" Width="68" Height="70" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}" Click="btn_param_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="/param_logo.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label Content="Test Zone&#xD;&#xA;" HorizontalAlignment="Left" Margin="140,41,0,0" VerticalAlignment="Top" Height="26" Width="63"/>
+        <TextBox x:Name="text_box_test" HorizontalAlignment="Left" Margin="71,78,0,0" Text="oui" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" Height="46" FontSize="15"/>
 
     </Grid>
 </Window>

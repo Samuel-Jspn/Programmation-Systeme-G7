@@ -43,5 +43,18 @@ namespace InterfaceGraphiqueL2
         {
             btn_Save.Content = rm.GetString("saveButton");
         }
+
+        private void btn_param_Click(object sender, RoutedEventArgs e)
+        {
+            text_box_test.Text = "Bouton Paramètres";
+        }
+        private void btn_fr_Click(object sender, RoutedEventArgs e)
+        {
+            text_box_test.Text = "Bouton français";
+        }
+        private void btn_en_Click(object sender, RoutedEventArgs e)
+        {
+            text_box_test.Text = "English Button";
+        }
     }
 }
