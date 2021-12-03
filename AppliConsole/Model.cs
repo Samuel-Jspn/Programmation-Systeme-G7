@@ -7,6 +7,7 @@ using System.Resources;
 using System.Reflection;
 using System.Threading;
 using System.Globalization;
+using System.Diagnostics;
 
 namespace AppliConsole
 {
@@ -123,6 +124,11 @@ namespace AppliConsole
 
                             File.Copy(SourcePath, path, true);
                             DateTime stop = DateTime.Now;
+
+                            //cryptage du fichier
+                            //Process cryptage = new Process();
+                            //cryptage.StartInfo.FileName = "Cryptage.exe";
+                            //cryptage.StartInfo.Arguments = "backup"
 
                             //recup copy time
                             FileTransferTime = (stop - start).ToString();

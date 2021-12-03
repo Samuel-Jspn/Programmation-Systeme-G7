@@ -1,7 +1,9 @@
 import string
+import sys
 
-def caesar2(plaintext, shift): 
-
+def caesar2(plaintext): 
+    
+    shift = 3;
     shift %= 26 # Values greater than 26 will wrap around
 
     alphabet_lower = string.ascii_lowercase
@@ -15,4 +17,7 @@ def caesar2(plaintext, shift):
 
     table = str.maketrans(alphabet, shifted_alphabet) 
 
+    print(plaintext.translate(table));
     return plaintext.translate(table)
+
+caesar2(sys.argv[1]);
