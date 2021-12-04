@@ -36,7 +36,7 @@
         <Button x:Name="btn_Save" Content="{x:Static language:Lang.saveButton}" Margin="510,306,0,0" VerticalAlignment="Top" Height="65" HorizontalAlignment="Left" Width="120"/>
         <Label x:Name="LabelSaveType" Content="{x:Static language:Lang.saveType}" Margin="510,243,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
-        <Button x:Name="btn_en" HorizontalAlignment="Left" Margin="103,358,0,0" VerticalAlignment="Top" Width="100" Height="68" Click="btn_en_Click">
+        <Button x:Name="btn_en" HorizontalAlignment="Left" Margin="118,341,0,0" VerticalAlignment="Top" Width="100" Height="68" Click="btn_en_Click">
             <Image  Source="/flag_en.png"  Stretch="Fill" >
                 <Image.Effect>
                     <DropShadowEffect/>
@@ -45,14 +45,14 @@
         </Button>
         <!-- <Image x:Name="flag_en" HorizontalAlignment="Left" Height="68" Margin="103,357,0,0" VerticalAlignment="Top" Width="100" Source="/flag_en.png" Stretch="Fill">-->
 
-        <Button x:Name="btn_fr" HorizontalAlignment="Left" Margin="236,358,0,0" VerticalAlignment="Top" Height="68" Width="100" Click="btn_fr_Click">
+        <Button x:Name="btn_fr" HorizontalAlignment="Left" Margin="251,341,0,0" VerticalAlignment="Top" Height="68" Width="100" Click="btn_fr_Click">
             <Image Source="/flag_fr.png" Stretch="Fill">
                 <Image.Effect>
                     <DropShadowEffect/>
                 </Image.Effect>
             </Image>
         </Button>
-        <Button x:Name="btn_param" Content="   " HorizontalAlignment="Left" Margin="10,356,0,0" VerticalAlignment="Top" Width="68" Height="70" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}" Click="btn_param_Click">
+        <Button x:Name="btn_param" Content="   " HorizontalAlignment="Left" Margin="25,339,0,0" VerticalAlignment="Top" Width="68" Height="70" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}" Click="btn_param_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="/param_logo.png"/>

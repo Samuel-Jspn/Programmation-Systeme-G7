@@ -4,6 +4,7 @@ using System.Resources;
 using InterfaceGraphiqueL2.Properties.Langs;
 using System.Windows.Controls;
 using System.Threading;
+using System.Diagnostics;
 
 namespace InterfaceGraphiqueL2
 {
@@ -12,10 +13,6 @@ namespace InterfaceGraphiqueL2
     /// </summary>
     public partial class MainWindow : Window
     {
-        private bool ButtonFrWasCliked = false;
-        private bool ButtonEnWasCliked = false;
-
-
         public MainWindow()
         {
             InitializeComponent();
@@ -26,35 +23,22 @@ namespace InterfaceGraphiqueL2
         }
         private void btn_fr_Click(object sender, RoutedEventArgs e)
         {
-            ButtonFrWasCliked = true;
-            Translate();
-            ButtonFrWasCliked = false;
-            MessageBox.Show("L'application va se fermer. Veuillez la relancer.");
-            Thread.Sleep(3000);
-            Environment.Exit(0);
+            Properties.Settings.Default.languageCode = "fr-FR";
+            Properties.Settings.Default.Save();
+            RestartApp();
         }
         private void btn_en_Click(object sender, RoutedEventArgs e)
         {
-            ButtonEnWasCliked = true;
-            Translate();
-            ButtonEnWasCliked = false;
-            MessageBox.Show("The application is about to close. Please start it again");
-            Thread.Sleep(3000);
-            Environment.Exit(0);
+            Properties.Settings.Default.languageCode = "en-US";
+            Properties.Settings.Default.Save();
+            RestartApp();
         }
 
-        private void Translate()
+        private void RestartApp()
         {
-            if (ButtonFrWasCliked == true)
-            {
-                Properties.Settings.Default.languageCode = "fr-FR";
-                Properties.Settings.Default.Save();
-            }
-            else if (ButtonEnWasCliked == true)
-            {
-                Properties.Settings.Default.languageCode = "en-US";
-                Properties.Settings.Default.Save();
-            }
+            var currentExecutablePath = Process.GetCurrentProcess().MainModule.FileName;
+            Process.Start(currentExecutablePath);
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }
