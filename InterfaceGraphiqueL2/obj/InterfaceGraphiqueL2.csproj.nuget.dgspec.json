@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\samjo\\OneDrive\\Bureau\\CESI\\A3\\Programmation système\\Le Projet\\Programmation-Systeme-G7\\AppliConsole\\AppliConsole.csproj": {}
+    "C:\\Users\\samjo\\OneDrive\\Bureau\\CESI\\A3\\Programmation système\\Le Projet\\Programmation-Systeme-G7\\InterfaceGraphiqueL2\\InterfaceGraphiqueL2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\samjo\\OneDrive\\Bureau\\CESI\\A3\\Programmation système\\Le Projet\\Programmation-Systeme-G7\\AppliConsole\\AppliConsole.csproj": {
+    "C:\\Users\\samjo\\OneDrive\\Bureau\\CESI\\A3\\Programmation système\\Le Projet\\Programmation-Systeme-G7\\InterfaceGraphiqueL2\\InterfaceGraphiqueL2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samjo\\OneDrive\\Bureau\\CESI\\A3\\Programmation système\\Le Projet\\Programmation-Systeme-G7\\AppliConsole\\AppliConsole.csproj",
-        "projectName": "AppliConsole",
-        "projectPath": "C:\\Users\\samjo\\OneDrive\\Bureau\\CESI\\A3\\Programmation système\\Le Projet\\Programmation-Systeme-G7\\AppliConsole\\AppliConsole.csproj",
+        "projectUniqueName": "C:\\Users\\samjo\\OneDrive\\Bureau\\CESI\\A3\\Programmation système\\Le Projet\\Programmation-Systeme-G7\\InterfaceGraphiqueL2\\InterfaceGraphiqueL2.csproj",
+        "projectName": "InterfaceGraphiqueL2",
+        "projectPath": "C:\\Users\\samjo\\OneDrive\\Bureau\\CESI\\A3\\Programmation système\\Le Projet\\Programmation-Systeme-G7\\InterfaceGraphiqueL2\\InterfaceGraphiqueL2.csproj",
         "packagesPath": "C:\\Users\\samjo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samjo\\OneDrive\\Bureau\\CESI\\A3\\Programmation système\\Le Projet\\Programmation-Systeme-G7\\AppliConsole\\obj\\",
+        "outputPath": "C:\\Users\\samjo\\OneDrive\\Bureau\\CESI\\A3\\Programmation système\\Le Projet\\Programmation-Systeme-G7\\InterfaceGraphiqueL2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,12 +43,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "dependencies": {
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.1, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -62,6 +56,9 @@
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
