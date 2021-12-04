@@ -9,6 +9,11 @@
       "InterfaceGraphiqueL2/1.0.0": {
         "runtime": {
           "InterfaceGraphiqueL2.dll": {}
+        },
+        "resources": {
+          "en/InterfaceGraphiqueL2.resources.dll": {
+            "locale": "en"
+          }
         }
       }
     }

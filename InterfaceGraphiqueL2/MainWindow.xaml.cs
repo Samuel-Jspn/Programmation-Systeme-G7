@@ -1,6 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Resources;
-using InterfaceGraphiqueL2.resources;
+using InterfaceGraphiqueL2.Properties.Langs;
+using System.Windows.Controls;
+using System.Threading;
 
 namespace InterfaceGraphiqueL2
 {
@@ -9,52 +12,49 @@ namespace InterfaceGraphiqueL2
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ResourceManager rm;
+        private bool ButtonFrWasCliked = false;
+        private bool ButtonEnWasCliked = false;
 
-        public ResourceManager RM
-        {
-            get { return rm; }
-            set { rm = value; }
-        }
 
         public MainWindow()
         {
-            rm = new ResourceManager(typeof(en_language));
             InitializeComponent();
-            btn_Save.Content = rm.GetString("saveButton");
-            LabelSaveName.Content = rm.GetString("saveName");
-            LabelSourcePath.Content = rm.GetString("sourcePath");
-            LabelTargetPath.Content = rm.GetString("targetPath");
-            LabelSaveType.Content = rm.GetString("saveType");
-        }
-        private void LanguageEN(object sender, RoutedEventArgs e)
-        {
-            rm = new ResourceManager(typeof(en_language));
-            this.RM = this.rm;
-            Translate();
-        }
-        private void LanguageFR(object sender, RoutedEventArgs e)
-        {
-            rm = new ResourceManager(typeof(fr_language));
-            this.RM = this.rm;
-            Translate();
-        }
-        public void Translate()
-        {
-            btn_Save.Content = rm.GetString("saveButton");
         }
 
         private void btn_param_Click(object sender, RoutedEventArgs e)
         {
-            text_box_test.Text = "Bouton Paramètres";
         }
         private void btn_fr_Click(object sender, RoutedEventArgs e)
         {
-            text_box_test.Text = "Bouton français";
+            ButtonFrWasCliked = true;
+            Translate();
+            ButtonFrWasCliked = false;
+            MessageBox.Show("L'application va se fermer. Veuillez la relancer.");
+            Thread.Sleep(3000);
+            Environment.Exit(0);
         }
         private void btn_en_Click(object sender, RoutedEventArgs e)
         {
-            text_box_test.Text = "English Button";
+            ButtonEnWasCliked = true;
+            Translate();
+            ButtonEnWasCliked = false;
+            MessageBox.Show("The application is about to close. Please start it again");
+            Thread.Sleep(3000);
+            Environment.Exit(0);
+        }
+
+        private void Translate()
+        {
+            if (ButtonFrWasCliked == true)
+            {
+                Properties.Settings.Default.languageCode = "fr-FR";
+                Properties.Settings.Default.Save();
+            }
+            else if (ButtonEnWasCliked == true)
+            {
+                Properties.Settings.Default.languageCode = "en-US";
+                Properties.Settings.Default.Save();
+            }
         }
     }
 }

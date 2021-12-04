@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InterfaceGraphiqueL2.resources {
+namespace InterfaceGraphiqueL2.Properties.Langs {
     using System;
     
     
@@ -22,24 +22,24 @@ namespace InterfaceGraphiqueL2.resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class fr_language {
+    public class Lang {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal fr_language() {
+        internal Lang() {
         }
         
         /// <summary>
         ///   Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("InterfaceGraphiqueL2.resources.fr_language", typeof(fr_language).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("InterfaceGraphiqueL2.Properties.Langs.Lang", typeof(Lang).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace InterfaceGraphiqueL2.resources {
         ///   les recherches de ressources à l'aide de cette classe de ressource fortement typée.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace InterfaceGraphiqueL2.resources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Sauvegarder.
         /// </summary>
-        internal static string saveButton {
+        public static string saveButton {
             get {
                 return ResourceManager.GetString("saveButton", resourceCulture);
             }
@@ -72,25 +72,25 @@ namespace InterfaceGraphiqueL2.resources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Nom de la sauvegarde.
         /// </summary>
-        internal static string saveName {
+        public static string saveName {
             get {
                 return ResourceManager.GetString("saveName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Type de sauvegarde.
+        ///   Recherche une chaîne localisée semblable à Type de Sauvegarde.
         /// </summary>
-        internal static string saveType {
+        public static string saveType {
             get {
                 return ResourceManager.GetString("saveType", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Chemin source du document à sauvegarder.
+        ///   Recherche une chaîne localisée semblable à Chemin source du document.
         /// </summary>
-        internal static string sourcePath {
+        public static string sourcePath {
             get {
                 return ResourceManager.GetString("sourcePath", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace InterfaceGraphiqueL2.resources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Chemin de destination du document.
         /// </summary>
-        internal static string targetPath {
+        public static string targetPath {
             get {
                 return ResourceManager.GetString("targetPath", resourceCulture);
             }

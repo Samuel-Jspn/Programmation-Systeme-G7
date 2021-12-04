@@ -124,10 +124,10 @@
     <value>Nom de la sauvegarde</value>
   </data>
   <data name="saveType" xml:space="preserve">
-    <value>Type de sauvegarde</value>
+    <value>Type de Sauvegarde</value>
   </data>
   <data name="sourcePath" xml:space="preserve">
-    <value>Chemin source du document à sauvegarder</value>
+    <value>Chemin source du document</value>
   </data>
   <data name="targetPath" xml:space="preserve">
     <value>Chemin de destination du document</value>

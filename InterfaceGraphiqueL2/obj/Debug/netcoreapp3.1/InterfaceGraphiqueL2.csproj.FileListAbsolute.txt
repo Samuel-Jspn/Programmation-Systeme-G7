@@ -20,5 +20,8 @@ C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programm
 C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\InterfaceGraphiqueL2.csproj.CoreCompileInputs.cache
 C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\InterfaceGraphiqueL2.genruntimeconfig.cache
 C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
-C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\InterfaceGraphiqueL2.resources.en_language.resources
-C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\InterfaceGraphiqueL2.resources.fr_language.resources
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\InterfaceGraphiqueL2.Properties.Langs.Lang.resources
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\InterfaceGraphiqueL2.Properties.Resources.resources
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\bin\Debug\netcoreapp3.1\en\InterfaceGraphiqueL2.resources.dll
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\InterfaceGraphiqueL2.Properties.Langs.Lang.en.resources
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\en\InterfaceGraphiqueL2.resources.dll
