@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="differential" xml:space="preserve">
+    <value>Séquentielle</value>
+  </data>
+  <data name="docType" xml:space="preserve">
+    <value>Choisir le type de document</value>
+  </data>
+  <data name="file" xml:space="preserve">
+    <value>Fichier</value>
+  </data>
+  <data name="folder" xml:space="preserve">
+    <value>Dossier</value>
+  </data>
+  <data name="full" xml:space="preserve">
+    <value>Complète</value>
+  </data>
   <data name="saveButton" xml:space="preserve">
     <value>Sauvegarder</value>
   </data>

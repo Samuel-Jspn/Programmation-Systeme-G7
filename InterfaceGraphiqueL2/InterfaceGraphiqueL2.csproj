@@ -9,13 +9,17 @@
   <ItemGroup>
     <None Remove="flag_en.png" />
     <None Remove="flag_fr.png" />
+    <None Remove="home.png" />
     <None Remove="param_logo.png" />
+    <None Remove="settings.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="flag_en.png" />
     <Resource Include="flag_fr.png" />
+    <Resource Include="home.png" />
     <Resource Include="param_logo.png" />
+    <Resource Include="settings.jpg" />
   </ItemGroup>
 
   <ItemGroup>

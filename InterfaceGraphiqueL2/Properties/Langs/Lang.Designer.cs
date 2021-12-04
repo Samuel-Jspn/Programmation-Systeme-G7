@@ -61,6 +61,51 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Séquentielle.
+        /// </summary>
+        public static string differential {
+            get {
+                return ResourceManager.GetString("differential", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Choisir le type de document.
+        /// </summary>
+        public static string docType {
+            get {
+                return ResourceManager.GetString("docType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Fichier.
+        /// </summary>
+        public static string file {
+            get {
+                return ResourceManager.GetString("file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Dossier.
+        /// </summary>
+        public static string folder {
+            get {
+                return ResourceManager.GetString("folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Complète.
+        /// </summary>
+        public static string full {
+            get {
+                return ResourceManager.GetString("full", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Sauvegarder.
         /// </summary>
         public static string saveButton {
