@@ -88,6 +88,15 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Choisir le type de fichier à crypter.
+        /// </summary>
+        public static string extension {
+            get {
+                return ResourceManager.GetString("extension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Fichier.
         /// </summary>
         public static string file {
@@ -111,6 +120,15 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         public static string full {
             get {
                 return ResourceManager.GetString("full", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Définir le logiciel métier.
+        /// </summary>
+        public static string job {
+            get {
+                return ResourceManager.GetString("job", resourceCulture);
             }
         }
         
@@ -165,6 +183,15 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         public static string sourcePath {
             get {
                 return ResourceManager.GetString("sourcePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Valider.
+        /// </summary>
+        public static string submit {
+            get {
+                return ResourceManager.GetString("submit", resourceCulture);
             }
         }
         

@@ -19,42 +19,6 @@ namespace InterfaceGraphiqueL2
     /// </summary>
     public partial class MainWindow : Window
     {
-        #region VARIABLES
-        private string dirOrFile;
-        private string name;
-        private string sourcePath;
-        private string targetPath;
-        private string backupType;
-        Controller controller;
-        #endregion
-
-        #region GETTER AND SETTER
-        public string DirOrFile
-        {
-            get { return dirOrFile; }
-            set { dirOrFile = value; }
-        }
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-        public string SourcePath
-        {
-            get { return sourcePath; }
-            set { sourcePath = value; }
-        }
-        public string TargetPath
-        {
-            get { return targetPath; }
-            set { targetPath = value; }
-        }
-        public string BackupType
-        {
-            get { return backupType; }
-            set { backupType = value; }
-        }
-        #endregion
         public MainWindow()
         {
             InitializeComponent();
@@ -64,6 +28,7 @@ namespace InterfaceGraphiqueL2
 
         private void btn_param_Click(object sender, RoutedEventArgs e)
         {
+            Main.Content = new Settings();
         }
         private void btn_fr_Click(object sender, RoutedEventArgs e)
         {

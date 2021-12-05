@@ -126,6 +126,9 @@
   <data name="docType" xml:space="preserve">
     <value>Choisir le type de document</value>
   </data>
+  <data name="extension" xml:space="preserve">
+    <value>Choisir le type de fichier à crypter</value>
+  </data>
   <data name="file" xml:space="preserve">
     <value>Fichier</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="full" xml:space="preserve">
     <value>Complète</value>
+  </data>
+  <data name="job" xml:space="preserve">
+    <value>Définir le logiciel métier</value>
   </data>
   <data name="manage" xml:space="preserve">
     <value>Gérer Sauvegardes</value>
@@ -152,6 +158,9 @@
   </data>
   <data name="sourcePath" xml:space="preserve">
     <value>Chemin source du document</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>Valider</value>
   </data>
   <data name="targetPath" xml:space="preserve">
     <value>Chemin de destination du document</value>

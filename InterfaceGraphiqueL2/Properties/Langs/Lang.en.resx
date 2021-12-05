@@ -126,6 +126,9 @@
   <data name="docType" xml:space="preserve">
     <value>Choose file type</value>
   </data>
+  <data name="extension" xml:space="preserve">
+    <value>Choose the type of file you want to encrypt</value>
+  </data>
   <data name="file" xml:space="preserve">
     <value>File</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="full" xml:space="preserve">
     <value>Full</value>
+  </data>
+  <data name="job" xml:space="preserve">
+    <value>Define the software society</value>
   </data>
   <data name="manage" xml:space="preserve">
     <value>Manage Saves</value>
@@ -152,6 +158,9 @@
   </data>
   <data name="sourcePath" xml:space="preserve">
     <value>Source path of the document</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>Submit</value>
   </data>
   <data name="targetPath" xml:space="preserve">
     <value>Destination path of the document</value>
