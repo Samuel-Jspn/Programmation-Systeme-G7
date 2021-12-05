@@ -23,23 +23,9 @@
 
         <Frame x:Name="Main" Grid.Row="1" Grid.Column="1" NavigationUIVisibility="Hidden"/>
 
-        <Rectangle HorizontalAlignment="Center" Stroke="Black" Width="76" Grid.RowSpan="2" Fill="#FF9EF6FF" Margin="0,0,0,9"/>
+        <Rectangle HorizontalAlignment="Center" Stroke="Black" Width="76" Grid.RowSpan="2" Fill="#FF9EF6FF" Margin="0,0,0,-1"/>
         <Rectangle HorizontalAlignment="Center" Height="60" Stroke="Black" VerticalAlignment="Bottom" Width="76" Fill="#FF3BADFB"/>
-        <!--<Label x:Name="LabelSaveName" Content="{x:Static language:Lang.saveName}" Margin="0,120,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalContentAlignment="Center" Width="202"/>
-        <Label x:Name="LabelSourcePath" Content="{x:Static language:Lang.sourcePath}" Margin="0,164,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Width="204">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="0.232"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="0.612"/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <Label x:Name="LabelTargetPath" Content="{x:Static language:Lang.targetPath}" Margin="0,207,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.5,0.54" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button x:Name="btn_Save" Content="{x:Static language:Lang.saveButton}" Margin="287,269,286,0" VerticalAlignment="Top" Height="81" Grid.Column="1" Grid.Row="1"/>
-        <Label x:Name="LabelSaveType" Content="{x:Static language:Lang.saveType}" Margin="0,6,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Width="202"/>
--->
+
         <Button Grid.Row="1" x:Name="btn_en" Margin="0,243,0,89" Click="btn_en_Click" ClickMode="Release" RenderTransformOrigin="0.5,0.5" Cursor="Hand" >
             <Button.Template>
                 <ControlTemplate>
@@ -55,6 +41,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        
         <Button Grid.Row="1" x:Name="btn_param" Content="" Margin="12,299,12,31" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}" Click="btn_param_Click" Cursor="Hand">
             <Button.Template>
                 <ControlTemplate>
@@ -62,6 +49,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        
         <Button Grid.Column="0" Grid.Row="0" x:Name="btn_home" Cursor="Hand" Click="btn_home_Click">
             <Button.Template>
                 <ControlTemplate>
@@ -69,6 +57,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        
         <Button Grid.Column="1" x:Name="btn_exit" Cursor="Hand" Margin="653,-2,10,3" Click="btn_exit_Click">
             <Button.Template>
                 <ControlTemplate>
@@ -76,19 +65,12 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        
         <Rectangle Stroke="Black" Margin="76,0,0,0" Grid.ColumnSpan="2"/>
         <Label Content="EasySave&#xD;&#xA;By Prosoft" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="56" Width="120" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontStyle="Italic" Foreground="#FF0074FF"/>
 
-        <!--<CheckBox Content="{x:Static language:Lang.full}" Grid.Column="1" Margin="261,34,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="20"/>
-        <CheckBox Content="{x:Static language:Lang.differential}" Grid.Column="1" Margin="383,34,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="20"/>
-
-        <TextBox Grid.Column="1" Margin="261,233,260,0" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox Grid.Column="1" Margin="261,190,260,0" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox Grid.Column="1" Margin="260,146,260,0" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Label Content="{x:Static language:Lang.docType}" Grid.Column="1" HorizontalAlignment="Center" Margin="0,59,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="203"/>
-        <CheckBox Content="{x:Static language:Lang.file}" Grid.Column="1" HorizontalAlignment="Left" Margin="261,90,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Height="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <CheckBox Content="{x:Static language:Lang.folder}" Grid.Column="1" HorizontalAlignment="Left" Margin="396,90,0,0" Grid.Row="1" VerticalAlignment="Top" Height="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>-->
-        <Button Content="{x:Static language:Lang.businessSoftware}" HorizontalAlignment="Center" Margin="0,57,0,0" VerticalAlignment="Top" Height="55" Width="76" Background="#FF9EF6FF" FontSize="10" Grid.RowSpan="2"/>
-        <Button x:Name="btn_menu_saves" Content="{x:Static language:Lang.saves}" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" Height="55" Width="76" Background="#FF9EF6FF" FontSize="10" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btn_menu_saves_Click"/>
+        <Button Content="{x:Static language:Lang.businessSoftware}" HorizontalAlignment="Center" Margin="0,57,0,0" VerticalAlignment="Top" Height="55" Width="76" Background="#FF9EF6FF" FontSize="10" Grid.RowSpan="2" MaxWidth="76" Cursor="Hand"/>
+        <Button x:Name="btn_menu_saves" Content="{x:Static language:Lang.saves}" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" Height="55" Width="76" Background="#FF9EF6FF" FontSize="10" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btn_menu_saves_Click" AllowDrop="True" MaxWidth="76" Cursor="Hand"/>
+        <Button x:Name="btn_manage_saves" Content="{x:Static language:Lang.manage}" HorizontalAlignment="Center" Margin="0,106,0,0" VerticalAlignment="Top" Height="55" Width="76" Background="#FF9EF6FF" FontSize="10" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btn_menu_saves_Click" AllowDrop="True" MaxWidth="76" Cursor="Hand"/>
     </Grid>
 </Window>

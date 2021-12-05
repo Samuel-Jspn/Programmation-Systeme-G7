@@ -135,6 +135,9 @@
   <data name="full" xml:space="preserve">
     <value>Full</value>
   </data>
+  <data name="manage" xml:space="preserve">
+    <value>Manage Saves</value>
+  </data>
   <data name="saveButton" xml:space="preserve">
     <value>Save</value>
   </data>
@@ -142,7 +145,7 @@
     <value>Name of the save</value>
   </data>
   <data name="saves" xml:space="preserve">
-    <value>Saves</value>
+    <value>Create Save</value>
   </data>
   <data name="saveType" xml:space="preserve">
     <value>Saving Type</value>

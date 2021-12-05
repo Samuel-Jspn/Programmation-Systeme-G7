@@ -115,6 +115,15 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Gérer Sauvegardes.
+        /// </summary>
+        public static string manage {
+            get {
+                return ResourceManager.GetString("manage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Sauvegarder.
         /// </summary>
         public static string saveButton {
@@ -133,7 +142,7 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Sauvegardes.
+        ///   Recherche une chaîne localisée semblable à Créer Sauvegarde.
         /// </summary>
         public static string saves {
             get {
