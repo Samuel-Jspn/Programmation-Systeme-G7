@@ -1,17 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "AdpjkJ0m6von9TltyJvllC6X+Lgnw6V4mZmrTh6x87umd35wVQWM4usokRXcuWhd6BYl/dIOgdHrT9jL3/NzXA==",
+  "dgSpecHash": "6PGZSiG6t/l/kdtIJtZx52ysSMGEzu6yFHdGU0PqzR/6vPT5Lye/iuNd8Jw+NMdGmLMg0lp3tkDiP2UVYWte4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\samjo\\OneDrive\\Bureau\\CESI\\A3\\Programmation système\\Le Projet\\Programmation-Systeme-G7\\InterfaceGraphiqueL2\\InterfaceGraphiqueL2.csproj",
+  "projectFilePath": "C:\\Users\\beaus\\OneDrive - Association Cesi Viacesi mail\\Documents\\FISE A3 info\\Programmation Système\\Projet\\Programmation-Systeme-G7\\InterfaceGraphiqueL2\\InterfaceGraphiqueL2.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\samjo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\beaus\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problème de lecture du fichier cache C:\\Users\\samjo\\OneDrive\\Bureau\\CESI\\A3\\Programmation système\\Le Projet\\Programmation-Systeme-G7\\InterfaceGraphiqueL2\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

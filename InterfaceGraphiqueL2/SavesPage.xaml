@@ -22,18 +22,18 @@
             </Label.RenderTransform>
         </Label>
         <Label x:Name="LabelTargetPath" Content="{x:Static language:Lang.targetPath}" Margin="0,214,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.54" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button x:Name="btn_Save" Content="{x:Static language:Lang.saveButton}" Margin="286,279,286,0" VerticalAlignment="Top" Height="67"/>
+        <Button x:Name="btn_Save" Content="{x:Static language:Lang.saveButton}" Margin="286,279,286,0" VerticalAlignment="Top" Height="67" Click="btn_Save_Click"/>
         <Label x:Name="LabelSaveType" Content="{x:Static language:Lang.saveType}" Margin="0,3,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="202"/>
 
-        <CheckBox Content="{x:Static language:Lang.full}" Margin="261,34,0,0" VerticalAlignment="Top" IsChecked="True" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="20"/>
-        <CheckBox Content="{x:Static language:Lang.differential}" Margin="378,34,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="20" RenderTransformOrigin="0.489,0.452"/>
+        <CheckBox Name="CheckBoxFullBackup" Content="{x:Static language:Lang.full}" Margin="261,34,0,0" VerticalAlignment="Top" IsChecked="True" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="20"/>
+        <CheckBox Name="CheckBoxDifferentialBackup" Content="{x:Static language:Lang.differential}" Margin="378,34,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="20" RenderTransformOrigin="0.489,0.452"/>
 
-        <TextBox Margin="261,245,260,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox Margin="261,191,260,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox Margin="260,141,260,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox Name="TextBoxTargetPath" Margin="261,245,260,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox Name="TextBoxSourcePath" Margin="261,191,260,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox Name="TextBoxName" Margin="260,141,260,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Label Content="{x:Static language:Lang.docType}" HorizontalAlignment="Center" Margin="0,59,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="204"/>
-        <CheckBox Content="{x:Static language:Lang.file}" HorizontalAlignment="Left" Margin="261,85,0,0" VerticalAlignment="Top" IsChecked="True" Height="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <CheckBox Content="{x:Static language:Lang.folder}" HorizontalAlignment="Left" Margin="378,85,0,0" VerticalAlignment="Top" Height="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <CheckBox Name="CheckBoxFile" Content="{x:Static language:Lang.file}" HorizontalAlignment="Left" Margin="261,85,0,0" VerticalAlignment="Top" IsChecked="True" Height="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <CheckBox Name="CheckBoxDir" Content="{x:Static language:Lang.folder}" HorizontalAlignment="Left" Margin="378,85,0,0" VerticalAlignment="Top" Height="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
 
     </Grid>
 </Page>
