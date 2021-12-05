@@ -21,7 +21,6 @@ namespace InterfaceGraphiqueL2
     {
         #region VARIABLES
         private string dirOrFile;
-        private string extension;
         private string name;
         private string sourcePath;
         private string targetPath;
@@ -34,11 +33,6 @@ namespace InterfaceGraphiqueL2
         {
             get { return dirOrFile; }
             set { dirOrFile = value; }
-        }
-        public string Extension
-        {
-            get { return extension; }
-            set { extension = value; }
         }
         public string Name
         {
