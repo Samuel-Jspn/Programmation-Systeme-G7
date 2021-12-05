@@ -58,8 +58,13 @@ namespace InterfaceGraphiqueL2
         public MainWindow()
         {
             InitializeComponent();
+            Main.Content = new HomePage();
         }
 
+
+        private void btn_param_Click(object sender, RoutedEventArgs e)
+        {
+        }
         private void btn_fr_Click(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.languageCode = "fr-FR";
@@ -80,34 +85,20 @@ namespace InterfaceGraphiqueL2
             System.Windows.Application.Current.Shutdown();
         }
 
-        private void btn_Save_Click(object sender, RoutedEventArgs e)
+        private void btn_menu_saves_Click(object sender, RoutedEventArgs e)
         {
-            if (CheckBoxDir.IsChecked == true)
-            {
-                DirOrFile = "Directory";
-            }
-            else
-            {
-                DirOrFile = "File";
-            }
-            Name = TextBoxName.Text;
-            SourcePath = TextBoxSourcePath.Text;
-            TargetPath = TextBoxTargetPath.Text;
-            if (CheckBoxFullBackup.IsChecked == true)
-            {
-                BackupType = "full";
-            }
-            else
-            {
-                BackupType = "differential";
-            }
-
-            controller = new Controller();
-            controller.updateBackupInfo(DirOrFile, Name, SourcePath, TargetPath, BackupType);
+            Main.Content = new SavesPage();
         }
 
-        private void btn_param_Click(object sender, RoutedEventArgs e)
+        private void btn_home_Click(object sender, RoutedEventArgs e)
         {
+            Main.Content = new HomePage();
+
+        }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

@@ -48,23 +48,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\beaus\\.nuget\\packages\\": {},
+    "C:\\Users\\samjo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\beaus\\OneDrive - Association Cesi Viacesi mail\\Documents\\FISE A3 info\\Programmation Système\\Projet\\Programmation-Systeme-G7\\InterfaceGraphiqueL2\\InterfaceGraphiqueL2.csproj",
+      "projectUniqueName": "C:\\Users\\samjo\\OneDrive\\Bureau\\CESI\\A3\\Programmation système\\Le Projet\\Programmation-Systeme-G7\\InterfaceGraphiqueL2\\InterfaceGraphiqueL2.csproj",
       "projectName": "InterfaceGraphiqueL2",
-      "projectPath": "C:\\Users\\beaus\\OneDrive - Association Cesi Viacesi mail\\Documents\\FISE A3 info\\Programmation Système\\Projet\\Programmation-Systeme-G7\\InterfaceGraphiqueL2\\InterfaceGraphiqueL2.csproj",
-      "packagesPath": "C:\\Users\\beaus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\beaus\\OneDrive - Association Cesi Viacesi mail\\Documents\\FISE A3 info\\Programmation Système\\Projet\\Programmation-Systeme-G7\\InterfaceGraphiqueL2\\obj\\",
+      "projectPath": "C:\\Users\\samjo\\OneDrive\\Bureau\\CESI\\A3\\Programmation système\\Le Projet\\Programmation-Systeme-G7\\InterfaceGraphiqueL2\\InterfaceGraphiqueL2.csproj",
+      "packagesPath": "C:\\Users\\samjo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\samjo\\OneDrive\\Bureau\\CESI\\A3\\Programmation système\\Le Projet\\Programmation-Systeme-G7\\InterfaceGraphiqueL2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\beaus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\samjo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
