@@ -39,7 +39,15 @@ namespace InterfaceGraphiqueL2
             model.createBackup(model.BackupType, dailyLogModel, stateLogModel);
 
             //variable for the dailyLogModel
-            dailyLogModel.Name = model.Name + "." + model.Extension;
+            if(model.DirOrFile == "File")
+            {
+                dailyLogModel.Name = model.Name + "." + model.Extension;
+
+            }
+            else
+            {
+                dailyLogModel.Name = model.Name;
+            }
             dailyLogModel.SourcePath = model.SourcePath;
             dailyLogModel.TargetPath = model.TargetPath;
             dailyLogModel.FileTransferTime = model.FileTransferTime;
