@@ -58,3 +58,5 @@ C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programm
 C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\SavesPage.baml
 C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\HomePage.g.cs
 C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\HomePage.baml
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\InterfaceGraphiqueL2.csproj.CopyComplete

@@ -71,6 +71,7 @@
 
         <Button Content="{x:Static language:Lang.businessSoftware}" HorizontalAlignment="Center" Margin="0,57,0,0" VerticalAlignment="Top" Height="55" Width="76" Background="#FF9EF6FF" FontSize="10" Grid.RowSpan="2" MaxWidth="76" Cursor="Hand"/>
         <Button x:Name="btn_menu_saves" Content="{x:Static language:Lang.saves}" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" Height="55" Width="76" Background="#FF9EF6FF" FontSize="10" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btn_menu_saves_Click" AllowDrop="True" MaxWidth="76" Cursor="Hand"/>
-        <Button x:Name="btn_manage_saves" Content="{x:Static language:Lang.manage}" HorizontalAlignment="Center" Margin="0,106,0,0" VerticalAlignment="Top" Height="55" Width="76" Background="#FF9EF6FF" FontSize="10" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btn_menu_saves_Click" AllowDrop="True" MaxWidth="76" Cursor="Hand"/>
-    </Grid>
+        <Button x:Name="btn_manage_saves" Content="{x:Static language:Lang.manage}" HorizontalAlignment="Center" Margin="0,106,0,0" VerticalAlignment="Top" Height="55" Width="76" Background="#FF9EF6FF" FontSize="10" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AllowDrop="True" MaxWidth="76" Cursor="Hand"/>
+    
+        </Grid>
 </Window>
