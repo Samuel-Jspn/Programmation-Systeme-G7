@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="businessSoftware" xml:space="preserve">
+    <value>Business Software</value>
+  </data>
   <data name="differential" xml:space="preserve">
     <value>Differential</value>
   </data>
@@ -138,13 +141,19 @@
   <data name="saveName" xml:space="preserve">
     <value>Name of the save</value>
   </data>
+  <data name="saves" xml:space="preserve">
+    <value>Saves</value>
+  </data>
   <data name="saveType" xml:space="preserve">
     <value>Saving Type</value>
   </data>
   <data name="sourcePath" xml:space="preserve">
-    <value>Source path of the document you want to save</value>
+    <value>Source path of the document</value>
   </data>
   <data name="targetPath" xml:space="preserve">
     <value>Destination path of the document</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Welcome on EasySave A Prosoft Application</value>
   </data>
 </root>

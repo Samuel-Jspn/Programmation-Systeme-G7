@@ -61,6 +61,15 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Logiciels Métier.
+        /// </summary>
+        public static string businessSoftware {
+            get {
+                return ResourceManager.GetString("businessSoftware", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Séquentielle.
         /// </summary>
         public static string differential {
@@ -124,6 +133,15 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Sauvegardes.
+        /// </summary>
+        public static string saves {
+            get {
+                return ResourceManager.GetString("saves", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Type de Sauvegarde.
         /// </summary>
         public static string saveType {
@@ -147,6 +165,15 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         public static string targetPath {
             get {
                 return ResourceManager.GetString("targetPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Bienvenue sur Easy Save Une application Prosoft.
+        /// </summary>
+        public static string welcome {
+            get {
+                return ResourceManager.GetString("welcome", resourceCulture);
             }
         }
     }

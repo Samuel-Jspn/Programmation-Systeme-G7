@@ -16,7 +16,9 @@ namespace InterfaceGraphiqueL2
         public MainWindow()
         {
             InitializeComponent();
+            Main.Content = new HomePage();
         }
+
 
         private void btn_param_Click(object sender, RoutedEventArgs e)
         {
@@ -39,6 +41,22 @@ namespace InterfaceGraphiqueL2
             var currentExecutablePath = Process.GetCurrentProcess().MainModule.FileName;
             Process.Start(currentExecutablePath);
             System.Windows.Application.Current.Shutdown();
+        }
+
+        private void btn_menu_saves_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new SavesPage();
+        }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new HomePage();
+
+        }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

@@ -1,0 +1,39 @@
+﻿<Page x:Class="InterfaceGraphiqueL2.SavesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:InterfaceGraphiqueL2"
+      mc:Ignorable="d" 
+      xmlns:language="clr-namespace:InterfaceGraphiqueL2.Properties.Langs"
+      d:DesignHeight="382" d:DesignWidth="724"
+      Title="SavesPage">
+
+    <Grid Background="White">
+        <Label x:Name="LabelSaveName" Content="{x:Static language:Lang.saveName}" Margin="0,110,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Width="202"/>
+        <Label x:Name="LabelSourcePath" Content="{x:Static language:Lang.sourcePath}" Margin="0,165,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="204">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.232"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.612"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="LabelTargetPath" Content="{x:Static language:Lang.targetPath}" Margin="0,214,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.54" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="btn_Save" Content="{x:Static language:Lang.saveButton}" Margin="286,279,286,0" VerticalAlignment="Top" Height="67"/>
+        <Label x:Name="LabelSaveType" Content="{x:Static language:Lang.saveType}" Margin="0,3,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="202"/>
+
+        <CheckBox Content="{x:Static language:Lang.full}" Margin="261,34,0,0" VerticalAlignment="Top" IsChecked="True" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="20"/>
+        <CheckBox Content="{x:Static language:Lang.differential}" Margin="378,34,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="20" RenderTransformOrigin="0.489,0.452"/>
+
+        <TextBox Margin="261,245,260,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox Margin="261,191,260,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox Margin="260,141,260,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Content="{x:Static language:Lang.docType}" HorizontalAlignment="Center" Margin="0,59,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="204"/>
+        <CheckBox Content="{x:Static language:Lang.file}" HorizontalAlignment="Left" Margin="261,85,0,0" VerticalAlignment="Top" IsChecked="True" Height="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <CheckBox Content="{x:Static language:Lang.folder}" HorizontalAlignment="Left" Margin="378,85,0,0" VerticalAlignment="Top" Height="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+    </Grid>
+</Page>
