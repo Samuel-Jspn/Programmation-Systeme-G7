@@ -9,6 +9,7 @@ using System.Threading;
 using System.Globalization;
 using System.Diagnostics;
 using InterfaceGraphiqueL2.Model;
+using System.Linq;
 
 namespace InterfaceGraphiqueL2
 {
@@ -150,11 +151,18 @@ namespace InterfaceGraphiqueL2
                         foreach (FileInfo file in files)
                         {
                             FileSize += file.Length;
-                            string tempPath = TargetPath + @"\" + Name + @"\" + file.Name;
-
+                            string tempTargetPath = TargetPath + @"\" + Name + @"\" + file.Name;
+                            string tempSourcePath = SourcePath + @"\" + file.Name;
+                            string tempExtension = file.Name.Split(".").Last();
                             TotalFileToCopy++;
 
-                            file.CopyTo(tempPath, false);
+                            file.CopyTo(tempTargetPath, false);
+
+                            //cryptage du fichier
+                            if (encryptExtension == tempExtension)
+                            {
+                                encrypt(tempSourcePath, tempTargetPath);
+                            }
                         }
                     }
                     break;
