@@ -100,7 +100,7 @@ namespace InterfaceGraphiqueL2
             TotalFileToCopy = 0;
         }
 
-        public void createBackup(string type, DailyLog dailyLogModel, StateLog stateLogModel)
+        public void createBackup(string type, string encryptExtension, DailyLog dailyLogModel, StateLog stateLogModel)
         {
             State = "ACTIF";
             switch (type)
@@ -120,7 +120,7 @@ namespace InterfaceGraphiqueL2
                         DateTime stop = DateTime.Now;
 
                         //cryptage du fichier
-                        if (Extension == "txt")
+                        if (encryptExtension == Extension)
                         {
                             encrypt(sourcePath, path);
                         }
@@ -197,6 +197,38 @@ namespace InterfaceGraphiqueL2
 
             sr.Close();
             sw.Close();
+        }
+
+        public bool EnterpriseSoftwareRunning(string nameSoftware)
+        {
+            if (Process.GetProcessesByName(nameSoftware).Length > 0)
+            {
+                string message = "You have to close your enterprise software if you want to continue the backup.\n Do you want to close it ?";
+                string caption = "EasySave";
+                var result = System.Windows.MessageBox.Show(message, caption,
+                    System.Windows.MessageBoxButton.YesNo);
+                switch (result)
+                {
+                    case System.Windows.MessageBoxResult.Yes:
+                        Process[] proc = Process.GetProcessesByName(nameSoftware);
+                        if (proc.Length == 0)
+                        {
+                            System.Windows.MessageBox.Show("The software has been closed");
+                        }
+                        else
+                        {
+                            proc[0].Kill();
+                            System.Windows.MessageBox.Show("The software has been closed");
+                        }
+                        break;
+                    case System.Windows.MessageBoxResult.No:
+                        EnterpriseSoftwareRunning(nameSoftware);
+                        break;
+                }
+                return true;
+
+            }
+            return false;
         }
     }
 }

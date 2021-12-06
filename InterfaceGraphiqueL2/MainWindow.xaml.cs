@@ -19,8 +19,10 @@ namespace InterfaceGraphiqueL2
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Controller controller;
         public MainWindow()
         {
+            controller = new Controller();
             InitializeComponent();
             Main.Content = new HomePage();
         }
@@ -28,7 +30,7 @@ namespace InterfaceGraphiqueL2
 
         private void btn_param_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Settings();
+            Main.Content = new Settings(controller);
         }
         private void btn_fr_Click(object sender, RoutedEventArgs e)
         {
@@ -52,7 +54,7 @@ namespace InterfaceGraphiqueL2
 
         private void btn_menu_saves_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new SavesPage();
+            Main.Content = new SavesPage(controller);
         }
 
         private void btn_home_Click(object sender, RoutedEventArgs e)

@@ -32,7 +32,7 @@ namespace InterfaceGraphiqueL2
         private string sourcePath;
         private string targetPath;
         private string backupType;
-        Controller controller;
+        Controller Controller;
         #endregion
 
         #region GETTER AND SETTER
@@ -62,8 +62,9 @@ namespace InterfaceGraphiqueL2
             set { backupType = value; }
         }
         #endregion
-        public SavesPage()
+        public SavesPage(Controller controller)
         {
+            this.Controller = controller;
             InitializeComponent();
         }
 
@@ -89,8 +90,7 @@ namespace InterfaceGraphiqueL2
                 BackupType = "differential";
             }
 
-            controller = new Controller();
-            controller.updateBackupInfo(DirOrFile, Name, SourcePath, TargetPath, BackupType);
+            Controller.updateBackupInfo(DirOrFile, Name, SourcePath, TargetPath, BackupType);
         }
 
     }

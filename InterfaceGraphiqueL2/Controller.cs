@@ -10,18 +10,18 @@ using InterfaceGraphiqueL2.Model;
 
 namespace InterfaceGraphiqueL2
 {
-    class Controller 
+    public class Controller 
     {
         #region VARIABLES
         private Backup model;
-        private MainWindow view;
         private DailyLog dailyLogModel;
         private StateLog stateLogModel;
+        public string EncryptExtension { get; set; }
+        public string SoftwareSociety { get; set; }
         #endregion
         public Controller()
         {
             model = new Backup();
-            view = new MainWindow();
             dailyLogModel = new DailyLog();
             stateLogModel = new StateLog();
         }
@@ -36,7 +36,8 @@ namespace InterfaceGraphiqueL2
             model.TargetPath = TargetPath;
             model.BackupType = BackupType;
 
-            model.createBackup(model.BackupType, dailyLogModel, stateLogModel);
+            model.EnterpriseSoftwareRunning(SoftwareSociety);
+            model.createBackup(model.BackupType, EncryptExtension, dailyLogModel, stateLogModel);
 
             //variable for the dailyLogModel
             if(model.DirOrFile == "File")
