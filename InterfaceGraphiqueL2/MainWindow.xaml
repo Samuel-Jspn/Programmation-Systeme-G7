@@ -41,7 +41,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        
+
         <Button Grid.Row="1" x:Name="btn_param" Content="" Margin="12,299,12,31" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}" Click="btn_param_Click" Cursor="Hand">
             <Button.Template>
                 <ControlTemplate>
@@ -49,7 +49,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        
+
         <Button Grid.Column="0" Grid.Row="0" x:Name="btn_home" Cursor="Hand" Click="btn_home_Click">
             <Button.Template>
                 <ControlTemplate>
@@ -57,7 +57,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        
+
         <Button Grid.Column="1" x:Name="btn_exit" Cursor="Hand" Margin="653,-2,10,3" Click="btn_exit_Click">
             <Button.Template>
                 <ControlTemplate>
@@ -65,12 +65,12 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        
+
         <Rectangle Stroke="Black" Margin="76,0,0,0" Grid.ColumnSpan="2"/>
         <Label Content="EasySave&#xD;&#xA;By Prosoft" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="56" Width="120" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontStyle="Italic" Foreground="#FF0074FF"/>
 
-        <Button Content="{x:Static language:Lang.businessSoftware}" HorizontalAlignment="Center" Margin="0,57,0,0" VerticalAlignment="Top" Height="55" Width="76" Background="#FF9EF6FF" FontSize="10" Grid.RowSpan="2" MaxWidth="76" Cursor="Hand"/>
+        <Button  x:Name="btn_business_software" Content="{x:Static language:Lang.businessSoftware}" HorizontalAlignment="Center" Margin="0,57,0,0" VerticalAlignment="Top" Height="55" Width="76" Background="#FF9EF6FF" FontSize="10" MaxWidth="76" Cursor="Hand"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btn_business_software_Click" AllowDrop="True" Grid.RowSpan="2" />
         <Button x:Name="btn_menu_saves" Content="{x:Static language:Lang.saves}" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" Height="55" Width="76" Background="#FF9EF6FF" FontSize="10" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btn_menu_saves_Click" AllowDrop="True" MaxWidth="76" Cursor="Hand"/>
-        <Button x:Name="btn_manage_saves" Content="{x:Static language:Lang.manage}" HorizontalAlignment="Center" Margin="0,106,0,0" VerticalAlignment="Top" Height="55" Width="76" Background="#FF9EF6FF" FontSize="10" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btn_menu_saves_Click" AllowDrop="True" MaxWidth="76" Cursor="Hand"/>
+        <Button x:Name="btn_manage_saves" Content="{x:Static language:Lang.manage}" HorizontalAlignment="Center" Margin="0,106,0,0" VerticalAlignment="Top" Height="55" Width="76" Background="#FF9EF6FF" FontSize="10" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btn_manage_saves_Click" AllowDrop="True" MaxWidth="76" Cursor="Hand"/>
     </Grid>
 </Window>

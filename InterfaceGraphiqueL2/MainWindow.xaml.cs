@@ -58,5 +58,10 @@ namespace InterfaceGraphiqueL2
         {
             Environment.Exit(0);
         }
+
+        private void btn_manage_saves_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
