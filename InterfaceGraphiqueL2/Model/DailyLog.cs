@@ -15,6 +15,7 @@ namespace InterfaceGraphiqueL2.Model
         private DateTime timestamp;
         private long fileSize;
         private string fileTransferTime;
+        private string encryptInfo;
         #endregion
 
         #region GETER AND SETER
@@ -48,16 +49,13 @@ namespace InterfaceGraphiqueL2.Model
             get { return fileTransferTime; }
             set { fileTransferTime = value; }
         }
+        public string EncryptInfo
+        {
+            get { return encryptInfo; }
+            set { encryptInfo = value; }
+        }
         #endregion
 
-        //public DailyLog()
-        //{
-        //    Timestamp = default;
-        //    FileTransferTime = default;
-        //    FileSize = 0;
-           
-        //    //createDailyLog(this);
-        //}
         public void createDailyLog(DailyLog dailyLog)
         {
             string jsonSerializeObj = JsonConvert.SerializeObject(dailyLog, Formatting.Indented);

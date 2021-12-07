@@ -70,7 +70,7 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Séquentielle.
+        ///   Recherche une chaîne localisée semblable à Différentiel.
         /// </summary>
         public static string differential {
             get {
@@ -124,7 +124,7 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Complète.
+        ///   Recherche une chaîne localisée semblable à Complet.
         /// </summary>
         public static string full {
             get {

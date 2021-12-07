@@ -29,6 +29,7 @@ namespace InterfaceGraphiqueL2
         private long fileSize;
         private string fileTransferTime;
         private int totalFileToCopy;
+        private string encryptInfo;
         #endregion
 
         #region GETER AND SETER
@@ -87,6 +88,11 @@ namespace InterfaceGraphiqueL2
             get { return totalFileToCopy; }
             set { totalFileToCopy = value; }
         }
+        public string EncryptInfo
+        {
+            get { return encryptInfo; }
+            set { encryptInfo = value; }
+        }
         #endregion
 
         public Backup()
@@ -101,6 +107,7 @@ namespace InterfaceGraphiqueL2
             FileTransferTime = default;
             FileSize = 0;
             TotalFileToCopy = 0;
+            EncryptInfo = "";
         }
 
         public void createBackup(string type, string encryptExtension, DailyLog dailyLogModel, StateLog stateLogModel)
@@ -122,10 +129,29 @@ namespace InterfaceGraphiqueL2
                         File.Copy(SourcePath, path, true);
                         DateTime stop = DateTime.Now;
 
+                        string encryptTime = "";
+
                         //cryptage du fichier
                         if (encryptExtension == Extension)
                         {
+                            DateTime startEncrypt = DateTime.Now;
                             encrypt(sourcePath, path);
+                            DateTime stopEncrypt = DateTime.Now;
+                            encryptTime = (stopEncrypt - startEncrypt).ToString();
+                        }
+                        else
+                        {
+                            encryptTime = "0";
+                        }
+
+                        //info temps cryptage pour DailyLogs
+                        if (encryptTime == "0")
+                        {
+                            encryptInfo = "Pas de cryptage";
+                        }
+                        else if (encryptTime != "0")
+                        {
+                            EncryptInfo = "Cryptage en "+ encryptTime +" millisecondes";
                         }
 
                         //recup copy time
@@ -146,10 +172,8 @@ namespace InterfaceGraphiqueL2
 
                         DateTime start = DateTime.Now;
                         Timestamp = start;
-                        DateTime stop = DateTime.Now;
-                        //recup copy time
-                        FileTransferTime = (stop - start).ToString();
 
+                        DateTime startEncrypt = DateTime.Now;
                         foreach (FileInfo file in files)
                         {
                             FileSize += file.Length;
@@ -166,6 +190,22 @@ namespace InterfaceGraphiqueL2
                                 encrypt(tempSourcePath, tempTargetPath);
                             }
                         }
+                        DateTime stopEncrypt = DateTime.Now;
+                        string encryptTime = (stopEncrypt - startEncrypt).ToString();
+                        //info temps cryptage pour DailyLogs
+                        if (encryptTime == "0")
+                        {
+                            encryptInfo = "Pas de cryptage";
+                        }
+                        else if (encryptTime != "0")
+                        {
+                            EncryptInfo = "Cryptage en " + encryptTime + " millisecondes";
+                        }
+
+                        DateTime stop = DateTime.Now;
+                        
+                        //recup copy time
+                        FileTransferTime = (stop - start).ToString();
                     }
                     break;
                 case "differential":
