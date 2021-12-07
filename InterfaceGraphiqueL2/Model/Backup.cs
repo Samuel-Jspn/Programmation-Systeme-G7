@@ -10,6 +10,8 @@ using System.Globalization;
 using System.Diagnostics;
 using InterfaceGraphiqueL2.Model;
 using System.Linq;
+using System.Windows;
+
 
 namespace InterfaceGraphiqueL2
 {
@@ -167,7 +169,8 @@ namespace InterfaceGraphiqueL2
                     }
                     break;
                 case "differential":
-                    Console.WriteLine("differential backup not available yet");
+                    //MessageBox.Show("differential backup not available yet");
+                    MessageBox.Show(InterfaceGraphiqueL2.Properties.Langs.Lang.differentialType);
                     break;
             }
         }

@@ -123,6 +123,9 @@
   <data name="differential" xml:space="preserve">
     <value>Séquentielle</value>
   </data>
+  <data name="differentialType" xml:space="preserve">
+    <value>Sauvegardes séquentielles pas encore disponible</value>
+  </data>
   <data name="docType" xml:space="preserve">
     <value>Choisir le type de document</value>
   </data>

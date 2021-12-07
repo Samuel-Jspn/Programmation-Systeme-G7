@@ -79,6 +79,15 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Sauvegardes séquentielles pas encore disponible.
+        /// </summary>
+        public static string differentialType {
+            get {
+                return ResourceManager.GetString("differentialType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Choisir le type de document.
         /// </summary>
         public static string docType {
