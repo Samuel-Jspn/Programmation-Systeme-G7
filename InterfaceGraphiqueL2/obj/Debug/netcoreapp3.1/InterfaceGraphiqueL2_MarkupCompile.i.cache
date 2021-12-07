@@ -9,12 +9,21 @@ InterfaceGraphiqueL2
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+<<<<<<< HEAD
 C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\App.xaml
 4509396504
 
 151095372206
 193-1388920498
 HomePage.xaml;MainWindow.xaml;SavesPage.xaml;Settings.xaml;
+=======
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\App.xaml
+4-690866200
 
-True
+111266960928
+192-1533232326
+BusinessSoftware.xaml;HomePage.xaml;MainWindow.xaml;SavesPage.xaml;
+>>>>>>> GUI
+
+False
 
