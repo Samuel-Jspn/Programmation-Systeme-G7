@@ -22,7 +22,7 @@
             </Label.RenderTransform>
         </Label>
         <Label x:Name="LabelTargetPath" Content="{x:Static language:Lang.targetPath}" Margin="0,228,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.54" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button x:Name="btn_Save" Content="{x:Static language:Lang.saveButton}" Margin="306,300,306,0" VerticalAlignment="Top" Height="49" Click="btn_Save_Click" FontSize="14" Background="#FF0074FF" Foreground="White" FontWeight="Bold" ClickMode="Press"/>
+        <Button x:Name="btn_Save" Content="{x:Static language:Lang.saveButton}" Margin="306,300,306,0" VerticalAlignment="Top" Height="49" Click="btn_Save_Click" FontSize="14" Background="#FF0074FF" Foreground="White" FontWeight="Bold" ClickMode="Press" Cursor="Hand"/>
         <Label x:Name="LabelSaveType" Content="{x:Static language:Lang.saveType}" Margin="0,17,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="202"/>
 
         <CheckBox Name="CheckBoxFullBackup" Content="{x:Static language:Lang.full}" Margin="261,48,0,0" VerticalAlignment="Top" IsChecked="True" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="20"/>

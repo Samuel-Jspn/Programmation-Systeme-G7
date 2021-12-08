@@ -54,6 +54,7 @@ namespace InterfaceGraphiqueL2
             dailyLogModel.FileTransferTime = model.FileTransferTime;
             dailyLogModel.Timestamp = model.Timestamp;
             dailyLogModel.FileSize = model.FileSize;
+            dailyLogModel.EncryptInfo = model.EncryptInfo;
             dailyLogModel.createDailyLog(dailyLogModel);
 
             //variables for the stateLog
