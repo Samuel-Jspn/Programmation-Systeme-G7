@@ -18,7 +18,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Globalization;
-using Microsoft.WindowsAPICodePack.Dialogs;
 using Microsoft.Win32;
 
 
@@ -97,12 +96,12 @@ namespace InterfaceGraphiqueL2
         }
         private void btn_source_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new CommonOpenFileDialog();
-            dialog.IsFolderPicker = true;
-
-            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            Microsoft.Win32.OpenFileDialog openFileDlg = new Microsoft.Win32.OpenFileDialog();
+            Nullable<bool> result = openFileDlg.ShowDialog();
+            if (result == true)
             {
-                SelectedFolderPath = dialog.FileName;
+                TextBoxSourcePath.Text = openFileDlg.FileName;
+                //TextBlock1.Text = System.IO.File.ReadAllText(openFileDlg.FileName);
             }
         }
         private void btn_target_Click(object sender, RoutedEventArgs e)
