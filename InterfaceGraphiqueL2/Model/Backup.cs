@@ -31,6 +31,10 @@ namespace InterfaceGraphiqueL2
         private int totalFileToCopy;
         private string encryptInfo;
         private string softwareSociety;
+        public string flag;
+        public bool stopThread = false;
+        private static ManualResetEvent mre = new ManualResetEvent(false);
+
         #endregion
 
         #region GETER AND SETER
@@ -115,19 +119,33 @@ namespace InterfaceGraphiqueL2
             TotalFileToCopy = 0;
             EncryptInfo = "";
             SoftwareSociety = "";
+            flag = "debut";
+        }
+
+
+        public void runningSoftware()
+        {
+            while (flag == "debut")
+            {
+                if(Process.GetProcessesByName(softwareSociety).Length > 0)
+                {
+                    MessageBox.Show(InterfaceGraphiqueL2.Properties.Langs.Lang.backupStopped);
+                }
+                else
+                {
+                    //si le logiciel métier n'est pas allumé, on skip le waitOne() de createBackup
+                    mre.Set();
+                }
+
+            }
         }
 
         public void createBackup(string type, string encryptExtension, DailyLog dailyLogModel, StateLog stateLogModel)
         {
-            //-----------------Test thread------------------------------//
-            Thread softwareSocietyThread = new Thread(()=>EnterpriseSoftwareRunning(SoftwareSociety));
+            Thread softwareSocietyThread = new Thread(runningSoftware);
             softwareSocietyThread.Start();
-            //if (softwareSocietyThread == true)
-            //{
-            //    MessageBox.Show("pas de logiciel metier");
-            //}
-            //----------------------------------------------------------//
 
+            flag = "debut";
 
             State = "ACTIF";
             switch (type)
@@ -199,6 +217,8 @@ namespace InterfaceGraphiqueL2
                             string tempExtension = file.Name.Split(".").Last();
                             TotalFileToCopy++;
 
+                            mre.WaitOne();
+                            mre.Reset();
                             file.CopyTo(tempTargetPath, false);
 
                             //cryptage du fichier
@@ -230,6 +250,8 @@ namespace InterfaceGraphiqueL2
                     MessageBox.Show(InterfaceGraphiqueL2.Properties.Langs.Lang.differentialType);
                     break;
             }
+            MessageBox.Show(InterfaceGraphiqueL2.Properties.Langs.Lang.msgBackupDone);
+            flag = "fin";
         }
 
         public void encrypt(string pathFileToEncrypt, string pathTargetFile)
@@ -271,7 +293,7 @@ namespace InterfaceGraphiqueL2
         {
             if (Process.GetProcessesByName(nameSoftware).Length > 0)
             {
-                string message = "You have to close your enterprise software if you want to continue the backup.\n Do you want to close it ?";
+                string message = InterfaceGraphiqueL2.Properties.Langs.Lang.msgSoftwareRunning;
                 string caption = "EasySave";
                 var result = System.Windows.MessageBox.Show(message, caption,
                     System.Windows.MessageBoxButton.YesNo);
@@ -281,12 +303,12 @@ namespace InterfaceGraphiqueL2
                         Process[] proc = Process.GetProcessesByName(nameSoftware);
                         if (proc.Length == 0)
                         {
-                            System.Windows.MessageBox.Show("The software has been closed");
+                            System.Windows.MessageBox.Show(InterfaceGraphiqueL2.Properties.Langs.Lang.msgSoftwareClose);
                         }
                         else
                         {
                             proc[0].Kill();
-                            System.Windows.MessageBox.Show("The software has been closed");
+                            System.Windows.MessageBox.Show(InterfaceGraphiqueL2.Properties.Langs.Lang.msgSoftwareClose);
                         }
                         break;
                     case System.Windows.MessageBoxResult.No:
