@@ -27,18 +27,24 @@ Sur votre machine, il faut installer Visual studio et .NET (les liens sont en ha
 
 ## Utilisation
 
-Lors du lancement du programme, il vou sera demandé de choisir entre Français et Anglais.
-Par la suite il vous sera demandé d'entrer les informations nécessaire à la Sauvegarde.
+Vous pouvez basculer entre Anglais et Français à tout moment grâce aux drapeaux situés à gauche de l'interface.
+Dans les paramètres vous pouvez choisir le type de fichier à crypter (txt seulement actuellement).
+Définir un logiciel métier qui va bloquer les sauvegarde si il est lancé.
+
+→ Pour sauvegarder un fichier, vous pourrez choisir entre une sauvegazrde complète ou séquentielle.
+→ Sauvegarder un fichier ou un dossier.
+→ Sélectionner le chemin de source (fichier ou dossier) du document 
+→ Séléctionner le chemin de destination du document
 
 ### Backup_Infos
 
 L'utilisateur devra  remplir dans l'ordre :
 
-1. Fichier ou Dossier (à sauvegarder)
-2. Nom de la backup
-3. Lien du fichier ou dossier a sauvegarder
-4. Destination de la sauvegarde
-5. Type de sauvegarde (Full ou différentielle)
+1. Type de sauvegarde (Full ou différentielle)
+2. Fichier ou Dossier (à sauvegarder)
+3. Nom de la backup
+4. Lien du fichier ou dossier a sauvegarder
+5. Destination de la sauvegarde
 
 Une fois toutes ces informations rentrées, le programme effectue la sauvegarde puis vous notifie du succès ou non de cette dernière.
 
