@@ -44,22 +44,51 @@ Une fois toutes ces informations rentrées, le programme effectue la sauvegarde 
 
 # Release_Notes
 
-## [2.1] - 23-11-2021
+## [2.2] - 13-12-2021
+### Modification
+- Modification checkBox. permet une seule CheckBox séléctionnée
+- Ajout choix Dossier
+- Chemin à séléctionner adaptatif en fonction de la checkBox cochée.
+
+## [2.1] - 08-12-2021
+### Ajout
+- Bouton OpenFile, permet la selection d'un fichier sans rentrer le chemin à la main
+
+## [2.0] - 06-12-2021
+### Ajout
+- Release Version 2.0
+
+## [1.3] - 05-12-2021
+### Modification
+- Modification infos des logs
+- Modification des boutons sur l'écran principal
+
+### Ajout
+- Ajout des pages paramètres, page principale, page de sauvegardes
+
+## [1.2] - 04-12-2021
+### Ajout
+- Logiciel de Cryptographie
+- Menu principal V1
+- Multilingue complet sur les pages existantes (avec les drapeaux)
+
+## [1.1] - 23-11-2021
 ### Modification
 - Finalisation des logs d'état et journaliers
 
-## [2.0] - 23-11-2021
+## [1.0] - 23-11-2021
 ### Ajout
+- Release Version 1.0
 - Logs d'état et journaliers
 - Ajout Multilingue (Anglais - Français)
 
-## [1.2] - 22-11-2021
+## [0.2] - 22-11-2021
 ### Ajout
 - Recupération de l'extension de fichier
 - Ajout fonctionnalité de sauvegarde de **dossier**
 - Ajout d'une limite du nombre de sauvegardes
 
-## [1.1] - 22-11-2021
+## [0.1] - 22-11-2021
 ### Ajout
 - Verification chemin d'origine et de destination
 - Choix du type de sauvegarde
