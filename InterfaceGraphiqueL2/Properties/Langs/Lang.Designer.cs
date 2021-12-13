@@ -97,6 +97,15 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous n&apos;avez pas choisi le type de document à sauvegarder.
+        /// </summary>
+        public static string docTypeError {
+            get {
+                return ResourceManager.GetString("docTypeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Choisir le type de fichier à crypter.
         /// </summary>
         public static string extension {

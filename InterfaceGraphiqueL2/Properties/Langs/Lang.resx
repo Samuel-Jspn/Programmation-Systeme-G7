@@ -129,6 +129,9 @@
   <data name="docType" xml:space="preserve">
     <value>Choisir le type de document</value>
   </data>
+  <data name="docTypeError" xml:space="preserve">
+    <value>Vous n'avez pas choisi le type de document à sauvegarder</value>
+  </data>
   <data name="extension" xml:space="preserve">
     <value>Choisir le type de fichier à crypter</value>
   </data>

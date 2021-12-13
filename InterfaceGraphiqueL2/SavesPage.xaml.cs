@@ -96,24 +96,68 @@ namespace InterfaceGraphiqueL2
         }
         private void btn_source_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.OpenFileDialog openFileDlg = new Microsoft.Win32.OpenFileDialog();
-            Nullable<bool> result = openFileDlg.ShowDialog();
-            if (result == true)
+            if (CheckBoxFile.IsChecked == true)
             {
-                TextBoxSourcePath.Text = openFileDlg.FileName;
-                //TextBlock1.Text = System.IO.File.ReadAllText(openFileDlg.FileName);
+                Microsoft.Win32.OpenFileDialog openFileDlg = new Microsoft.Win32.OpenFileDialog();
+                Nullable<bool> result = openFileDlg.ShowDialog();
+                if (result == true)
+                {
+                    TextBoxSourcePath.Text = openFileDlg.FileName;
+                    //TextBlock1.Text = System.IO.File.ReadAllText(openFileDlg.FileName);
+                }
             }
-        }
-        private void btn_target_Click(object sender, RoutedEventArgs e)
-        {
-            Microsoft.Win32.OpenFileDialog openFileDlg = new Microsoft.Win32.OpenFileDialog();
-            Nullable<bool> result = openFileDlg.ShowDialog();
+            else if (CheckBoxDir.IsChecked == true)
+            {
+                Ookii.Dialogs.Wpf.VistaFolderBrowserDialog openDlg = new Ookii.Dialogs.Wpf.VistaFolderBrowserDialog();
+            Nullable<bool> result = openDlg.ShowDialog();
             if (result == true)
             {
-                TextBoxTargetPath.Text = openFileDlg.FileName;
-                //TextBlock1.Text = System.IO.File.ReadAllText(openFileDlg.FileName);
+                TextBoxSourcePath.Text = openDlg.SelectedPath;
+            }
+            }
+            else
+            {
+                MessageBox.Show(Lang.docTypeError);
             }
         }
 
+        private void btn_target_Click(object sender, RoutedEventArgs e)
+        {
+            Ookii.Dialogs.Wpf.VistaFolderBrowserDialog openDlg = new Ookii.Dialogs.Wpf.VistaFolderBrowserDialog();
+            Nullable<bool> result = openDlg.ShowDialog();
+            if (result == true)
+            {
+                TextBoxTargetPath.Text = openDlg.SelectedPath;
+            }
+        }
+
+        private void CheckBoxFullBackup_Checked(object sender, RoutedEventArgs e)
+        {
+            if (CheckBoxFullBackup.IsChecked == true)
+            {
+                CheckBoxDifferentialBackup.IsChecked = false;
+            }
+        }
+        private void CheckBoxDifferentialBackup_Checked(object sender, RoutedEventArgs e)
+        {
+            if (CheckBoxDifferentialBackup.IsChecked == true)
+            {
+                CheckBoxFullBackup.IsChecked = false;
+            }
+        }
+        private void CheckBoxFile_Checked(object sender, RoutedEventArgs e)
+        {
+            if (CheckBoxFile.IsChecked == true)
+            {
+                CheckBoxDir.IsChecked = false;
+            }
+        }
+        private void CheckBoxDir_Checked(object sender, RoutedEventArgs e)
+        {
+            if (CheckBoxDir.IsChecked == true)
+            {
+                CheckBoxFile.IsChecked = false;
+            }
+        }
     }
 }

@@ -129,6 +129,9 @@
   <data name="docType" xml:space="preserve">
     <value>Choose file type</value>
   </data>
+  <data name="docTypeError" xml:space="preserve">
+    <value>You didn't choose the type of document you want to save</value>
+  </data>
   <data name="extension" xml:space="preserve">
     <value>Choose the type of file you want to encrypt</value>
   </data>
