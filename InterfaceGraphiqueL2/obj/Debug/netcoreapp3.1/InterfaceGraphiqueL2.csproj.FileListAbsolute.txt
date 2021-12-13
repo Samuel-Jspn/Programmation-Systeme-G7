@@ -70,3 +70,4 @@ C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programm
 C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\Settings.g.cs
 C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\BusinessSoftware.baml
 C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\Settings.baml
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\bin\Debug\netcoreapp3.1\Ookii.Dialogs.Wpf.dll
