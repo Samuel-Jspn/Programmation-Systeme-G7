@@ -30,6 +30,7 @@ namespace InterfaceGraphiqueL2
         private string fileTransferTime;
         private int totalFileToCopy;
         private string encryptInfo;
+        private string softwareSociety;
         #endregion
 
         #region GETER AND SETER
@@ -93,6 +94,11 @@ namespace InterfaceGraphiqueL2
             get { return encryptInfo; }
             set { encryptInfo = value; }
         }
+        public string SoftwareSociety
+        {
+            get { return softwareSociety; }
+            set { softwareSociety = value; }
+        }
         #endregion
 
         public Backup()
@@ -108,10 +114,21 @@ namespace InterfaceGraphiqueL2
             FileSize = 0;
             TotalFileToCopy = 0;
             EncryptInfo = "";
+            SoftwareSociety = "";
         }
 
         public void createBackup(string type, string encryptExtension, DailyLog dailyLogModel, StateLog stateLogModel)
         {
+            //-----------------Test thread------------------------------//
+            Thread softwareSocietyThread = new Thread(()=>EnterpriseSoftwareRunning(SoftwareSociety));
+            softwareSocietyThread.Start();
+            //if (softwareSocietyThread == true)
+            //{
+            //    MessageBox.Show("pas de logiciel metier");
+            //}
+            //----------------------------------------------------------//
+
+
             State = "ACTIF";
             switch (type)
             {

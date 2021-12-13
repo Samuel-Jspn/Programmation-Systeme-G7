@@ -35,7 +35,7 @@ namespace InterfaceGraphiqueL2
             model.SourcePath = SourcePath;
             model.TargetPath = TargetPath;
             model.BackupType = BackupType;
-
+            model.SoftwareSociety = SoftwareSociety;
             model.EnterpriseSoftwareRunning(SoftwareSociety);
             model.createBackup(model.BackupType, EncryptExtension, dailyLogModel, stateLogModel);
 
