@@ -61,6 +61,15 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à L&apos;application est déjà en cours d&apos;éxecution.
+        /// </summary>
+        public static string appRunning {
+            get {
+                return ResourceManager.GetString("appRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Logiciels Métier.
         /// </summary>
         public static string businessSoftware {

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="appRunning" xml:space="preserve">
+    <value>L'application est déjà en cours d'éxecution</value>
+  </data>
   <data name="businessSoftware" xml:space="preserve">
     <value>Logiciels Métier</value>
   </data>

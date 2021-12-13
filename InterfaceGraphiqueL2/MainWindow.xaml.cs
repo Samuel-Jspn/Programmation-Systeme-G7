@@ -22,6 +22,12 @@ namespace InterfaceGraphiqueL2
         public Controller controller;
         public MainWindow()
         {
+            Process[] process = Process.GetProcessesByName("InterfaceGraphiqueL2");
+            if (process.Length != 1)
+            {
+                MessageBox.Show(Lang.appRunning);
+                Environment.Exit(0);
+            }
             controller = new Controller();
             InitializeComponent();
             Main.Content = new HomePage();
@@ -44,6 +50,9 @@ namespace InterfaceGraphiqueL2
             Properties.Settings.Default.Save();
             RestartApp();
         }
+
+
+
 
         private void RestartApp()
         {
