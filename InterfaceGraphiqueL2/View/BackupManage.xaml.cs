@@ -17,9 +17,21 @@ namespace InterfaceGraphiqueL2.View
     /// </summary>
     public partial class BackupManage : Window
     {
-        public BackupManage()
+        public Controller Controller { get; set; }
+        public BackupManage(Controller controller)
         {
+            this.Controller = controller;
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Controller.IsStopBtnPress = true;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Controller.IsStopBtnPress = false;
         }
     }
 }

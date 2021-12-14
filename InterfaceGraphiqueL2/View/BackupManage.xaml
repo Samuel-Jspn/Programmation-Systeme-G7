@@ -8,8 +8,11 @@
         mc:Ignorable="d"
         Title="BackupManage" Height="450" Width="800">
     <Grid>
-        <ProgressBar Margin="236,89,237,314"/>
+        <ProgressBar Margin="236,89,237,292"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="479,160,0,0" VerticalAlignment="Top"/>
         <Label Content="{x:Static language:Lang.progressBarLabel}" HorizontalAlignment="Left" Margin="263,160,0,0" VerticalAlignment="Top"/>
+        <Button Content="Pause" HorizontalAlignment="Left" Margin="263,287,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Reprendre" HorizontalAlignment="Center" Margin="0,287,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button Content="Arrêt" HorizontalAlignment="Left" Margin="498,287,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

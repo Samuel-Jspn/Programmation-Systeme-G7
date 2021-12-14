@@ -19,6 +19,7 @@ using System.Linq;
 using System.Reflection;
 using System.Globalization;
 using Microsoft.Win32;
+using InterfaceGraphiqueL2.View;
 
 
 namespace InterfaceGraphiqueL2
@@ -93,6 +94,9 @@ namespace InterfaceGraphiqueL2
             }
 
             Controller.updateBackupInfo(DirOrFile, Name, SourcePath, TargetPath, BackupType);
+            //ouverture de la page de suivi de la sauvegarde
+            BackupManage backupManage = new BackupManage(Controller);
+            backupManage.Show();
         }
         private void btn_source_Click(object sender, RoutedEventArgs e)
         {

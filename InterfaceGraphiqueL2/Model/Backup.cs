@@ -34,7 +34,8 @@ namespace InterfaceGraphiqueL2
         public string flag;
         public bool stopThread = false;
         private static ManualResetEvent mre = new ManualResetEvent(false);
-
+        private static ManualResetEvent mreBtn = new ManualResetEvent(false);
+        public bool IsStopBtnPress { get; set; }
         #endregion
 
         #region GETER AND SETER
@@ -120,9 +121,33 @@ namespace InterfaceGraphiqueL2
             EncryptInfo = "";
             SoftwareSociety = "";
             flag = "debut";
+            IsStopBtnPress = false;
         }
 
+        //Check if stop button is clicked or not
+        public void checkStopBackup()
+        {
+            while (flag == "debut")
+            {
+                if (IsStopBtnPress == true)
+                {
+                    MessageBox.Show("Backup Suspend");
 
+                    //Si on appuie sur le bouton reprendre la sauvegarde
+                    if(IsStopBtnPress == false)
+                    {
+                        mreBtn.Set();
+                    }
+                }
+                else
+                {
+                    //si on n'appuie pas pour stopper la sauvegarde on arrête pas (on skip le waitOne())
+                    mreBtn.Set();
+                }
+            }
+        }
+
+        //Check if software society is openned during the backup
         public void runningSoftware()
         {
             while (flag == "debut")
@@ -140,10 +165,20 @@ namespace InterfaceGraphiqueL2
             }
         }
 
+        //Call createBackup in a thread
+        public void backupThread(DailyLog dailyLogModel, StateLog stateLogModel)
+        {
+            Thread backupThread = new Thread(() => createBackup(BackupType, EncryptInfo, dailyLogModel, stateLogModel));
+            backupThread.Start();
+        }
+
         public void createBackup(string type, string encryptExtension, DailyLog dailyLogModel, StateLog stateLogModel)
         {
             Thread softwareSocietyThread = new Thread(runningSoftware);
             softwareSocietyThread.Start();
+
+            Thread checkStopBtnThread = new Thread(checkStopBackup);
+            checkStopBtnThread.Start();
 
             flag = "debut";
 
@@ -219,6 +254,10 @@ namespace InterfaceGraphiqueL2
 
                             mre.WaitOne();
                             mre.Reset();
+
+                            mreBtn.WaitOne();
+                            mreBtn.Reset();
+
                             file.CopyTo(tempTargetPath, false);
 
                             //cryptage du fichier
