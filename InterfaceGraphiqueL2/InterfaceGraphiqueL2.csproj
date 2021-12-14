@@ -21,6 +21,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms.VisualStudio.15.0">
+      <HintPath>..\..\..\..\..\..\..\..\..\testBackup\System.Windows.Forms.VisualStudio.15.0.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="close.png" />
     <Resource Include="flag_en.png" />
     <Resource Include="flag_fr.png" />

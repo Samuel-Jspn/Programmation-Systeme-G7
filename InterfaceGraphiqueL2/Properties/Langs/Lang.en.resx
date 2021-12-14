@@ -166,6 +166,9 @@
     <value>You have to close your enterprise software if you want to continue the backup. 
 Do you want to close it ?</value>
   </data>
+  <data name="progressBarLabel" xml:space="preserve">
+    <value>Backup's progression : </value>
+  </data>
   <data name="saveButton" xml:space="preserve">
     <value>Save</value>
   </data>

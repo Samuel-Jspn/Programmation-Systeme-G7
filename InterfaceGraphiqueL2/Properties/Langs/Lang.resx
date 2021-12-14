@@ -190,4 +190,7 @@ Voulez-vous fermer le logiciel métier ?</value>
   <data name="welcome" xml:space="preserve">
     <value>Bienvenue sur Easy Save Une application Prosoft</value>
   </data>
+  <data name="progressBarLabel" xml:space="preserve">
+    <value>Progression de la sauvegarde : </value>
+  </data>
 </root>
