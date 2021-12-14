@@ -70,6 +70,15 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à La sauvegarde a été stoppé, veulliez fermer le logiciel métier pour reprendre la sauvegarde.
+        /// </summary>
+        public static string backupStopped {
+            get {
+                return ResourceManager.GetString("backupStopped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Logiciels Métier.
         /// </summary>
         public static string businessSoftware {
@@ -165,6 +174,34 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         public static string manage {
             get {
                 return ResourceManager.GetString("manage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Sauvegarde faite.
+        /// </summary>
+        public static string msgBackupDone {
+            get {
+                return ResourceManager.GetString("msgBackupDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le logiciel métier a été fermé..
+        /// </summary>
+        public static string msgSoftwareClose {
+            get {
+                return ResourceManager.GetString("msgSoftwareClose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous devez fermer le logiciel métier pour continuer la sauvegarde.
+        ///Voulez-vous fermer le logiciel métier ?.
+        /// </summary>
+        public static string msgSoftwareRunning {
+            get {
+                return ResourceManager.GetString("msgSoftwareRunning", resourceCulture);
             }
         }
         

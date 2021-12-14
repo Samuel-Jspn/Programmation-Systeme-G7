@@ -29,13 +29,13 @@ namespace InterfaceGraphiqueL2
         public void updateBackupInfo(string DirOrFile, string Name, string SourcePath, string TargetPath, string BackupType)
         {
             //variable for the backupModel
+            model.SoftwareSociety = SoftwareSociety;
             model.DirOrFile = DirOrFile;
             model.Extension = SourcePath.Split(".").Last();
             model.Name = Name;
             model.SourcePath = SourcePath;
             model.TargetPath = TargetPath;
             model.BackupType = BackupType;
-            model.SoftwareSociety = SoftwareSociety;
             model.EnterpriseSoftwareRunning(SoftwareSociety);
             model.createBackup(model.BackupType, EncryptExtension, dailyLogModel, stateLogModel);
 
