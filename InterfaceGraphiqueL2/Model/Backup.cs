@@ -11,6 +11,7 @@ using System.Diagnostics;
 using InterfaceGraphiqueL2.Model;
 using System.Linq;
 using System.Windows;
+using InterfaceGraphiqueL2.View;
 
 
 namespace InterfaceGraphiqueL2
@@ -35,14 +36,16 @@ namespace InterfaceGraphiqueL2
         public bool stopThread = false;
         private static ManualResetEvent mre = new ManualResetEvent(false);
         private static ManualResetEvent mreBtn = new ManualResetEvent(false);
+        public BackupManage backupManage { get; set; }
         public bool IsStopBtnPress { get; set; }
+        public int percentage { get; set; }
         #endregion
 
         #region GETER AND SETER
         public string DirOrFile
         {
             get { return dirOrFile; }
-            set { dirOrFile = value; }
+            set => dirOrFile = value;
         }
         public string Extension
         {
@@ -122,6 +125,7 @@ namespace InterfaceGraphiqueL2
             SoftwareSociety = "";
             flag = "debut";
             IsStopBtnPress = false;
+            percentage = 0;            
         }
 
         //Check if stop button is clicked or not
@@ -172,6 +176,7 @@ namespace InterfaceGraphiqueL2
 
         public void createBackup(string type, string encryptExtension, DailyLog dailyLogModel, StateLog stateLogModel)
         {
+            //Thread pour détecter si on stoppe ou logiciel métier
             Thread softwareSocietyThread = new Thread(runningSoftware);
             softwareSocietyThread.Start();
 
@@ -238,12 +243,18 @@ namespace InterfaceGraphiqueL2
                         //get the file in the directory and copy them to the new location
                         FileInfo[] files = dir.GetFiles();
 
+                        //Nb Total fichier pour pourcentage 
+                        int nbFileTot = files.Length;
+                        int nbFile = 0;
+
                         DateTime start = DateTime.Now;
                         Timestamp = start;
 
                         DateTime startEncrypt = DateTime.Now;
                         foreach (FileInfo file in files)
                         {
+                            nbFile += 1;
+
                             FileSize += file.Length;
                             string tempTargetPath = TargetPath + @"\" + Name + @"\" + file.Name;
                             string tempSourcePath = SourcePath + @"\" + file.Name;
@@ -263,6 +274,20 @@ namespace InterfaceGraphiqueL2
                             {
                                 encrypt(tempSourcePath, tempTargetPath);
                             }
+
+                            float percentage = (100*nbFile) / nbFileTot;
+                            //Faire évoluer la barre de progression
+                            new Thread(() =>
+                            {
+
+                                Thread.CurrentThread.IsBackground = false;
+                                Application.Current.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background, (SendOrPostCallback)delegate {
+
+                                    backupManage.ProgressBar.Value = percentage;
+                                    backupManage.percentgeLabel.Content = percentage+"%";
+
+                                }, null);
+                            }).Start();
                         }
                         DateTime stopEncrypt = DateTime.Now;
                         string encryptTime = (stopEncrypt - startEncrypt).ToString();
@@ -289,6 +314,18 @@ namespace InterfaceGraphiqueL2
             }
             MessageBox.Show(InterfaceGraphiqueL2.Properties.Langs.Lang.msgBackupDone);
             flag = "fin";
+
+            //thread pour fermer la fenetre de gestion sauvegarde
+            new Thread(() =>
+            {
+
+                Thread.CurrentThread.IsBackground = false;
+                Application.Current.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background, (SendOrPostCallback)delegate {
+
+                    backupManage.Close();
+
+                }, null);
+            }).Start();
         }
 
         public void encrypt(string pathFileToEncrypt, string pathTargetFile)

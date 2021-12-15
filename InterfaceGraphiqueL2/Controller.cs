@@ -7,6 +7,8 @@ using System.Threading;
 using System.Globalization;
 using System.Linq;
 using InterfaceGraphiqueL2.Model;
+using InterfaceGraphiqueL2.View;
+using System.Windows.Threading;
 
 namespace InterfaceGraphiqueL2
 {
@@ -16,9 +18,12 @@ namespace InterfaceGraphiqueL2
         private Backup model;
         private DailyLog dailyLogModel;
         private StateLog stateLogModel;
+        public BackupManage backupManageView;
         public string EncryptExtension { get; set; }
         public string SoftwareSociety { get; set; }
         public bool IsStopBtnPress { get; set; }
+        public string flagBackup { get; set; }
+        public int percentage { get; set; }
         #endregion
         public Controller()
         {
@@ -37,6 +42,7 @@ namespace InterfaceGraphiqueL2
             model.SourcePath = SourcePath;
             model.TargetPath = TargetPath;
             model.BackupType = BackupType;
+            model.backupManage = backupManageView;
 
             //variable for the dailyLogModel
             if (model.DirOrFile == "File")
@@ -79,21 +85,25 @@ namespace InterfaceGraphiqueL2
             }
 
 
-            //checker ça en boucle
+            //checker si on clique sur stopper sauvegarde ou ouverture logiciel métier en boucle durant la sauvegarde
             model.IsStopBtnPress = IsStopBtnPress;
             model.EnterpriseSoftwareRunning(SoftwareSociety);
 
-
-            //model.createBackup(model.BackupType, EncryptExtension, dailyLogModel, stateLogModel);
+            //creation DailyLog, StateLog, et sauvegarde
             dailyLogModel.createDailyLog(dailyLogModel);
             stateLogModel.createStateLog(stateLogModel);
             Thread checkStopBtnThread = new Thread(checkStopBtn);
             checkStopBtnThread.Start();
             model.backupThread(dailyLogModel, stateLogModel);
-            
         }
 
-        //Check en continue grâce à son appel dans un thread si on appuie sur le btn stop sauvegarde, récupération de la valeur de la vue pour la passer au controller
+        //test ProgressBar
+        public void updatePercentage(int percentageModel)
+        {
+            backupManageView.SetProgressBar(percentage);
+        }
+
+        //Check en continue si on appuie sur le btn stop sauvegarde, récupération de la valeur de la vue pour la passer au controller
         public void checkStopBtn()
         {
             while (true)
@@ -108,5 +118,18 @@ namespace InterfaceGraphiqueL2
                 }
             }
         }
+
+        //Check en continue si on appuie sur on arrive à la fin de la sauvegarde ou pas
+        //public void checkBackupFlag()
+        //{
+
+        //    while (true)
+        //    {
+        //        if (model.flag == "fin")
+        //        {
+        //            backupManageView.closePage();
+        //        }
+        //    }
+        //}
     }
 }

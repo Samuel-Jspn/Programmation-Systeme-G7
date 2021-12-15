@@ -93,10 +93,12 @@ namespace InterfaceGraphiqueL2
                 BackupType = "differential";
             }
 
-            Controller.updateBackupInfo(DirOrFile, Name, SourcePath, TargetPath, BackupType);
             //ouverture de la page de suivi de la sauvegarde
             BackupManage backupManage = new BackupManage(Controller);
             backupManage.Show();
+            Controller.backupManageView = backupManage;
+
+            Controller.updateBackupInfo(DirOrFile, Name, SourcePath, TargetPath, BackupType);
         }
         private void btn_source_Click(object sender, RoutedEventArgs e)
         {

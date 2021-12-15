@@ -35,5 +35,15 @@ namespace InterfaceGraphiqueL2.View
             Controller.IsStopBtnPress = false;
             backupProgressInfo.Content = InterfaceGraphiqueL2.Properties.Langs.Lang.backupInProgress;
         }
+
+        //public void closePage()
+        //{
+        //    this.Hide();
+        //}
+
+        public void SetProgressBar(int percentage)
+        {
+            ProgressBar.Value = percentage;
+        }
     }
 }
