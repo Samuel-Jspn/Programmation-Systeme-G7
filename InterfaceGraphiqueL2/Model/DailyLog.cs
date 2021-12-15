@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 using System.IO;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace InterfaceGraphiqueL2.Model
 {
@@ -58,10 +60,13 @@ namespace InterfaceGraphiqueL2.Model
 
         public void createDailyLog(DailyLog dailyLog)
         {
-            string jsonSerializeObj = JsonConvert.SerializeObject(dailyLog, Formatting.Indented);
-          
+            string jsonSerializeObj = JsonConvert.SerializeObject(dailyLog, Newtonsoft.Json.Formatting.Indented);
             Directory.CreateDirectory(@"C:\testBackup\DailyLogs");
             File.AppendAllText(@"C:\testBackup\DailyLogs\DailyLog.json", jsonSerializeObj);
+
+            XNode node = JsonConvert.DeserializeXNode(jsonSerializeObj, "Root");
+            //string xmlLog = doc.ToString();
+            File.AppendAllText(@"C:\testBackup\DailyLogs\DailyLog.xml", node.ToString());
         }
     }
 }
