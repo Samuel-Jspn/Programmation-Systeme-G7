@@ -11,6 +11,8 @@ using System.Diagnostics;
 using InterfaceGraphiqueL2.Model;
 using System.Linq;
 using System.Windows;
+using InterfaceGraphiqueL2.Properties.Langs;
+
 
 
 namespace InterfaceGraphiqueL2
@@ -161,40 +163,49 @@ namespace InterfaceGraphiqueL2
                         TotalFileToCopy = 1;
 
                         //backup
-                        File.Copy(SourcePath, path, true);
-                        DateTime stop = DateTime.Now;
-
-                        string encryptTime = "";
-
-                        //cryptage du fichier
-                        if (encryptExtension == Extension)
+                        FileInfo file = new FileInfo(SourcePath);
+                        if (file.Length > 1000000000)
                         {
-                            DateTime startEncrypt = DateTime.Now;
-                            encrypt(sourcePath, path);
-                            DateTime stopEncrypt = DateTime.Now;
-                            encryptTime = (stopEncrypt - startEncrypt).ToString();
+                            MessageBox.Show(Lang.tooBig);
+                            Environment.Exit(0);
                         }
                         else
                         {
-                            encryptTime = "0";
-                        }
+                            File.Copy(SourcePath, path, true);
+                            DateTime stop = DateTime.Now;
 
-                        //info temps cryptage pour DailyLogs
-                        if (encryptTime == "0")
-                        {
-                            encryptInfo = "Pas de cryptage";
-                        }
-                        else if (encryptTime != "0")
-                        {
-                            EncryptInfo = "Cryptage en "+ encryptTime +" millisecondes";
-                        }
+                            string encryptTime = "";
 
-                        //recup copy time
-                        FileTransferTime = (stop - start).ToString();
+                            //cryptage du fichier
+                            if (encryptExtension == Extension)
+                            {
+                                DateTime startEncrypt = DateTime.Now;
+                                encrypt(sourcePath, path);
+                                DateTime stopEncrypt = DateTime.Now;
+                                encryptTime = (stopEncrypt - startEncrypt).ToString();
+                            }
+                            else
+                            {
+                                encryptTime = "0";
+                            }
 
-                        //recup infos log
-                        FileInfo file = new FileInfo(path);
-                        FileSize = file.Length;
+                            //info temps cryptage pour DailyLogs
+                            if (encryptTime == "0")
+                            {
+                                encryptInfo = "Pas de cryptage";
+                            }
+                            else if (encryptTime != "0")
+                            {
+                                EncryptInfo = "Cryptage en " + encryptTime + " millisecondes";
+                            }
+
+                            //recup copy time
+                            FileTransferTime = (stop - start).ToString();
+
+                            //recup infos log
+                            file = new FileInfo(path);
+                            FileSize = file.Length;
+                        }
                     }
                     else if (DirOrFile == "Directory")
                     {
@@ -209,7 +220,20 @@ namespace InterfaceGraphiqueL2
                         Timestamp = start;
 
                         DateTime startEncrypt = DateTime.Now;
+
                         foreach (FileInfo file in files)
+                        {
+                            FileSize += file.Length;
+
+                        }
+                        if (FileSize > 1000000000)
+                        {
+                            MessageBox.Show(Lang.tooBig);
+                            Environment.Exit(0);
+                        }
+                        else
+                        { 
+                            foreach (FileInfo file in files)
                         {
                             FileSize += file.Length;
                             string tempTargetPath = TargetPath + @"\" + Name + @"\" + file.Name;
@@ -226,6 +250,7 @@ namespace InterfaceGraphiqueL2
                             {
                                 encrypt(tempSourcePath, tempTargetPath);
                             }
+                        }
                         }
                         DateTime stopEncrypt = DateTime.Now;
                         string encryptTime = (stopEncrypt - startEncrypt).ToString();

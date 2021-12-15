@@ -278,6 +278,15 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Sauvegarde trop volumineuse.
+        /// </summary>
+        public static string tooBig {
+            get {
+                return ResourceManager.GetString("tooBig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Bienvenue sur Easy Save Une application Prosoft.
         /// </summary>
         public static string welcome {

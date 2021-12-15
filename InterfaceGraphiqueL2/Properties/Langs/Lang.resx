@@ -193,4 +193,7 @@ Voulez-vous fermer le logiciel métier ?</value>
   <data name="progressBarLabel" xml:space="preserve">
     <value>Progression de la sauvegarde : </value>
   </data>
+  <data name="tooBig" xml:space="preserve">
+    <value>Sauvegarde trop volumineuse</value>
+  </data>
 </root>
