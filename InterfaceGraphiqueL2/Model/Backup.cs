@@ -202,61 +202,41 @@ namespace InterfaceGraphiqueL2
 
                         //backup
                         FileInfo file = new FileInfo(SourcePath);
-                        if (file.Length > 5000000000)
+                        File.Copy(SourcePath, path, true);
+
+                        DateTime stop = DateTime.Now;
+
+                        string encryptTime = "";
+
+                        //cryptage du fichier
+                        if (encryptExtension == Extension)
                         {
-                            MessageBox.Show(Lang.tooBig);
-                            Environment.Exit(0);
+                            DateTime startEncrypt = DateTime.Now;
+                            encrypt(sourcePath, path);
+                            DateTime stopEncrypt = DateTime.Now;
+                            encryptTime = (stopEncrypt - startEncrypt).ToString();
                         }
                         else
                         {
-                            File.Copy(SourcePath, path, true);
-                            //Faire évoluer la barre de progression
-                            new Thread(() =>
-                            {
-
-                                Thread.CurrentThread.IsBackground = false;
-                                Application.Current.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background, (SendOrPostCallback)delegate {
-
-                                    backupManage.ProgressBar.Value = 100;
-                                    backupManage.percentgeLabel.Content = 100 + "%";
-
-                                }, null);
-                            }).Start();
-
-                            DateTime stop = DateTime.Now;
-
-                            string encryptTime = "";
-
-                            //cryptage du fichier
-                            if (encryptExtension == Extension)
-                            {
-                                DateTime startEncrypt = DateTime.Now;
-                                encrypt(sourcePath, path);
-                                DateTime stopEncrypt = DateTime.Now;
-                                encryptTime = (stopEncrypt - startEncrypt).ToString();
-                            }
-                            else
-                            {
-                                encryptTime = "0";
-                            }
-
-                            //info temps cryptage pour DailyLogs
-                            if (encryptTime == "0")
-                            {
-                                encryptInfo = "Pas de cryptage";
-                            }
-                            else if (encryptTime != "0")
-                            {
-                                EncryptInfo = "Cryptage en " + encryptTime + " millisecondes";
-                            }
-
-                            //recup copy time
-                            FileTransferTime = (stop - start).ToString();
-
-                            //recup infos log
-                            file = new FileInfo(path);
-                            FileSize = file.Length;
+                            encryptTime = "0";
                         }
+
+                        //info temps cryptage pour DailyLogs
+                        if (encryptTime == "0")
+                        {
+                            encryptInfo = "Pas de cryptage";
+                        }
+                        else if (encryptTime != "0")
+                        {
+                            EncryptInfo = "Cryptage en " + encryptTime + " millisecondes";
+                        }
+
+                        //recup copy time
+                        FileTransferTime = (stop - start).ToString();
+
+                        //recup infos log
+                        file = new FileInfo(path);
+                        FileSize = file.Length;
                     }
                     else if (DirOrFile == "Directory")
                     {
@@ -276,18 +256,18 @@ namespace InterfaceGraphiqueL2
 
                         DateTime startEncrypt = DateTime.Now;
 
-                        foreach (FileInfo file in files)
-                        {
-                            FileSize += file.Length;
+                        //foreach (FileInfo file in files)
+                        //{
+                        //    FileSize += file.Length;
 
-                        }
-                        if (FileSize > 5000000000)
-                        {
-                            MessageBox.Show(Lang.tooBig);
-                            Environment.Exit(0);
-                        }
-                        else
-                        { 
+                        //}
+                        //if (FileSize > 5000000000)
+                        //{
+                        //    MessageBox.Show(Lang.tooBig);
+                        //    Environment.Exit(0);
+                        //}
+                        //else
+                        //{ 
                             foreach (FileInfo file in files)
                             {
                                 nbFile += 1;
@@ -330,7 +310,7 @@ namespace InterfaceGraphiqueL2
                                     }, null);
                                 }).Start();
                             }
-                        }
+                        //}
                         DateTime stopEncrypt = DateTime.Now;
                         string encryptTime = (stopEncrypt - startEncrypt).ToString();
                         //info temps cryptage pour DailyLogs
@@ -347,8 +327,21 @@ namespace InterfaceGraphiqueL2
                         
                         //recup copy time
                         FileTransferTime = (stop - start).ToString();
+
+                        //thread pour fermer la fenetre de gestion sauvegarde
+                        new Thread(() =>
+                        {
+
+                            Thread.CurrentThread.IsBackground = false;
+                            Application.Current.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background, (SendOrPostCallback)delegate {
+
+                                backupManage.Close();
+
+                            }, null);
+                        }).Start();
                     }
                     break;
+
                 case "differential":
                     //MessageBox.Show("differential backup not available yet");
                     MessageBox.Show(InterfaceGraphiqueL2.Properties.Langs.Lang.differentialType);
@@ -357,17 +350,17 @@ namespace InterfaceGraphiqueL2
             MessageBox.Show(InterfaceGraphiqueL2.Properties.Langs.Lang.msgBackupDone);
             flag = "fin";
 
-            //thread pour fermer la fenetre de gestion sauvegarde
-            new Thread(() =>
-            {
+            ////thread pour fermer la fenetre de gestion sauvegarde
+            //new Thread(() =>
+            //{
 
-                Thread.CurrentThread.IsBackground = false;
-                Application.Current.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background, (SendOrPostCallback)delegate {
+            //    Thread.CurrentThread.IsBackground = false;
+            //    Application.Current.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background, (SendOrPostCallback)delegate {
 
-                    backupManage.Close();
+            //        backupManage.Close();
 
-                }, null);
-            }).Start();
+            //    }, null);
+            //}).Start();
         }
 
         public void encrypt(string pathFileToEncrypt, string pathTargetFile)
