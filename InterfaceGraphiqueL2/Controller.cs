@@ -36,6 +36,7 @@ namespace InterfaceGraphiqueL2
         {
             //variable for the backupModel
             model.SoftwareSociety = SoftwareSociety;
+            model.EncryptInfo = EncryptExtension;
             model.DirOrFile = DirOrFile;
             model.Extension = SourcePath.Split(".").Last();
             model.Name = Name;

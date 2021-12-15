@@ -202,7 +202,7 @@ namespace InterfaceGraphiqueL2
 
                         //backup
                         FileInfo file = new FileInfo(SourcePath);
-                        if (file.Length > 1000000000)
+                        if (file.Length > 5000000000)
                         {
                             MessageBox.Show(Lang.tooBig);
                             Environment.Exit(0);
@@ -210,6 +210,19 @@ namespace InterfaceGraphiqueL2
                         else
                         {
                             File.Copy(SourcePath, path, true);
+                            //Faire évoluer la barre de progression
+                            new Thread(() =>
+                            {
+
+                                Thread.CurrentThread.IsBackground = false;
+                                Application.Current.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background, (SendOrPostCallback)delegate {
+
+                                    backupManage.ProgressBar.Value = 100;
+                                    backupManage.percentgeLabel.Content = 100 + "%";
+
+                                }, null);
+                            }).Start();
+
                             DateTime stop = DateTime.Now;
 
                             string encryptTime = "";
@@ -265,12 +278,10 @@ namespace InterfaceGraphiqueL2
 
                         foreach (FileInfo file in files)
                         {
-                            nbFile += 1;
-
                             FileSize += file.Length;
 
                         }
-                        if (FileSize > 1000000000)
+                        if (FileSize > 5000000000)
                         {
                             MessageBox.Show(Lang.tooBig);
                             Environment.Exit(0);
@@ -278,41 +289,47 @@ namespace InterfaceGraphiqueL2
                         else
                         { 
                             foreach (FileInfo file in files)
-                        {
-                            FileSize += file.Length;
-                            string tempTargetPath = TargetPath + @"\" + Name + @"\" + file.Name;
-                            string tempSourcePath = SourcePath + @"\" + file.Name;
-                            string tempExtension = file.Name.Split(".").Last();
-                            TotalFileToCopy++;
-
-                            mre.WaitOne();
-                            mre.Reset();
-
-                            mreBtn.WaitOne();
-                            mreBtn.Reset();
-
-                            file.CopyTo(tempTargetPath, false);
-
-                            //cryptage du fichier
-                            if (encryptExtension == tempExtension)
                             {
-                                encrypt(tempSourcePath, tempTargetPath);
+                                nbFile += 1;
+
+                                FileSize += file.Length;
+                                string tempTargetPath = TargetPath + @"\" + Name + @"\" + file.Name;
+                                string tempSourcePath = SourcePath + @"\" + file.Name;
+                                string tempExtension = file.Name.Split(".").Last();
+                                TotalFileToCopy++;
+
+                                mre.WaitOne();
+                                mre.Reset();
+
+                                mreBtn.WaitOne();
+                                mreBtn.Reset();
+
+                                file.CopyTo(tempTargetPath, false);
+
+                                //cryptage du fichier
+                                if (encryptExtension == tempExtension)
+                                {
+                                    encrypt(tempSourcePath, tempTargetPath);
+                                }
+
+                                float percentage = (100*nbFile) / nbFileTot;
+                                //Faire évoluer la barre de progression
+                                new Thread(() =>
+                                {
+
+                                    Thread.CurrentThread.IsBackground = false;
+                                    Application.Current.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background, (SendOrPostCallback)delegate {
+
+                                        backupManage.ProgressBar.Value = percentage;
+                                        backupManage.percentgeLabel.Content = percentage+"%";
+                                        if(backupManage.percentgeLabel.Content.ToString() == "100%")
+                                        {
+                                            backupManage.backupProgressInfo.Content = InterfaceGraphiqueL2.Properties.Langs.Lang.backupEnd;
+                                        }
+
+                                    }, null);
+                                }).Start();
                             }
-
-                            float percentage = (100*nbFile) / nbFileTot;
-                            //Faire évoluer la barre de progression
-                            new Thread(() =>
-                            {
-
-                                Thread.CurrentThread.IsBackground = false;
-                                Application.Current.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background, (SendOrPostCallback)delegate {
-
-                                    backupManage.ProgressBar.Value = percentage;
-                                    backupManage.percentgeLabel.Content = percentage+"%";
-
-                                }, null);
-                            }).Start();
-                        }
                         }
                         DateTime stopEncrypt = DateTime.Now;
                         string encryptTime = (stopEncrypt - startEncrypt).ToString();
@@ -360,9 +377,9 @@ namespace InterfaceGraphiqueL2
             Process crypt = new Process(); //logiciel cryptosoft
 
             //recup du chemin vers l'exécutable de cryptosoft adapté à chaque PC
-            string fullPath = Environment.CurrentDirectory;
-            string halfPath = fullPath.Substring(0, 133);
-            string path = halfPath + "Cryptage\\Cryptage.exe";
+            //string fullPath = Environment.CurrentDirectory;
+            //string halfPath = fullPath.Substring(0, 133);
+            string path = @"C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\Cryptage\Cryptage.exe";
 
             crypt.StartInfo.FileName = path;
             crypt.StartInfo.UseShellExecute = false;

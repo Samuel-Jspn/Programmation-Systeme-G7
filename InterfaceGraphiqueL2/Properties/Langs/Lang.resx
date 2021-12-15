@@ -202,4 +202,7 @@ Voulez-vous fermer le logiciel métier ?</value>
   <data name="backupStop" xml:space="preserve">
     <value>Stop</value>
   </data>
+  <data name="backupEnd" xml:space="preserve">
+    <value>Terminé</value>
+  </data>
 </root>

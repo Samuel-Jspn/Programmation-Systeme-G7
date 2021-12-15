@@ -120,6 +120,9 @@
   <data name="appRunning" xml:space="preserve">
     <value>The Application is already running</value>
   </data>
+  <data name="backupEnd" xml:space="preserve">
+    <value>Ended</value>
+  </data>
   <data name="backupInProgress" xml:space="preserve">
     <value>In progress</value>
   </data>

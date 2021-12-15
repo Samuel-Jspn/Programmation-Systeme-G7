@@ -70,6 +70,15 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Terminé.
+        /// </summary>
+        public static string backupEnd {
+            get {
+                return ResourceManager.GetString("backupEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à En cours.
         /// </summary>
         public static string backupInProgress {
