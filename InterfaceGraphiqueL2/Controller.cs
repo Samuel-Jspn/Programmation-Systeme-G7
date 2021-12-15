@@ -7,6 +7,8 @@ using System.Threading;
 using System.Globalization;
 using System.Linq;
 using InterfaceGraphiqueL2.Model;
+using InterfaceGraphiqueL2.View;
+using System.Windows.Threading;
 
 namespace InterfaceGraphiqueL2
 {
@@ -16,8 +18,12 @@ namespace InterfaceGraphiqueL2
         private Backup model;
         private DailyLog dailyLogModel;
         private StateLog stateLogModel;
+        public BackupManage backupManageView;
         public string EncryptExtension { get; set; }
         public string SoftwareSociety { get; set; }
+        public bool IsStopBtnPress { get; set; }
+        public string flagBackup { get; set; }
+        public int percentage { get; set; }
         #endregion
         public Controller()
         {
@@ -36,11 +42,10 @@ namespace InterfaceGraphiqueL2
             model.SourcePath = SourcePath;
             model.TargetPath = TargetPath;
             model.BackupType = BackupType;
-            model.EnterpriseSoftwareRunning(SoftwareSociety);
-            model.createBackup(model.BackupType, EncryptExtension, dailyLogModel, stateLogModel);
+            model.backupManage = backupManageView;
 
             //variable for the dailyLogModel
-            if(model.DirOrFile == "File")
+            if (model.DirOrFile == "File")
             {
                 dailyLogModel.Name = model.Name + "." + model.Extension;
 
@@ -55,7 +60,6 @@ namespace InterfaceGraphiqueL2
             dailyLogModel.Timestamp = model.Timestamp;
             dailyLogModel.FileSize = model.FileSize;
             dailyLogModel.EncryptInfo = model.EncryptInfo;
-            dailyLogModel.createDailyLog(dailyLogModel);
 
             //variables for the stateLog
             stateLogModel.Name = model.Name;
@@ -63,7 +67,7 @@ namespace InterfaceGraphiqueL2
             stateLogModel.TargetPath = model.TargetPath;
             stateLogModel.Timestamp = model.Timestamp;
             stateLogModel.BackupState = model.State;
-            if(stateLogModel.BackupState == "ACTIF")
+            if (stateLogModel.BackupState == "ACTIF")
             {
                 stateLogModel.TotalFileToCopy = model.TotalFileToCopy;
                 stateLogModel.TotalFileSize = model.FileSize;
@@ -79,9 +83,53 @@ namespace InterfaceGraphiqueL2
                 stateLogModel.FileSizeLeftToDo = 0;
                 stateLogModel.NbFileLeftToDo = 0;
             }
-            stateLogModel.createStateLog(stateLogModel);
 
+
+            //checker si on clique sur stopper sauvegarde ou ouverture logiciel métier en boucle durant la sauvegarde
+            model.IsStopBtnPress = IsStopBtnPress;
+            model.EnterpriseSoftwareRunning(SoftwareSociety);
+
+            //creation DailyLog, StateLog, et sauvegarde
+            dailyLogModel.createDailyLog(dailyLogModel);
+            stateLogModel.createStateLog(stateLogModel);
+            Thread checkStopBtnThread = new Thread(checkStopBtn);
+            checkStopBtnThread.Start();
+            model.backupThread(dailyLogModel, stateLogModel);
         }
 
+        //test ProgressBar
+        public void updatePercentage(int percentageModel)
+        {
+            backupManageView.SetProgressBar(percentage);
+        }
+
+        //Check en continue si on appuie sur le btn stop sauvegarde, récupération de la valeur de la vue pour la passer au controller
+        public void checkStopBtn()
+        {
+            while (true)
+            {
+                if(IsStopBtnPress == true)
+                {
+                    model.IsStopBtnPress = true;
+                }
+                else
+                {
+                    model.IsStopBtnPress = false;
+                }
+            }
+        }
+
+        //Check en continue si on appuie sur on arrive à la fin de la sauvegarde ou pas
+        //public void checkBackupFlag()
+        //{
+
+        //    while (true)
+        //    {
+        //        if (model.flag == "fin")
+        //        {
+        //            backupManageView.closePage();
+        //        }
+        //    }
+        //}
     }
 }

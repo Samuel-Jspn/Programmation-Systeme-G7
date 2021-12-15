@@ -70,6 +70,24 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à En cours.
+        /// </summary>
+        public static string backupInProgress {
+            get {
+                return ResourceManager.GetString("backupInProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Stop.
+        /// </summary>
+        public static string backupStop {
+            get {
+                return ResourceManager.GetString("backupStop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à La sauvegarde a été stoppé, veulliez fermer le logiciel métier pour reprendre la sauvegarde.
         /// </summary>
         public static string backupStopped {

@@ -19,6 +19,7 @@ using System.Linq;
 using System.Reflection;
 using System.Globalization;
 using Microsoft.Win32;
+using InterfaceGraphiqueL2.View;
 
 
 namespace InterfaceGraphiqueL2
@@ -91,6 +92,11 @@ namespace InterfaceGraphiqueL2
             {
                 BackupType = "differential";
             }
+
+            //ouverture de la page de suivi de la sauvegarde
+            BackupManage backupManage = new BackupManage(Controller);
+            backupManage.Show();
+            Controller.backupManageView = backupManage;
 
             Controller.updateBackupInfo(DirOrFile, Name, SourcePath, TargetPath, BackupType);
         }

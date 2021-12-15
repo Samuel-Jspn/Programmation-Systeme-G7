@@ -196,4 +196,10 @@ Voulez-vous fermer le logiciel métier ?</value>
   <data name="tooBig" xml:space="preserve">
     <value>Sauvegarde trop volumineuse</value>
   </data>
+  <data name="backupInProgress" xml:space="preserve">
+    <value>En cours</value>
+  </data>
+  <data name="backupStop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
 </root>

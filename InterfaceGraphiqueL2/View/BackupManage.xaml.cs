@@ -17,9 +17,33 @@ namespace InterfaceGraphiqueL2.View
     /// </summary>
     public partial class BackupManage : Window
     {
-        public BackupManage()
+        public Controller Controller { get; set; }
+        public BackupManage(Controller controller)
         {
+            this.Controller = controller;
             InitializeComponent();
+        }
+
+        private void Button_Stop_Click(object sender, RoutedEventArgs e)
+        {
+            Controller.IsStopBtnPress = true;
+            backupProgressInfo.Content= InterfaceGraphiqueL2.Properties.Langs.Lang.backupStop;
+        }
+
+        private void Button_InProgress_Click(object sender, RoutedEventArgs e)
+        {
+            Controller.IsStopBtnPress = false;
+            backupProgressInfo.Content = InterfaceGraphiqueL2.Properties.Langs.Lang.backupInProgress;
+        }
+
+        //public void closePage()
+        //{
+        //    this.Hide();
+        //}
+
+        public void SetProgressBar(int percentage)
+        {
+            ProgressBar.Value = percentage;
         }
     }
 }

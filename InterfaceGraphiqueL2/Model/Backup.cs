@@ -11,6 +11,7 @@ using System.Diagnostics;
 using InterfaceGraphiqueL2.Model;
 using System.Linq;
 using System.Windows;
+using InterfaceGraphiqueL2.View;
 using InterfaceGraphiqueL2.Properties.Langs;
 
 
@@ -36,14 +37,17 @@ namespace InterfaceGraphiqueL2
         public string flag;
         public bool stopThread = false;
         private static ManualResetEvent mre = new ManualResetEvent(false);
-
+        private static ManualResetEvent mreBtn = new ManualResetEvent(false);
+        public BackupManage backupManage { get; set; }
+        public bool IsStopBtnPress { get; set; }
+        public int percentage { get; set; }
         #endregion
 
         #region GETER AND SETER
         public string DirOrFile
         {
             get { return dirOrFile; }
-            set { dirOrFile = value; }
+            set => dirOrFile = value;
         }
         public string Extension
         {
@@ -122,9 +126,32 @@ namespace InterfaceGraphiqueL2
             EncryptInfo = "";
             SoftwareSociety = "";
             flag = "debut";
+            IsStopBtnPress = false;
+            percentage = 0;            
         }
 
+        //Check if stop button is clicked or not
+        public void checkStopBackup()
+        {
+            while (flag == "debut")
+            {
+                if (IsStopBtnPress == true)
+                {
+                    //Si on appuie sur le bouton reprendre la sauvegarde
+                    if(IsStopBtnPress == false)
+                    {
+                        mreBtn.Set();
+                    }
+                }
+                else
+                {
+                    //si on n'appuie pas pour stopper la sauvegarde on arrête pas (on skip le waitOne())
+                    mreBtn.Set();
+                }
+            }
+        }
 
+        //Check if software society is openned during the backup
         public void runningSoftware()
         {
             while (flag == "debut")
@@ -142,10 +169,21 @@ namespace InterfaceGraphiqueL2
             }
         }
 
+        //Call createBackup in a thread
+        public void backupThread(DailyLog dailyLogModel, StateLog stateLogModel)
+        {
+            Thread backupThread = new Thread(() => createBackup(BackupType, EncryptInfo, dailyLogModel, stateLogModel));
+            backupThread.Start();
+        }
+
         public void createBackup(string type, string encryptExtension, DailyLog dailyLogModel, StateLog stateLogModel)
         {
+            //Thread pour détecter si on stoppe ou logiciel métier
             Thread softwareSocietyThread = new Thread(runningSoftware);
             softwareSocietyThread.Start();
+
+            Thread checkStopBtnThread = new Thread(checkStopBackup);
+            checkStopBtnThread.Start();
 
             flag = "debut";
 
@@ -216,6 +254,10 @@ namespace InterfaceGraphiqueL2
                         //get the file in the directory and copy them to the new location
                         FileInfo[] files = dir.GetFiles();
 
+                        //Nb Total fichier pour pourcentage 
+                        int nbFileTot = files.Length;
+                        int nbFile = 0;
+
                         DateTime start = DateTime.Now;
                         Timestamp = start;
 
@@ -223,6 +265,8 @@ namespace InterfaceGraphiqueL2
 
                         foreach (FileInfo file in files)
                         {
+                            nbFile += 1;
+
                             FileSize += file.Length;
 
                         }
@@ -243,6 +287,10 @@ namespace InterfaceGraphiqueL2
 
                             mre.WaitOne();
                             mre.Reset();
+
+                            mreBtn.WaitOne();
+                            mreBtn.Reset();
+
                             file.CopyTo(tempTargetPath, false);
 
                             //cryptage du fichier
@@ -250,6 +298,20 @@ namespace InterfaceGraphiqueL2
                             {
                                 encrypt(tempSourcePath, tempTargetPath);
                             }
+
+                            float percentage = (100*nbFile) / nbFileTot;
+                            //Faire évoluer la barre de progression
+                            new Thread(() =>
+                            {
+
+                                Thread.CurrentThread.IsBackground = false;
+                                Application.Current.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background, (SendOrPostCallback)delegate {
+
+                                    backupManage.ProgressBar.Value = percentage;
+                                    backupManage.percentgeLabel.Content = percentage+"%";
+
+                                }, null);
+                            }).Start();
                         }
                         }
                         DateTime stopEncrypt = DateTime.Now;
@@ -277,6 +339,18 @@ namespace InterfaceGraphiqueL2
             }
             MessageBox.Show(InterfaceGraphiqueL2.Properties.Langs.Lang.msgBackupDone);
             flag = "fin";
+
+            //thread pour fermer la fenetre de gestion sauvegarde
+            new Thread(() =>
+            {
+
+                Thread.CurrentThread.IsBackground = false;
+                Application.Current.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background, (SendOrPostCallback)delegate {
+
+                    backupManage.Close();
+
+                }, null);
+            }).Start();
         }
 
         public void encrypt(string pathFileToEncrypt, string pathTargetFile)
