@@ -193,4 +193,10 @@ Voulez-vous fermer le logiciel métier ?</value>
   <data name="progressBarLabel" xml:space="preserve">
     <value>Progression de la sauvegarde : </value>
   </data>
+  <data name="backupInProgress" xml:space="preserve">
+    <value>En cours</value>
+  </data>
+  <data name="backupStop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
 </root>

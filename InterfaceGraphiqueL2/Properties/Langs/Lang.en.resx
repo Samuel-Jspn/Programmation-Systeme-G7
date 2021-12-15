@@ -120,6 +120,12 @@
   <data name="appRunning" xml:space="preserve">
     <value>The Application is already running</value>
   </data>
+  <data name="backupInProgress" xml:space="preserve">
+    <value>In progress</value>
+  </data>
+  <data name="backupStop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
   <data name="backupStopped" xml:space="preserve">
     <value>The backup has been stopped, please close the society software to resume the backup</value>
   </data>

@@ -24,14 +24,16 @@ namespace InterfaceGraphiqueL2.View
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Stop_Click(object sender, RoutedEventArgs e)
         {
             Controller.IsStopBtnPress = true;
+            backupProgressInfo.Content= InterfaceGraphiqueL2.Properties.Langs.Lang.backupStop;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_InProgress_Click(object sender, RoutedEventArgs e)
         {
             Controller.IsStopBtnPress = false;
+            backupProgressInfo.Content = InterfaceGraphiqueL2.Properties.Langs.Lang.backupInProgress;
         }
     }
 }

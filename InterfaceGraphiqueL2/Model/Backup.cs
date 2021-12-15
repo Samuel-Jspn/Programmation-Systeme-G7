@@ -131,8 +131,6 @@ namespace InterfaceGraphiqueL2
             {
                 if (IsStopBtnPress == true)
                 {
-                    MessageBox.Show("Backup Suspend");
-
                     //Si on appuie sur le bouton reprendre la sauvegarde
                     if(IsStopBtnPress == false)
                     {

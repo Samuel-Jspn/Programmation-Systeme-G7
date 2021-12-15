@@ -29,6 +29,15 @@ namespace InterfaceGraphiqueL2
 
         public void updateBackupInfo(string DirOrFile, string Name, string SourcePath, string TargetPath, string BackupType)
         {
+            //variable for the backupModel
+            model.SoftwareSociety = SoftwareSociety;
+            model.DirOrFile = DirOrFile;
+            model.Extension = SourcePath.Split(".").Last();
+            model.Name = Name;
+            model.SourcePath = SourcePath;
+            model.TargetPath = TargetPath;
+            model.BackupType = BackupType;
+
             //variable for the dailyLogModel
             if (model.DirOrFile == "File")
             {
@@ -69,14 +78,6 @@ namespace InterfaceGraphiqueL2
                 stateLogModel.NbFileLeftToDo = 0;
             }
 
-            //variable for the backupModel
-            model.SoftwareSociety = SoftwareSociety;
-            model.DirOrFile = DirOrFile;
-            model.Extension = SourcePath.Split(".").Last();
-            model.Name = Name;
-            model.SourcePath = SourcePath;
-            model.TargetPath = TargetPath;
-            model.BackupType = BackupType;
 
             //checker ça en boucle
             model.IsStopBtnPress = IsStopBtnPress;
@@ -84,11 +85,12 @@ namespace InterfaceGraphiqueL2
 
 
             //model.createBackup(model.BackupType, EncryptExtension, dailyLogModel, stateLogModel);
+            dailyLogModel.createDailyLog(dailyLogModel);
+            stateLogModel.createStateLog(stateLogModel);
             Thread checkStopBtnThread = new Thread(checkStopBtn);
             checkStopBtnThread.Start();
             model.backupThread(dailyLogModel, stateLogModel);
-            dailyLogModel.createDailyLog(dailyLogModel);
-            stateLogModel.createStateLog(stateLogModel);
+            
         }
 
         //Check en continue grâce à son appel dans un thread si on appuie sur le btn stop sauvegarde, récupération de la valeur de la vue pour la passer au controller
