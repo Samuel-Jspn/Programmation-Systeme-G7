@@ -51,16 +51,8 @@ C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\P
 C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\InterfaceGraphiqueL2.genruntimeconfig.cache
 C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\InterfaceGraphiqueL2.csproj.CopyComplete
-C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\SavesPage.g.cs
-C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\SavesPage.baml
-C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\HomePage.g.cs
-C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\HomePage.baml
 C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\InterfaceGraphiqueL2.csproj.CopyComplete
-C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\BusinessSoftware.g.cs
-C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\Settings.g.cs
-C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\BusinessSoftware.baml
-C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\Settings.baml
 C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\bin\Debug\netcoreapp3.1\Ookii.Dialogs.Wpf.dll
 C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\bin\Debug\netcoreapp3.1\Ookii.Dialogs.Wpf.dll
 C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\View\BusinessSoftware.g.cs
@@ -76,3 +68,13 @@ C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\P
 C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\bin\Debug\netcoreapp3.1\System.Windows.Forms.VisualStudio.15.0.dll
 C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\View\BackupManage.g.cs
 C:\Users\beaus\OneDrive - Association Cesi Viacesi mail\Documents\FISE A3 info\Programmation Système\Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\View\BackupManage.baml
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\View\BackupManage.g.cs
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\View\BusinessSoftware.g.cs
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\View\HomePage.g.cs
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\View\SavesPage.g.cs
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\View\Settings.g.cs
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\View\BackupManage.baml
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\View\BusinessSoftware.baml
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\View\HomePage.baml
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\View\SavesPage.baml
+C:\Users\samjo\OneDrive\Bureau\CESI\A3\Programmation système\Le Projet\Programmation-Systeme-G7\InterfaceGraphiqueL2\obj\Debug\netcoreapp3.1\View\Settings.baml
