@@ -190,6 +190,9 @@ Do you want to close it ?</value>
   <data name="targetPath" xml:space="preserve">
     <value>Destination path of the document</value>
   </data>
+  <data name="tooBig" xml:space="preserve">
+    <value>Save is too big</value>
+  </data>
   <data name="welcome" xml:space="preserve">
     <value>Welcome on EasySave A Prosoft Application</value>
   </data>
