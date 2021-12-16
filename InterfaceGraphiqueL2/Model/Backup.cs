@@ -41,6 +41,8 @@ namespace InterfaceGraphiqueL2
         public BackupManage backupManage { get; set; }
         public bool IsStopBtnPress { get; set; }
         public int percentage { get; set; }
+        public string PriorityExtension { get; set; }
+
         #endregion
 
         #region GETER AND SETER
@@ -246,6 +248,24 @@ namespace InterfaceGraphiqueL2
                         Directory.CreateDirectory(TargetPath + @"\" + Name);
                         //get the file in the directory and copy them to the new location
                         FileInfo[] files = dir.GetFiles();
+
+                        //Gérer priorité des fichiers
+                        if (PriorityExtension != null)
+                        {
+                            for (int i = 0; i < files.Length; i++)
+                            {
+                                string recupExtention = files[i].Name.Split(".").Last();
+                                if (recupExtention == PriorityExtension)
+                                {
+                                    for (int j = i; j > 0; j--)
+                                    {
+                                        FileInfo temp = files[j];
+                                        files[j] = files[j - 1];
+                                        files[j - 1] = temp;
+                                    }
+                                }
+                            }
+                        }
 
                         //Nb Total fichier pour pourcentage 
                         int nbFileTot = files.Length;

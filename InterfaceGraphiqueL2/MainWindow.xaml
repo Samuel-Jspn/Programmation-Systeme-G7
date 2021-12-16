@@ -73,12 +73,7 @@
 
         <Rectangle Stroke="Black" Margin="0,1,0,3" Grid.Column="1"/>
         <Label Content="EasySave&#xD;&#xA;By Prosoft" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="56" Width="120" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontStyle="Italic" Foreground="#FF0074FF"/>
-        <Button x:Name="btn_menu_saves" Content="{x:Static language:Lang.saves}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="55" Width="76" FontSize="9" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btn_menu_saves_Click" AllowDrop="True" MaxWidth="76" Cursor="Hand" BorderThickness="0,0,0,0" ClickMode="Press">
-            <Button.Background>
-                <SolidColorBrush Color="#FF0074FF" Opacity="0"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="btn_manage_saves" Content="{x:Static language:Lang.manage}" HorizontalAlignment="Center" Margin="0,97,0,0" VerticalAlignment="Top" Height="55" Width="76" FontSize="9" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AllowDrop="True" MaxWidth="76" Cursor="Hand" Grid.RowSpan="2" ClickMode="Press" BorderThickness="0,0,0,0">
+        <Button x:Name="btn_menu_saves" Content="{x:Static language:Lang.saves}" HorizontalAlignment="Center" VerticalAlignment="Top" Height="55" Width="76" FontSize="9" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btn_menu_saves_Click" AllowDrop="True" MaxWidth="76" Cursor="Hand" BorderThickness="0,0,0,0" ClickMode="Press" Margin="0,70,0,0">
             <Button.Background>
                 <SolidColorBrush Color="#FF0074FF" Opacity="0"/>
             </Button.Background>

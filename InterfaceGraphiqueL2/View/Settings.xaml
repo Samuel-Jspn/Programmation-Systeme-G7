@@ -12,10 +12,12 @@
     <Grid Background="White">
         <TextBlock HorizontalAlignment="Center" Margin="0,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.45,-2.457"><Run Language="fr-fr"/></TextBlock>
         <TextBox Name="textBoxExtension" HorizontalAlignment="Center" Margin="0,89,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="textBoxLogiciel" HorizontalAlignment="Center" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
-        <Button x:Name="btn_submit" Content="{x:Static language:Lang.submit}" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Height="40" Width="81" Background="#FF0074FF" Foreground="White" FontSize="14" FontWeight="Bold" Click="btn_submit_Click" Cursor="Hand"/>
+        <TextBox Name="textBoxLogiciel" HorizontalAlignment="Center" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="0,173,0,0"/>
+        <Button x:Name="btn_submit" Content="{x:Static language:Lang.submit}" HorizontalAlignment="Center" Margin="0,301,0,0" VerticalAlignment="Top" Height="40" Width="80" Background="#FF0074FF" Foreground="White" FontSize="14" FontWeight="Bold" Click="btn_submit_Click" Cursor="Hand"/>
         <Label x:Name="labelExtension" Content="{x:Static language:Lang.extension}" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelJob" Content="{x:Static language:Lang.job}" HorizontalAlignment="Center" Margin="0,151,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelJob" Content="{x:Static language:Lang.job}" HorizontalAlignment="Center" Margin="0,143,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxPriority" HorizontalAlignment="Center" Margin="0,251,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="labelExtension_Copy" Content="{x:Static language:Lang.priorityLabel}" HorizontalAlignment="Center" Margin="0,218,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

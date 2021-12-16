@@ -24,6 +24,7 @@ namespace InterfaceGraphiqueL2
         public bool IsStopBtnPress { get; set; }
         public string flagBackup { get; set; }
         public int percentage { get; set; }
+        public string PriorityExtension { get; set; }
         #endregion
         public Controller()
         {
@@ -44,6 +45,7 @@ namespace InterfaceGraphiqueL2
             model.TargetPath = TargetPath;
             model.BackupType = BackupType;
             model.backupManage = backupManageView;
+            model.PriorityExtension = PriorityExtension;
 
             //variable for the dailyLogModel
             if (model.DirOrFile == "File")
@@ -119,6 +121,8 @@ namespace InterfaceGraphiqueL2
                 }
             }
         }
+
+
 
         //Check en continue si on appuie sur on arrive à la fin de la sauvegarde ou pas
         //public void checkBackupFlag()

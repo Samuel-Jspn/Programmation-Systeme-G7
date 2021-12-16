@@ -233,6 +233,15 @@ namespace InterfaceGraphiqueL2.Properties.Langs {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Choisir l&apos;extension des fichiers à télécharger en priorité.
+        /// </summary>
+        public static string priorityLabel {
+            get {
+                return ResourceManager.GetString("priorityLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Progression de la sauvegarde : .
         /// </summary>
         public static string progressBarLabel {

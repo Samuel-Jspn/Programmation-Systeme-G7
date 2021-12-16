@@ -49,6 +49,7 @@ namespace InterfaceGraphiqueL2
             SoftwareSociety = textBoxLogiciel.Text;
             Controller.EncryptExtension = EncryptExtension;
             Controller.SoftwareSociety = SoftwareSociety;
+            Controller.PriorityExtension = textBoxPriority.Text;
         }
     }
 }
