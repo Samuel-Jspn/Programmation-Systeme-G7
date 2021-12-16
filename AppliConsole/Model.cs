@@ -7,6 +7,7 @@ using System.Resources;
 using System.Reflection;
 using System.Threading;
 using System.Globalization;
+using System.Diagnostics;
 
 namespace AppliConsole
 {
@@ -121,8 +122,15 @@ namespace AppliConsole
                             Timestamp = start;
                             TotalFileToCopy = 1;
 
+                            //backup
                             File.Copy(SourcePath, path, true);
                             DateTime stop = DateTime.Now;
+
+                            //cryptage du fichier
+                            if(Extension == "txt")
+                            {
+                                encrypt(sourcePath, path);
+                            }
 
                             //recup copy time
                             FileTransferTime = (stop - start).ToString();
@@ -229,6 +237,41 @@ namespace AppliConsole
             Directory.CreateDirectory(@"C:\testBackup\StateLogs");
 
             File.AppendAllText(@"C:\testBackup\StateLogs\StateLog.json", jsonSerializeObj);
+        }
+
+        public void encrypt(string pathFileToEncrypt, string pathTargetFile)
+        {
+            StreamReader sr = new StreamReader(pathFileToEncrypt); //fichier à crypter
+            StreamWriter sw = new StreamWriter(pathTargetFile); //fichier où écrire
+            Process crypt = new Process(); //logiciel cryptosoft
+
+            //recup du chemin vers l'exécutable de cryptosoft adapté à chaque PC
+            string fullPath = Environment.CurrentDirectory;
+            string halfPath = fullPath.Substring(0, 133);
+            string path = halfPath + "Cryptage\\Cryptage.exe";
+
+            crypt.StartInfo.FileName = path;
+            crypt.StartInfo.UseShellExecute = false;
+            crypt.StartInfo.RedirectStandardOutput = true;
+            crypt.StartInfo.RedirectStandardInput = true;
+            crypt.StartInfo.RedirectStandardError = true;
+
+            string line;
+            line = sr.ReadLine();
+
+            while (line != null)
+            {
+                crypt.StartInfo.Arguments = line; //on demande au logiciel de cryptage de crypter le contenu du fichier
+                crypt.Start(); //lancement de cryptosoft
+                string cryptedLine = crypt.StandardOutput.ReadToEnd();
+                crypt.WaitForExit();
+
+                sw.WriteLine(cryptedLine); //on écrit dans le fichier le contenu crypté du précédent fichier 
+                line = sr.ReadLine();
+            }
+
+            sr.Close();
+            sw.Close();
         }
     }
 

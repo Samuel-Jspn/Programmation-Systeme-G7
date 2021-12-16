@@ -1,0 +1,23 @@
+﻿<Window x:Class="InterfaceGraphiqueL2.View.BackupManage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InterfaceGraphiqueL2.View"
+        xmlns:language="clr-namespace:InterfaceGraphiqueL2.Properties.Langs"
+        mc:Ignorable="d"
+        Title="BackupManage" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ProgressBar Name="ProgressBar" Value ="0" Margin="236,89,237,292" Grid.RowSpan="2" RenderTransformOrigin="0.498,0.284"/>
+        <Label Name="backupProgressInfo" Content="{x:Static language:Lang.backupInProgress}" HorizontalAlignment="Left" Margin="479,160,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Label Content="{x:Static language:Lang.progressBarLabel}" HorizontalAlignment="Left" Margin="263,160,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Button Content="Pause" HorizontalAlignment="Left" Margin="263,287,0,0" VerticalAlignment="Top" Click="Button_Stop_Click" Grid.RowSpan="2"/>
+        <Button Content="Reprendre" HorizontalAlignment="Center" Margin="0,287,0,0" VerticalAlignment="Top" Click="Button_InProgress_Click" Grid.RowSpan="2"/>
+        <Button Content="Arrêt" HorizontalAlignment="Left" Margin="498,287,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Label Name="percentgeLabel" Content="0%" HorizontalAlignment="Center" Margin="0,90,0,0" Grid.RowSpan="2" VerticalAlignment="Top" RenderTransformOrigin="0.434,-0.172"/>
+    </Grid>
+</Window>
