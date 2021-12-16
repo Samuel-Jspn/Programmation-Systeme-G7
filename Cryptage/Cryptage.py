@@ -17,7 +17,6 @@ def caesar2(plaintext):
 
     table = str.maketrans(alphabet, shifted_alphabet) 
 
-    print(plaintext.translate(table));
     return plaintext.translate(table)
 
 nbArgument = len(sys.argv) - 1;
