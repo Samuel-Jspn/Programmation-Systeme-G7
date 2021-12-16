@@ -172,9 +172,9 @@ namespace InterfaceGraphiqueL2
         }
 
         //Call createBackup in a thread
-        public void backupThread(DailyLog dailyLogModel, StateLog stateLogModel)
+        public void backupThread(string encryptExtension, DailyLog dailyLogModel, StateLog stateLogModel)
         {
-            Thread backupThread = new Thread(() => createBackup(BackupType, EncryptInfo, dailyLogModel, stateLogModel));
+            Thread backupThread = new Thread(() => createBackup(BackupType, encryptExtension, dailyLogModel, stateLogModel));
             backupThread.Start();
         }
 

@@ -37,7 +37,6 @@ namespace InterfaceGraphiqueL2
         {
             //variable for the backupModel
             model.SoftwareSociety = SoftwareSociety;
-            model.EncryptInfo = EncryptExtension;
             model.DirOrFile = DirOrFile;
             model.Extension = SourcePath.Split(".").Last();
             model.Name = Name;
@@ -97,7 +96,7 @@ namespace InterfaceGraphiqueL2
             stateLogModel.createStateLog(stateLogModel);
             Thread checkStopBtnThread = new Thread(checkStopBtn);
             checkStopBtnThread.Start();
-            model.backupThread(dailyLogModel, stateLogModel);
+            model.backupThread(EncryptExtension, dailyLogModel, stateLogModel);
         }
 
         //test ProgressBar
